@@ -3,34 +3,24 @@
 var module = new Object();
 var module_field = new Object();
 var module_milestone = new Object();
-var module_field_array = [];
-var module_milestone_array = [];
+var module_fields_array = [];
+var module_milestones_array = [];
 var moduleCount = 0;
 var fieldCount = 0;
 var milestoneCount = 0;
 
+var fieldIdTemp = 0;
+var milestoneIdTemp = 0;
+
 jQuery(document).ready(function() {
 
-    module = new Object();
-    module_field = new Object();
-    module_milestone = new Object();
-
-    module_field_array = [];
-    module_milestone_array = [];
-
-    moduleCount = 0
-    fieldCount = 0;
-    milestoneCount = 0;
-
-    clearModuleEntryForm();
-    clearModuleFieldEntryForm();
-    // clearMilestoneEntryForm();
-
+    init();
     document.getElementById('button_add_module').classList.remove('kt-hidden');
 
 });
 
 // TODO Module Entry Related Codes Begin
+
 function addModule(){
 
     module.module_name = $('#module_name').val();
@@ -69,39 +59,44 @@ function clearModuleEntryForm(){
 
 }
 
-
 //TODO Fields Creation Related Codes Begin
 
 function addField(){
 
     fieldCount ++;
 
-    module_field.filed_name = $('#field_name').val();
-    module_field.filed_data_type = $('#field_data_type').val();
+    module_field.field_id_temp = fieldIdTemp;
+    module_field.field_name = $('#field_name').val();
+    module_field.field_data_type = $('#field_data_type').val();
     module_field.serial = $('#field_serial').val();
     module_field.dropdown_values = $('#field_dropdown_values').val();
     module_field.field_remarks = $('#field_remarks').val();
 
-    module_field_array.push(module_field);
-    var markup =    '<tr id="field_row_' + fieldCount +'">' +
-                        '<td>' + module_field.filed_name + '</td>' +
-                        '<td>' + module_field.filed_data_type + '</td>' +
+    module_fields_array.push(module_field);
+
+    var markup =    '<tr id="field_row_' + fieldIdTemp +'">' +
+                        '<td>' + module_field.field_name + '</td>' +
+                        '<td>' + module_field.field_data_type + '</td>' +
                         '<td>' + module_field.serial + '</td>' +
                         '<td>' + module_field.dropdown_values + '</td>' +
                         '<td>' + module_field.field_remarks + '</td>' +
                         '<td>' +
-                            '<i onclick="removeField(' + fieldCount + ')" class="la la-trash"></i>' +
+                            '<i onclick="removeField(' + fieldIdTemp + ')" class="la la-trash"></i>' +
                         '</td>'+
                     '</tr>';
 
     $("#module_fields_table tbody").append(markup);
     clearModuleFieldEntryForm();
+    fieldIdTemp ++;
 
 }
 
 function removeField( rowId ) {
+
     $('#field_row_' + rowId).remove();
     fieldCount--;
+    module_fields_array = module_fields_array.filter((item) => item.field_id_temp !== rowId);
+
 }
 
 function clearModuleFieldEntryForm(){
@@ -115,16 +110,16 @@ function clearModuleFieldEntryForm(){
 
 }
 
-
-//TODO Default Milestone Related Codes begin
+//TODO Default Milestone Related Codes Begin
 
 function addMilestone() {
 
     milestoneCount++;
 
+    module_milestone.milestone_id_temp = milestoneIdTemp;
     module_milestone.milestone_name = $('#milestone_name').val();
 
-    module_milestone_array.push(module_milestone);
+    module_milestones_array.push(module_milestone);
 
     var markup =    '<tr id="milestone_row_' + milestoneCount +'">' +
                         '<td>' + module_milestone.milestone_name + '</td>' +
@@ -135,6 +130,7 @@ function addMilestone() {
 
     $("#module_milestone_table tbody").append(markup);
     clearMilestoneEntryForm();
+    milestoneIdTemp++;
 
 }
 
@@ -142,6 +138,7 @@ function removeMilestone( rowId ) {
 
     $('#milestone_row_' + rowId).remove();
     milestoneCount--;
+    module_milestones_array = module_milestones_array.filter((item) => item.milestone_id_temp !== rowId);
 }
 
 function clearMilestoneEntryForm(){
@@ -150,6 +147,8 @@ function clearMilestoneEntryForm(){
     $('#milestone_name').val("");
 
 }
+
+//TODO Entire Module Saving Codes Begin
 
 function saveEntireModule( buttonObject ){ // this function is called from /assets/js/demo4/pages/wizard/wizard-3.js"
 
@@ -171,63 +170,129 @@ function saveEntireModule( buttonObject ){ // this function is called from /asse
                 module_milestone_type : module.milestone_type_id
                 // field_count : fieldCount,
                 // milestone_count : milestoneCount,
-                // module_fields : module_field_array,
-                // module_milestones : module_milestone_array
+                // module_fields : module_fields_array,
+                // module_milestones : module_milestones_array
 
             },
             dataType : 'JSON',
             success : function(data){
 
-                console.log(data);
 
 
-
-
-
-                var message = '';
-                $.each(data.text, function(index, item){
-                    $.each(item, function (index, text) {
-                        message = message + text + '</br>'
-                    })
-                });
-                if(data.id == 1){
-
-                    // Show a toaster notification for success
-
-
-                    console.log(data.module_id);
-
-                    // swal.fire(
-                    //     'Saved!',
-                    //     message,
-                    //     'success'
-                    // )
+                if(data.id == 0){
+                    showModuleFailureAlert(data);
                 } else {
-                    swal.fire(
-                        'Failed!',
-                        message,
-                        'error'
-                    )
+                    // Show toaster notification of successfull module save
+
+                    if(fieldCount > 0){
+                        // Adding Module id to all the fields and send to save
+                        $.each(module_fields_array, function(index, item){
+                           item.module_id = data.module_id;
+                            $.ajax({
+                                type : 'POST',
+                                url : './savefield',
+                                data : {
+                                    module_id : item.module_id,
+                                    field_id : 0,
+                                    field_name : item.field_name,
+                                    field_data_type : item.field_data_type,
+                                    serial : item.serial,
+                                    dropdown_values : item.dropdown_values,
+                                    remarks : item.field_remarks
+                                },
+                                dataType: 'JSON',
+                                success : function (data) {
+                                    var message = '';
+                                    $.each(data.text, function(index, item){
+                                        $.each(item, function (index, text) {
+                                            message = message + text + '</br>'
+                                        })
+                                    });
+                                    if (data.id == 0){
+                                        showNotification('error', message, data.field_name);
+                                    } else {
+                                        showNotification('success', message, "");
+                                    }
+                                }
+                            });
+
+                        });
+                        // console.log(module_fields_array);
+
+                    }
+                    if(milestoneCount > 0){
+                        //Save the milestones
+                    }
                 }
-
-
-
-
-
-
             }
         });
     }
 
-
-
-
-
     KTApp.unprogress(buttonObject);
 
+}
 
+function showModuleFailureAlert( data ){
 
+    var message = '';
+    $.each(data.text, function(index, item){
+        $.each(item, function (index, text) {
+            message = message + text + '</br>'
+        })
+    });
 
+    swal.fire(
+        'Failed!',
+        message,
+        'error'
+    );
 
+}
 
+function showNotification( type, message, title){
+
+    toastr.options = {
+        "closeButton": true,
+        "debug": false,
+        "newestOnTop": true,
+        "progressBar": false,
+        "positionClass": "toast-top-right",
+        "preventDuplicates": false,
+        "onclick": null,
+        "showDuration": "300",
+        "hideDuration": "1000",
+        "timeOut": "0",
+        "extendedTimeOut": "0",
+        "showEasing": "swing",
+        "hideEasing": "linear",
+        "showMethod": "fadeIn",
+        "hideMethod": "fadeOut"
+    };
+
+    if(type == 'success'){
+        toastr.success(message, title);
+    } else {
+        toastr.error(message, title);
+    }
+
+}
+
+function init(){
+    module = new Object();
+    module_field = new Object();
+    module_milestone = new Object();
+
+    module_fields_array = [];
+    module_milestones_array = [];
+
+    moduleCount = 0
+    fieldCount = 0;
+    milestoneCount = 0;
+
+    fieldIdTemp = 0;
+    milestoneIdTemp = 0;
+
+    clearModuleEntryForm();
+    clearModuleFieldEntryForm();
+    clearMilestoneEntryForm();
 }

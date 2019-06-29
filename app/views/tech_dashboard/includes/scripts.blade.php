@@ -125,4 +125,5 @@
 {{--<script src="./assets/js/demo4/pages/crud/metronic-datatable/base/data-local.js" type="text/javascript"></script>--}}
 {{--<script src="./assets/js/demo4/pages/crud/forms/widgets/select2.js" type="text/javascript"></script>--}}
 <script src="./assets/js/demo4/pages/components/extended/sweetalert2.js" type="text/javascript"></script>
+<script src="./assets/js/demo4/pages/components/extended/toastr.js" type="text/javascript"></script>
 

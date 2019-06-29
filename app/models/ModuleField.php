@@ -1,7 +1,6 @@
 <?php
 
-class Module extends Eloquent {
-
+class ModuleField extends Eloquent {
 
 
     public function user(){

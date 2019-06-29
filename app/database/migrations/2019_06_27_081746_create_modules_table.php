@@ -16,7 +16,7 @@ class CreateModulesTable extends Migration {
 		{
 			$table->increments('id');
 			$table->text('module_name');
-			$table->text('module_milestone_type');
+			$table->integer('module_milestone_type');
 			$table->text('remarks');
 			$table->text('updated_by');
 			$table->timestamps();

@@ -211,12 +211,12 @@ function saveField(){
                     var i = 0;
                     $.each(data.text, function(index, item){
 
-                        if(i==0){
-                            msg = item;
-                        } else {
-                            msg = msg + '</br>' + item;
-                        }
-                        i++;
+                        var message = '';
+                        $.each(data.text, function(index, item){
+                            $.each(item, function (index, text) {
+                                message = message + text + '</br>'
+                            })
+                        });
                     });
 
                     if(data.id == 1){
@@ -225,15 +225,16 @@ function saveField(){
                             'Your field has been saved.',
                             'success'
                         )
+                        window.location.reload();
                     } else {
                         swal.fire(
                             'Failed!',
-                            msg,
+                            message,
                             'error'
                         )
                     }
-                    // init();
-                    window.location.reload();
+
+
                 }
             });
 

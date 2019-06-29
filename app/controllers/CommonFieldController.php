@@ -109,6 +109,7 @@ class CommonFieldController extends BaseController {
         $result['id'] = 1;
         $result['text'][0] = "Common Field Saved Successfully";
 
+
         return $result;
 
     }
@@ -121,16 +122,16 @@ class CommonFieldController extends BaseController {
             'field_data_type' => 'required',
             'serial' => 'sometimes|numeric',
             'remarks' => 'required',
+            'module_id' => 'sometimes|required'
         );
 
         $validator = Validator::make($values, $validationRule);
 
         if($validator->fails()){
             $result['id'] = 0;
-            $result['text'] = $validator->messages();
+            $result['text']['fields'] = $validator->messages();
         } else {
             $result['id'] = 1;
-            $result['text'][0] = "Validation Passes!";
         }
 
         return $result;

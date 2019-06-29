@@ -26,5 +26,11 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
     public function commonFields(){
         return $this->hasMany('CommonField', 'updated_by');
     }
+    public function modules(){
+        return $this->hasMany('Module', 'updated_by');
+    }
+    public function moduleFields(){
+        return $this->hasMany('ModuleField', 'updated_by');
+    }
 
 }
