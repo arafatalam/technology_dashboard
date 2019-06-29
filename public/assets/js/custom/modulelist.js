@@ -1,10 +1,8 @@
 'use strict';
 
 jQuery(document).ready(function() {
-
+    init();
     KTDatatableDataLocalDemo.init();
-
-
 });
 
 var KTDatatableDataLocalDemo = function() {
@@ -96,7 +94,7 @@ var KTDatatableDataLocalDemo = function() {
                 });
 
                 dataTable.on('click', '[data-module_id]', function() {
-
+                    showModule($(this).data('module_id'));
                 });
 
             }
@@ -110,3 +108,101 @@ var KTDatatableDataLocalDemo = function() {
         },
     };
 }();
+
+function showModule( moduleId ) {
+
+    KTUtil.scrollTop();
+    $.ajax({
+        type : 'GET',
+        url : './getdatamodule/' + moduleId,
+        dataType : 'JSON',
+        success : function(data){
+            init();
+            $('#module_id').text(data.id);
+            // TODO Feeding the form with current data
+            $('#module_name').val(data.module_name);
+            $('#module_milestone_type').val(data.module_milestone_type);
+            select2dropdown();
+            document.getElementById('delete_module_button').classList.remove('kt-hidden');
+        }
+    });
+
+}
+
+function saveModule(){
+
+    var moduleId = $('#module_id').text();
+    var moduleName = $('#module_name').val();
+    var moduleMilestoneType = $('#module_milestone_type').val();
+    var moduleRemarks = $('#module_remarks').val();
+
+    if(moduleRemarks == null || moduleRemarks == "" || moduleRemarks == undefined){
+        swal.fire(
+            'Remarks',
+            'Please write some remarks.',
+            'error'
+        );
+    } else {
+        $.ajax({
+            type : 'POST',
+            url : './savemodule',
+            data : {
+
+                module_id : moduleId,
+                module_name : moduleName,
+                module_remarks : moduleRemarks,
+                module_milestone_type : moduleMilestoneType
+
+            },
+            dataType : 'JSON',
+            success : function(data){
+
+                if(data.id == 0){
+                    showModuleFailureAlert(data);
+                } else {
+
+                    var message = getNotificationMessage(data);
+                    showNotification('success', message, "SUCCESS");
+
+                    swal.fire({
+                        title: 'Well Done',
+                        text: "You successfully updated the module!!",
+                        type: 'success',
+                        confirmButtonText: 'Continue!'
+                    });
+                    init();
+                }
+            }
+        });
+    }
+
+
+
+}
+
+function clearModuleEditForm(){
+    init();
+}
+
+function showModuleFailureAlert( data ){
+
+    var message = getNotificationMessage(data)
+
+    swal.fire(
+        'Failed!',
+        message,
+        'error'
+    );
+    KTApp.unprogress(buttonObject);
+
+}
+
+function init(){
+    $('#module_id').text('');
+    // TODO Feeding the form with current data
+    $('#module_name').val('');
+    $('#module_milestone_type').val('Fixed Milestone');
+    $('#module_ramrks').val('');
+    select2dropdown();
+    document.getElementById('delete_module_button').classList.add('kt-hidden');
+}

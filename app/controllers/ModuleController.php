@@ -33,11 +33,10 @@ class ModuleController extends BaseController {
 
     public function saveModule(){
 
-        // TODO UNCOMMENT THE FOLLOWING LINES
-
         $validationRule = array(
+            'module_id' => 'sometimes|required',
             'module_name' => 'required',
-            'module_remarks' => 'required'
+            'module_remarks' => 'required',
         );
 
         $validator = Validator::make(Input::all(), $validationRule);
@@ -47,7 +46,12 @@ class ModuleController extends BaseController {
             $result['text']['module']= $validator->messages();
         } else {
 
-            $module = new Module();
+            if(Input::has('module_id')){
+                $module = Module::find(Input::get('module_id'));
+            } else {
+                $module = new Module();
+            }
+
             $module->module_name = Input::get('module_name');
             $module->module_milestone_type = Input::get('module_milestone_type');
             $module->remarks = Input::get('module_remarks');
@@ -158,14 +162,22 @@ class ModuleController extends BaseController {
     }
 
     public function getDataModuleList(){
-
         $modules = Module::all();
-
         foreach($modules as $module){
             $module->user;
         }
-
         return $modules;
+    }
+
+    public function getDataModule( $moduleId ){
+
+        $module = Module::find($moduleId);
+        $module->user;
+        $module->moduleFields;
+        $module->defaultMilestones;
+
+        return $module;
+
 
     }
 

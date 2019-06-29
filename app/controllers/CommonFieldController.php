@@ -33,7 +33,7 @@ class CommonFieldController extends BaseController {
         return $commonFields;
     }
 
-    public function getDataCommonField($fieldId){
+    public function getDataCommonField( $fieldId ){
 
         return CommonField::find($fieldId);
 

@@ -108,7 +108,7 @@ var KTDatatableDataLocalDemo = function() {
 
                 dataTable.on('click', '[data-field_id]', function() {
 
-                    editField($(this).data('field_id'));
+                    showField($(this).data('field_id'));
                 });
 
             }
@@ -123,9 +123,9 @@ var KTDatatableDataLocalDemo = function() {
     };
 }();
 
-function editField(commonFieldId) {
+function showField( commonFieldId ) {
 
-
+    KTUtil.scrollTop();
     $.ajax({
         type : 'GET',
         url : './getdatacommonfield/' + commonFieldId,
@@ -306,18 +306,20 @@ function deleteField(){
 
 
 }
-
+function clearFieldEntryForm(){
+    init();
+}
 function init(){
     //TODO Clearing any previous data from the field entry form
 
-    // $("#field_id").text("");
-    // $("#entry_form_name").text("Add New Field");
-    // $('#field_name').val('');
-    // $("#field_data_type").val("TEXT");
-    // $("#serial").val("");
-    // $("#dropdown_values").val("");
-    // $("#remarks").val("");
-    // select2dropdown();
-    // document.getElementById('delete_field_button').classList.add('kt-hidden');
+    $("#field_id").text("");
+    $("#entry_form_name").text("Add New Field");
+    $('#field_name').val('');
+    $("#field_data_type").val("TEXT");
+    $("#serial").val("");
+    $("#dropdown_values").val("");
+    $("#remarks").val("");
+    select2dropdown();
+    document.getElementById('delete_field_button').classList.add('kt-hidden');
 
 }

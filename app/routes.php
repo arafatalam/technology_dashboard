@@ -38,3 +38,4 @@ Route::post('/savemodule', array('as' => 'savemodule', 'before ' => 'auth', 'use
 Route::post('/savefield', array('as' => 'savefield', 'before ' => 'auth', 'uses' => 'ModuleController@saveField'));
 Route::post('/savemilestone', array('as' => 'savemilestone', 'before ' => 'auth', 'uses' => 'ModuleController@saveMilestone'));
 Route::get('/getdatamodulelist', array('as' => 'getdatamodulelist', 'before ' => 'auth', 'uses' => 'ModuleController@getDataModuleList'));
+Route::get('/getdatamodule/{moduleId}', array('as' => 'getdatamodule', 'before ' => 'auth', 'uses' => 'ModuleController@getDataModule'));

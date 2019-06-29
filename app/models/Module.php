@@ -9,7 +9,7 @@ class Module extends Eloquent {
         return $this->hasMany('ModuleField');
     }
     public function defaultMilestones(){
-        return $this->hasMany('DeafultMilestone');
+        return $this->hasMany('DefaultMilestone');
     }
 
 }

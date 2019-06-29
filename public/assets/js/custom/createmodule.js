@@ -17,6 +17,7 @@ jQuery(document).ready(function() {
     init();
     document.getElementById('button_add_module').classList.remove('kt-hidden');
 
+
 });
 
 // TODO Module Entry Related Codes Begin
@@ -24,24 +25,34 @@ jQuery(document).ready(function() {
 function addModule(){
 
     module.module_name = $('#module_name').val();
-    module.milestone_type_name = $('#module_milestone_type option:selected').text();
-    module.milestone_type_id = $('#module_milestone_type').val();
-    module.module_remarks = $('#module_remarks').val();
+    module.milestone_type_name = $('#module_milestone_type option:selected').val();
+    if( module.milestone_type_name == null || module.milestone_type_name == undefined || module.milestone_type_name == 0){
+        swal.fire(
+            'Error!',
+            'You have to select a Milestone Type.',
+            'error'
+        );
+    } else {
+        module.milestone_type_id = $('#module_milestone_type').val();
+        module.module_remarks = $('#module_remarks').val();
 
-    var markup =    '<tr id="module_row">' +
-                        '<td>' + module.module_name + '</td>' +
-                        '<td>' + module.milestone_type_name + '</td>' +
-                        '<td>' + module.module_remarks + '</td>' +
-                        '<td>' +
-                            '<i onclick="removeModule();" class="la la-trash"></i>' +
-                        '</td>'+
-                    '</tr>';
+        var markup =    '<tr id="module_row">' +
+            '<td>' + module.module_name + '</td>' +
+            '<td>' + module.milestone_type_name + '</td>' +
+            '<td>' + module.module_remarks + '</td>' +
+            '<td>' +
+            '<i onclick="removeModule();" class="la la-trash"></i>' +
+            '</td>'+
+            '</tr>';
 
-    $("#module_table tbody").append(markup);
+        $("#module_table tbody").append(markup);
 
-    clearModuleEntryForm();
-    document.getElementById('button_add_module').classList.add('kt-hidden');
-    moduleCount = 1;
+        clearModuleEntryForm();
+        document.getElementById('button_add_module').classList.add('kt-hidden');
+        moduleCount = 1;
+    }
+
+
 }
 
 function removeModule(){
@@ -167,7 +178,7 @@ function saveEntireModule( buttonObject ){ // this function is called from /asse
 
                 module_name : module.module_name,
                 module_remarks : module.module_remarks,
-                module_milestone_type : module.milestone_type_id
+                module_milestone_type : module.milestone_type_name
 
             },
             dataType : 'JSON',
@@ -218,6 +229,7 @@ function saveEntireModule( buttonObject ){ // this function is called from /asse
 
 
 }
+
 function saveField( field ){
 
     $.ajax({
@@ -271,12 +283,7 @@ function saveMilestone( milestone ) {
 
 function showModuleFailureAlert( data ){
 
-    var message = '';
-    $.each(data.text, function(index, item){
-        $.each(item, function (index, text) {
-            message = message + text + '</br>'
-        })
-    });
+    var message = getNotificationMessage(data)
 
     swal.fire(
         'Failed!',
@@ -284,34 +291,6 @@ function showModuleFailureAlert( data ){
         'error'
     );
     KTApp.unprogress(buttonObject);
-
-}
-
-function showNotification( type, message, title){
-
-    toastr.options = {
-        "closeButton": true,
-        "debug": false,
-        "newestOnTop": true,
-        "progressBar": false,
-        "positionClass": "toast-top-right",
-        "preventDuplicates": false,
-        "onclick": null,
-        "showDuration": "300",
-        "hideDuration": "1000",
-        "timeOut": "0",
-        "extendedTimeOut": "0",
-        "showEasing": "swing",
-        "hideEasing": "linear",
-        "showMethod": "fadeIn",
-        "hideMethod": "fadeOut"
-    };
-
-    if(type == 'success'){
-        toastr.success(message, title);
-    } else {
-        toastr.error(message, title);
-    }
 
 }
 
@@ -335,4 +314,5 @@ function init(){
     clearModuleEntryForm();
     clearModuleFieldEntryForm();
     clearMilestoneEntryForm();
+
 }
