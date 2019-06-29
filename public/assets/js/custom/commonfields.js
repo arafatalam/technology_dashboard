@@ -206,26 +206,17 @@ function saveField(){
                 },
                 dataType : 'JSON',
                 success : function(data){
-
-                    var msg = '';
-                    var i = 0;
-                    $.each(data.text, function(index, item){
-
-                        var message = '';
-                        $.each(data.text, function(index, item){
-                            $.each(item, function (index, text) {
-                                message = message + text + '</br>'
-                            })
-                        });
-                    });
-
+                    var message = getNotificationMessage(data);
                     if(data.id == 1){
-                        swal.fire(
-                            'Saved!',
-                            'Your field has been saved.',
-                            'success'
-                        )
-                        window.location.reload();
+                        swal.fire({
+                            title: 'Well Done',
+                            text: "You successfully added a new field!!",
+                            type: 'success',
+                            confirmButtonText: 'Ok, Let\'s Finish!'
+                        }).then(function(result) {
+                            // Reload or redirect to another page
+                            window.location.reload();
+                        });
                     } else {
                         swal.fire(
                             'Failed!',
@@ -278,28 +269,22 @@ function deleteField(){
                 dataType : 'JSON',
                 success : function(data){
 
-                    var msg = '';
-                    var i = 0;
-                    $.each(data.text, function(index, item){
-                        if(i==0){
-                            msg = item;
-                        } else {
-                            msg = msg + '</br>' + item;
-                        }
-                        i++;
-                    });
+                    var message = getNotificationMessage(data);
 
                     if(data.id == 1){
-                        swal.fire(
-                            'Deleted!',
-                            'Your field has been deleted.',
-                            'success'
-                        )
-                        window.location.reload();
+                        swal.fire({
+                            title: 'Deleted',
+                            text: "Your field has been deleted!!",
+                            type: 'success',
+                            confirmButtonText: 'Ok, Let\'s Finish!'
+                        }).then(function(result) {
+                            // Reload or redirect to another page
+                            window.location.reload();
+                        });
                     } else {
                         swal.fire(
                             'Failed!',
-                            msg,
+                            message,
                             'error'
                         )
                     }

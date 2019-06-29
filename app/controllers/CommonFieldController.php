@@ -104,12 +104,17 @@ class CommonFieldController extends BaseController {
       //  $stop_date =
         $commonField->updated_on = date('Y-m-d');
 
-        $commonField->save();
-
-        $result['id'] = 1;
-        $result['text'][0] = "Common Field Saved Successfully";
 
 
+        try{
+            $commonField->save();
+//                $commonField->id = 1;
+            $result['id'] = 1;
+            $result['text']['field'][$commonField->field_name][0]= "FIELD : " . $commonField->field_name . " Created Sucessfully!!";
+        }catch (Exception $e){
+            $result['id'] = 0;
+            $result['text']['field']['message']= $e->getMessage();
+        }
         return $result;
 
     }

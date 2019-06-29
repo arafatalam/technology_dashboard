@@ -315,16 +315,7 @@ function showNotification( type, message, title){
 
 }
 
-function getNotificationMessage( data ){
-    var message = '';
-    $.each(data.text, function(index, item){
-        $.each(item, function (index, text) {
-            message = message + text + '</br>'
-        })
-    });
 
-    return message;
-}
 
 function init(){
     module = new Object();
