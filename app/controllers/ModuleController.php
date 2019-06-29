@@ -26,51 +26,38 @@ class ModuleController extends BaseController {
 
     public function saveModule(){
 
-
-        $result['id'] = 1;
-        $result['text']['module']['message'][0]= "Module Created Sucessfully!!";
-        $result['module_id'] = 2;
-
         // TODO UNCOMMENT THE FOLLOWING LINES
 
-//        $validationRule = array(
-//            'module_name' => 'required',
-//            'module_remarks' => 'required'
-//        );
-//
-//        $validator = Validator::make(Input::all(), $validationRule);
-//
-//        if($validator->fails()){
-//            $result['id'] = 0;
-//            $result['text']['module']= $validator->messages();
-//        } else {
-//
-//            $module = new Module();
-//            $module->module_name = Input::get('module_name');
-//            $module->module_milestone_type = Input::get('module_milestone_type');
-//            $module->remarks = Input::get('module_remarks');
-//            $module->updated_by = Session::get('USER_ID');
-//            $module->save();
-//            if($module->id > 0){
-//                $result['id'] = 1;
-//                $result['module_id'] = $module->id;
-//                $result['text']['module']['message'][0]= "Module Created Sucessfully!!";
-//            } else {
-//                $result['id'] = 0;
-//                $result['text']['module']['message'][0]= "Module Not Created!!";
-//            }
-//        }
-        return $result;
-    }
+        $validationRule = array(
+            'module_name' => 'required',
+            'module_remarks' => 'required'
+        );
 
-    public function saveFields(){
+        $validator = Validator::make(Input::all(), $validationRule);
 
-        $fields = Input::get('fields');
-        $i = 0;
-        foreach ($fields as $moduleField){
-            $result =  $this->saveField($moduleField);
+        if($validator->fails()){
+            $result['id'] = 0;
+            $result['text']['module']= $validator->messages();
+        } else {
+
+            $module = new Module();
+            $module->module_name = Input::get('module_name');
+            $module->module_milestone_type = Input::get('module_milestone_type');
+            $module->remarks = Input::get('module_remarks');
+            $module->updated_by = Session::get('USER_ID');
+
+            try{
+                $module->save();
+//                $module->id = 1;
+                $result['id'] = 1;
+                $result['module_id'] = $module->id;
+                $result['text']['module']['message'][0]= "Module Created Sucessfully!!";
+            }catch (Exception $e){
+                $result['id'] = 0;
+                $result['text']['module']['message']= $e->getMessage();
+            }
         }
-
+        return $result;
     }
 
     public function saveField(){
@@ -98,20 +85,69 @@ class ModuleController extends BaseController {
             $newModuleField->remarks = Input::get('remarks');
             $newModuleField->updated_by = Session::get('USER_ID');
 
-            $newModuleField->save();
-
-            if($newModuleField->id > 0){
+            try{
+                $newModuleField->save();
+//                $newModuleField->id = 1;
                 $result['id'] = 1;
                 $result['text']['field'][$newModuleField->field_name][0]= "FIELD : " . $newModuleField->field_name . " Created Sucessfully!!";
-            } else {
+            }catch (Exception $e){
                 $result['id'] = 0;
-                $result['text']['field'][$newModuleField->field_name][0]= "FIELD : " . $newModuleField->field_name . " Not Created!!";
+                $result['text']['field']['message']= $e->getMessage();
+            }
+        }
+        return $result;
+    }
+
+    public function saveMilestone(){
+
+        $result = $this->valiDateMilestone(Input::all());
+        if($result['id'] == 0){
+            $result['milestone_name'] = Input::get('milestone_name');
+            return $result;
+        } else {
+
+            $defaultMilestone = new DefaultMilestone();
+
+            $defaultMilestone->module_id = Input::get('module_id');
+            $defaultMilestone->milestone_name = Input::get('milestone_name');
+            $defaultMilestone->remarks = Input::get('remarks');
+            $defaultMilestone->updated_by = Session::get('USER_ID');
+
+            try{
+                $defaultMilestone->save();
+//                $defaultMilestone->id = 1;
+                $result['id'] = 1;
+                $result['text']['milestone'][$defaultMilestone->field_name][0]= "FIELD : " . $defaultMilestone->field_name . " Created Sucessfully!!";
+            }catch (Exception $e){
+                $result['id'] = 0;
+                $result['text']['milestone']['message']= $e->getMessage();
             }
 
         }
 
         return $result;
 
+
+
+    }
+
+    public function valiDateMilestone( $values ){
+        $validationRule = array(
+            'module_id' => 'required',
+            'milestone_name' => 'required',
+            'remarks' => 'required',
+        );
+
+        $validator = Validator::make($values, $validationRule);
+
+        if($validator->fails()){
+            $result['id'] = 0;
+            $result['text']['milestone'] = $validator->messages();
+        } else {
+            $result['id'] = 1;
+        }
+
+        return $result;
     }
 
 }

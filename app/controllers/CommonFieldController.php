@@ -129,7 +129,7 @@ class CommonFieldController extends BaseController {
 
         if($validator->fails()){
             $result['id'] = 0;
-            $result['text']['fields'] = $validator->messages();
+            $result['text']['field'] = $validator->messages();
         } else {
             $result['id'] = 1;
         }

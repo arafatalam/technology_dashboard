@@ -1,6 +1,7 @@
 <?php
 
-class ModuleField extends Eloquent {
+class DefaultMilestone extends Eloquent {
+
 
 
     public function user(){

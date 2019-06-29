@@ -32,5 +32,8 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
     public function moduleFields(){
         return $this->hasMany('ModuleField', 'updated_by');
     }
+    public function defaultMilestones(){
+        return $this->hasMany('DeaultMilestone', 'updated_by');
+    }
 
 }

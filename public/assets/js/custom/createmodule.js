@@ -121,10 +121,10 @@ function addMilestone() {
 
     module_milestones_array.push(module_milestone);
 
-    var markup =    '<tr id="milestone_row_' + milestoneCount +'">' +
+    var markup =    '<tr id="milestone_row_' + milestoneIdTemp +'">' +
                         '<td>' + module_milestone.milestone_name + '</td>' +
                         '<td>' +
-                            '<i onclick="removeMilestone(' + milestoneCount + ')" class="la la-trash"></i>' +
+                            '<i onclick="removeMilestone(' + milestoneIdTemp + ')" class="la la-trash"></i>' +
                         '</td>'+
                     '</tr>';
 
@@ -168,67 +168,104 @@ function saveEntireModule( buttonObject ){ // this function is called from /asse
                 module_name : module.module_name,
                 module_remarks : module.module_remarks,
                 module_milestone_type : module.milestone_type_id
-                // field_count : fieldCount,
-                // milestone_count : milestoneCount,
-                // module_fields : module_fields_array,
-                // module_milestones : module_milestones_array
 
             },
             dataType : 'JSON',
             success : function(data){
 
-
-
                 if(data.id == 0){
                     showModuleFailureAlert(data);
                 } else {
-                    // Show toaster notification of successfull module save
+
+                    var message = getNotificationMessage(data);
+                    showNotification('success', message, "SUCCESS");
 
                     if(fieldCount > 0){
                         // Adding Module id to all the fields and send to save
                         $.each(module_fields_array, function(index, item){
+                            //Set Milestone id for the fields
                            item.module_id = data.module_id;
-                            $.ajax({
-                                type : 'POST',
-                                url : './savefield',
-                                data : {
-                                    module_id : item.module_id,
-                                    field_id : 0,
-                                    field_name : item.field_name,
-                                    field_data_type : item.field_data_type,
-                                    serial : item.serial,
-                                    dropdown_values : item.dropdown_values,
-                                    remarks : item.field_remarks
-                                },
-                                dataType: 'JSON',
-                                success : function (data) {
-                                    var message = '';
-                                    $.each(data.text, function(index, item){
-                                        $.each(item, function (index, text) {
-                                            message = message + text + '</br>'
-                                        })
-                                    });
-                                    if (data.id == 0){
-                                        showNotification('error', message, data.field_name);
-                                    } else {
-                                        showNotification('success', message, "");
-                                    }
-                                }
-                            });
-
+                           //Save fields individually
+                            saveField(item);
                         });
-                        // console.log(module_fields_array);
-
                     }
                     if(milestoneCount > 0){
-                        //Save the milestones
+                        // Adding Module id to all the milestones and send to save
+                        $.each(module_milestones_array, function(index, item){
+                            //Set Milestone id for the fields
+                            item.module_id = data.module_id;
+                            //Save fields individually
+                            saveMilestone(item);
+                        });
                     }
+
+
+                    swal.fire({
+                        title: 'Well Done',
+                        text: "You successfully added a new module!!",
+                        type: 'success',
+                        confirmButtonText: 'Ok, Let\'s Finish!'
+                    }).then(function(result) {
+                        KTApp.unprogress(buttonObject);
+                        // Reload or redirect to another page
+                        window.location.reload();
+                    });
                 }
             }
         });
     }
 
-    KTApp.unprogress(buttonObject);
+
+
+}
+function saveField( field ){
+
+    $.ajax({
+        type : 'POST',
+        url : './savefield',
+        data : {
+            module_id : field.module_id,
+            field_id : 0,
+            field_name : field.field_name,
+            field_data_type : field.field_data_type,
+            serial : field.serial,
+            dropdown_values : field.dropdown_values,
+            remarks : field.field_remarks
+        },
+        dataType: 'JSON',
+        success : function (data) {
+            var message = getNotificationMessage(data);
+
+            if (data.id == 0){
+                showNotification('error', message, "FIELD : "  + data.field_name);
+            } else {
+                showNotification('success', message, "SUCCESS");
+            }
+        }
+    });
+}
+
+function saveMilestone( milestone ) {
+
+    $.ajax({
+        type : 'POST',
+        url : './savemilestone',
+        data : {
+            module_id : milestone.module_id,
+            milestone_name : milestone.milestone_name,
+            remarks : "Initial Adding",
+        },
+        dataType: 'JSON',
+        success : function (data) {
+            var message = getNotificationMessage(data);
+
+            if (data.id == 0){
+                showNotification('error', message, "MILESTONE : " + data.field_name);
+            } else {
+                showNotification('success', message, "SUCCESS");
+            }
+        }
+    });
 
 }
 
@@ -246,6 +283,7 @@ function showModuleFailureAlert( data ){
         message,
         'error'
     );
+    KTApp.unprogress(buttonObject);
 
 }
 
@@ -275,6 +313,17 @@ function showNotification( type, message, title){
         toastr.error(message, title);
     }
 
+}
+
+function getNotificationMessage( data ){
+    var message = '';
+    $.each(data.text, function(index, item){
+        $.each(item, function (index, text) {
+            message = message + text + '</br>'
+        })
+    });
+
+    return message;
 }
 
 function init(){
