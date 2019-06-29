@@ -23,6 +23,13 @@ class ModuleController extends BaseController {
         return View::make('tech_dashboard.pages.module.createmodule');
     }
 
+    public function showModuleList(){
+
+        Session::put('DocId', 'modulelist');
+        Session::put('Header', 'header_administration');
+
+        return View::make('tech_dashboard.pages.module.modulelist');
+    }
 
     public function saveModule(){
 
@@ -148,6 +155,18 @@ class ModuleController extends BaseController {
         }
 
         return $result;
+    }
+
+    public function getDataModuleList(){
+
+        $modules = Module::all();
+
+        foreach($modules as $module){
+            $module->user;
+        }
+
+        return $modules;
+
     }
 
 }

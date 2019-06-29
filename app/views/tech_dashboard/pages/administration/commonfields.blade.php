@@ -35,7 +35,7 @@
             <!--Begin::Dashboard 2-->
             <!--Begin::Section-->
             <div class="row">
-                <div class="col-xl-8">
+                <div class="col-xl-12">
                     <div class="kt-portlet kt-portlet--mobile kt-portlet--head-noborder kt-portlet--height-fluid">
                         <div class="kt-portlet__head kt-portlet__head--lg">
                             <div class="kt-portlet__head-label">
@@ -75,7 +75,7 @@
                         </div>
                     </div>
                 </div>
-                <div id="common_field_entry_form" class="col-xl-4">
+                <div id="common_field_entry_form" class="col-xl-4 kt-hidden">
                     <!--begin::Portlet-->
                     <div class="kt-portlet kt-portlet--head-noborder kt-portlet--height-fluid">
                         <div class="kt-portlet__head">
@@ -147,10 +147,6 @@
                     </div>
                     <!--end::Portlet-->
                 </div>
-
-            </div>
-            <div class="row">
-
             </div>
             <!--End::Section-->
             <!--End::Dashboard 2-->

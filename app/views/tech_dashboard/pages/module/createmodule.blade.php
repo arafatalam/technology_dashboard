@@ -116,8 +116,8 @@
                                                                             <label>Milestone Type</label>
                                                                             <div>
                                                                                 <select class="form-control kt-select2" id="module_milestone_type">
-                                                                                    <option value="0">Fixed Milestone</option>
-                                                                                    <option value="1">Independent Milestone</option>
+                                                                                    <option value="Fixed Milestone">Fixed Milestone</option>
+                                                                                    <option value="Independent Milestone">Independent Milestone</option>
                                                                                 </select>
                                                                             </div>
                                                                         </div>

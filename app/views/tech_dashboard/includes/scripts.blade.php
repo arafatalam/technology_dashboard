@@ -110,8 +110,7 @@
 
 
 {{-- TODO Custom Scripts--}}
-{{--<script src="./assets/js/custom/utility.js" type="text/javascript"></script>--}}
-{{--<script src="./assets/js/custom/createorupdateproject.js" type="text/javascript"></script>--}}
+
 <script src="./assets/js/custom/utilities.js" type="text/javascript"></script>
 @if(Session::get('DocId') == 'commonfields')
     <script src="./assets/js/custom/commonfields.js" type="text/javascript"></script>
@@ -121,9 +120,14 @@
     <script src="./assets/js/demo4/pages/wizard/wizard-3.js" type="text/javascript"></script>
 @endif
 
+@if(Session::get('DocId') == 'modulelist')
+    <script src="./assets/js/custom/modulelist.js" type="text/javascript"></script>
+@endif
+
 {{--<script src="./assets/js/demo4/pages/crud/forms/widgets/autosize.js" type="text/javascript"></script>--}}
 {{--<script src="./assets/js/demo4/pages/crud/metronic-datatable/base/data-local.js" type="text/javascript"></script>--}}
 {{--<script src="./assets/js/demo4/pages/crud/forms/widgets/select2.js" type="text/javascript"></script>--}}
-<script src="./assets/js/demo4/pages/components/extended/sweetalert2.js" type="text/javascript"></script>
-<script src="./assets/js/demo4/pages/components/extended/toastr.js" type="text/javascript"></script>
+{{--<script src="./assets/js/demo4/pages/components/extended/sweetalert2.js" type="text/javascript"></script>--}}
+{{--<script src="./assets/js/demo4/pages/components/extended/toastr.js" type="text/javascript"></script>--}}
+{{--<script src="./assets/js/custom/commonfields.js" type="text/javascript"></script>--}}
 

@@ -24,15 +24,17 @@ Route::get('/logout', array('as' => 'logout', 'uses' => 'LoginController@doLogou
 
 Route::get('/landing', array('as' => 'landing', 'before ' => 'auth', 'uses' => 'CommonFieldController@showCommonFields'));
 
-
+// TODO Common Fields related routes
 Route::get('/commonfields', array('as' => 'commonfields', 'before ' => 'auth', 'uses' => 'CommonFieldController@showCommonFields'));
 Route::post('/savecommonfield', array('as' => 'savecommonfield', 'before ' => 'auth', 'uses' => 'CommonFieldController@saveCommonField'));
 Route::post('/deletecommonfield', array('as' => 'deletecommonfield', 'before ' => 'auth', 'uses' => 'CommonFieldController@deleteCommonField'));
 Route::get('/getdatacommonfields', array('as' => 'getdatacommonfields', 'before ' => 'auth', 'uses' => 'CommonFieldController@getDataCommonFields'));
 Route::get('/getdatacommonfield/{fieldId}', array('as' => 'getdatacommonfield', 'before ' => 'auth', 'uses' => 'CommonFieldController@getDataCommonField'));
 
-
+// TODO Module related routes
 Route::get('/createmodule', array('as' => 'createmodule', 'before ' => 'auth', 'uses' => 'ModuleController@showCreateModule'));
+Route::get('/modulelist', array('as' => 'modulelist', 'before ' => 'auth', 'uses' => 'ModuleController@showModuleList'));
 Route::post('/savemodule', array('as' => 'savemodule', 'before ' => 'auth', 'uses' => 'ModuleController@saveModule'));
 Route::post('/savefield', array('as' => 'savefield', 'before ' => 'auth', 'uses' => 'ModuleController@saveField'));
 Route::post('/savemilestone', array('as' => 'savemilestone', 'before ' => 'auth', 'uses' => 'ModuleController@saveMilestone'));
+Route::get('/getdatamodulelist', array('as' => 'getdatamodulelist', 'before ' => 'auth', 'uses' => 'ModuleController@getDataModuleList'));
