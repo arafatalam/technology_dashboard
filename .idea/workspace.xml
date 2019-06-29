@@ -1,16 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="09c33a73-abe1-4415-b8f9-c8d0a1bad0ce" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/CommonFieldController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/CommonFieldController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/ModuleController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/ModuleController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/Module.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/Module.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/ModuleField.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/ModuleField.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/routes.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/routes.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/custom/createmodule.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/custom/createmodule.js" afterDir="false" />
-    </list>
+    <list default="true" id="09c33a73-abe1-4415-b8f9-c8d0a1bad0ce" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -36,7 +27,7 @@
           <entry key="css" value="26" />
           <entry key="dummy" value="6" />
           <entry key="js" value="9203" />
-          <entry key="php" value="9689" />
+          <entry key="php" value="9697" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
@@ -45,7 +36,7 @@
           <entry key="CSS" value="26" />
           <entry key="HTML" value="11" />
           <entry key="JavaScript" value="9192" />
-          <entry key="PHP" value="6176" />
+          <entry key="PHP" value="6184" />
           <entry key="PLAIN_TEXT" value="6" />
         </counts>
       </usages-collector>
@@ -53,7 +44,7 @@
         <counts>
           <entry key="css" value="4" />
           <entry key="js" value="49" />
-          <entry key="php" value="55" />
+          <entry key="php" value="57" />
           <entry key="ts" value="1" />
         </counts>
       </usages-collector>
@@ -62,7 +53,7 @@
           <entry key="Blade" value="17" />
           <entry key="CSS" value="4" />
           <entry key="JavaScript" value="49" />
-          <entry key="PHP" value="38" />
+          <entry key="PHP" value="40" />
           <entry key="TypeScript" value="1" />
         </counts>
       </usages-collector>
@@ -84,11 +75,29 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/ModuleController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="148">
+            <state relative-caret-position="-1195">
               <caret line="51" column="34" selection-start-line="51" selection-start-column="34" selection-end-line="51" selection-end-column="34" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/database/migrations/2019_06_29_163310_create_common_fields_table.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="298">
+              <caret line="26" column="24" selection-start-line="26" selection-start-column="24" selection-end-line="26" selection-end-column="24" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/database/migrations/2019_06_29_040143_create_module_fields_table.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="442">
+              <caret line="27" column="33" lean-forward="true" selection-start-line="16" selection-start-column="12" selection-end-line="27" selection-end-column="33" />
             </state>
           </provider>
         </entry>
@@ -218,6 +227,7 @@
         <option value="$PROJECT_DIR$/app/database/migrations/2019_06_29_154607_create_default_milestone_table.php" />
         <option value="$PROJECT_DIR$/public/assets/js/custom/createmodule.js" />
         <option value="$PROJECT_DIR$/app/controllers/ModuleController.php" />
+        <option value="$PROJECT_DIR$/app/database/migrations/2019_06_29_163310_create_common_fields_table.php" />
       </list>
     </option>
   </component>
@@ -528,12 +538,12 @@
       <workItem from="1561623537103" duration="5440000" />
       <workItem from="1561632984696" duration="24979000" />
       <workItem from="1561754831979" duration="32260000" />
-      <workItem from="1561820004636" duration="5124000" />
+      <workItem from="1561820004636" duration="5819000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="100592000" />
+    <option name="totallyTimeSpent" value="101287000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
@@ -714,13 +724,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/database/migrations/2019_06_29_040143_create_module_fields_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="5" column="29" selection-start-line="5" selection-start-column="29" selection-end-line="5" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/database/migrations/2019_06_27_081746_create_modules_table.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
@@ -897,8 +900,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/ModuleController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="148">
+        <state relative-caret-position="-1195">
           <caret line="51" column="34" selection-start-line="51" selection-start-column="34" selection-end-line="51" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/database/migrations/2019_06_29_040143_create_module_fields_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="27" column="33" lean-forward="true" selection-start-line="16" selection-start-column="12" selection-end-line="27" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/database/migrations/2019_06_29_163310_create_common_fields_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="298">
+          <caret line="26" column="24" selection-start-line="26" selection-start-column="24" selection-end-line="26" selection-end-column="24" />
         </state>
       </provider>
     </entry>
