@@ -173,10 +173,26 @@ class ModuleController extends BaseController {
 
         $module = Module::find($moduleId);
         $module->user;
-        $module->moduleFields;
-        $module->defaultMilestones;
-
         return $module;
+
+    }
+
+    public function getDataModuleFields( $moduleId ){
+
+        $moduleFields = Module::find($moduleId)->moduleFields;
+        foreach ($moduleFields as $moduleField) {
+            $moduleField->user;
+        }
+        return $moduleFields;
+
+    }
+
+    public function getDataModuleField( $moduleFieldId ){
+
+        $moduleField = ModuleField::find($moduleFieldId);
+        $moduleField->user;
+
+        return $moduleField;
 
 
     }

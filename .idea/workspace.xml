@@ -3,17 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="09c33a73-abe1-4415-b8f9-c8d0a1bad0ce" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/controllers/CommonFieldController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/CommonFieldController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/controllers/ModuleController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/ModuleController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/models/Module.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/Module.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/routes.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/routes.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/tech_dashboard/pages/administration/commonfields.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/tech_dashboard/pages/administration/commonfields.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/tech_dashboard/pages/module/createmodule.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/tech_dashboard/pages/module/createmodule.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/views/tech_dashboard/pages/module/modulelist.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/tech_dashboard/pages/module/modulelist.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/custom/commonfields.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/custom/commonfields.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/custom/createmodule.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/custom/createmodule.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/assets/js/custom/modulelist.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/custom/modulelist.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/custom/utilities.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/custom/utilities.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -39,33 +32,33 @@
         <counts>
           <entry key="css" value="26" />
           <entry key="dummy" value="6" />
-          <entry key="js" value="10649" />
-          <entry key="php" value="10724" />
+          <entry key="js" value="11327" />
+          <entry key="php" value="11281" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Blade" value="3884" />
+          <entry key="Blade" value="4073" />
           <entry key="CSS" value="26" />
           <entry key="HTML" value="13" />
-          <entry key="JavaScript" value="10636" />
-          <entry key="PHP" value="6840" />
+          <entry key="JavaScript" value="11314" />
+          <entry key="PHP" value="7208" />
           <entry key="PLAIN_TEXT" value="6" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="css" value="4" />
-          <entry key="js" value="64" />
-          <entry key="php" value="75" />
+          <entry key="js" value="68" />
+          <entry key="php" value="77" />
           <entry key="ts" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="Blade" value="26" />
+          <entry key="Blade" value="28" />
           <entry key="CSS" value="4" />
-          <entry key="JavaScript" value="64" />
+          <entry key="JavaScript" value="68" />
           <entry key="PHP" value="49" />
           <entry key="TypeScript" value="1" />
         </counts>
@@ -79,11 +72,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/routes.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="527">
-              <caret line="40" column="133" selection-start-line="40" selection-start-column="133" selection-end-line="40" selection-end-column="133" />
+            <state relative-caret-position="561">
+              <caret line="42" column="10" selection-start-line="42" selection-start-column="10" selection-end-line="42" selection-end-column="10" />
             </state>
           </provider>
         </entry>
@@ -91,25 +84,28 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/controllers/ModuleController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
-              <caret line="53" selection-start-line="53" selection-end-line="53" />
+            <state relative-caret-position="502">
+              <caret line="194" column="28" selection-start-line="194" selection-start-column="28" selection-end-line="194" selection-end-column="28" />
               <folding>
                 <element signature="n#showCreateModule#0;n#ModuleController#0;n#!!top" />
                 <element signature="n#showModuleList#0;n#ModuleController#0;n#!!top" />
+                <element signature="n#saveModule#0;n#ModuleController#0;n#!!top" />
                 <element signature="n#saveField#0;n#ModuleController#0;n#!!top" />
                 <element signature="n#saveMilestone#0;n#ModuleController#0;n#!!top" />
                 <element signature="n#valiDateMilestone#0;n#ModuleController#0;n#!!top" />
                 <element signature="n#getDataModuleList#0;n#ModuleController#0;n#!!top" />
+                <element signature="n#getDataModule#0;n#ModuleController#0;n#!!top" />
+                <element signature="n#getDataModuleFields#0;n#ModuleController#0;n#!!top" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/assets/js/custom/modulelist.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" column="36" selection-start-line="4" selection-start-column="36" selection-end-line="4" selection-end-column="36" />
+            <state relative-caret-position="502">
+              <caret line="302" column="30" selection-start-line="302" selection-start-column="30" selection-end-line="302" selection-end-column="30" />
               <folding>
                 <element signature="e#4315#8417#0" />
                 <element signature="e#5495#5715#0" />
@@ -120,6 +116,8 @@
                 <element signature="e#7275#8082#0" />
                 <element signature="n#!!block;n#editModule#0" />
                 <element signature="n#!!block;n#saveModule#0" />
+                <element signature="e#8685#11693#0" />
+                <element signature="e#9315#9366#0" />
                 <element signature="n#!!block;n#clearModuleEditForm#0" />
                 <element signature="n#!!block;n#showModuleFailureAlert#0" />
                 <element signature="n#!!block;n#init#0" />
@@ -129,11 +127,21 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/views/tech_dashboard/includes/scripts.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="468">
+              <caret line="123" column="83" selection-start-line="123" selection-start-column="83" selection-end-line="123" selection-end-column="83" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/assets/js/custom/commonfields.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="417">
-              <caret line="238" column="13" lean-forward="true" selection-start-line="234" selection-start-column="12" selection-end-line="238" selection-end-column="13" />
+            <state relative-caret-position="272">
+              <caret line="125" selection-start-line="125" selection-end-line="156" selection-end-column="1" />
               <folding>
+                <element signature="e#453#3958#0" />
                 <element signature="n#!!block;n#deleteField#0" />
                 <element signature="n#!!block;n#clearFieldEntryForm#0" />
                 <element signature="n#!!block;n#init#0" />
@@ -145,48 +153,24 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/views/tech_dashboard/pages/module/modulelist.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="368">
-              <caret line="127" column="116" selection-start-line="127" selection-start-column="116" selection-end-line="127" selection-end-column="116" />
+            <state relative-caret-position="68">
+              <caret line="4" column="27" selection-start-line="4" selection-start-column="27" selection-end-line="4" selection-end-column="27" />
               <folding>
                 <element signature="e#1566#4017#0#HTML" />
-                <element signature="e#7302#7535#0#HTML" />
+                <element signature="e#4033#8262#0#HTML" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/assets/js/custom/createmodule.js">
+        <entry file="file://$PROJECT_DIR$/app/views/tech_dashboard/pages/administration/commonfields.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="520">
-              <caret line="294" column="1" selection-start-line="283" selection-end-line="294" selection-end-column="1" />
+            <state relative-caret-position="451">
+              <caret line="149" column="18" lean-forward="true" selection-start-line="36" selection-start-column="12" selection-end-line="149" selection-end-column="18" />
               <folding>
-                <element signature="n#!!block;n#addModule#0" />
-                <element signature="n#!!block;n#removeModule#0" />
-                <element signature="n#!!block;n#clearModuleEntryForm#0" />
-                <element signature="n#!!block;n#addField#0" />
-                <element signature="n#!!block;n#removeField#0" />
-                <element signature="n#!!block;n#clearModuleFieldEntryForm#0" />
-                <element signature="n#!!block;n#addMilestone#0" />
-                <element signature="n#!!block;n#removeMilestone#0" />
-                <element signature="n#!!block;n#clearMilestoneEntryForm#0" />
-                <element signature="e#5339#7058#0" />
-                <element signature="n#!!block;n#saveField#0" />
-                <element signature="n#!!block;n#saveMilestone#0" />
-                <element signature="n#!!block;n#init#0" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/assets/js/custom/utilities.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="553">
-              <caret line="70" column="1" selection-start-line="70" selection-start-column="1" selection-end-line="70" selection-end-column="1" />
-              <folding>
-                <element signature="n#!!block;n#getNotificationMessage#0" />
-                <element signature="n#!!block;n#showNotification#0" />
+                <element signature="e#1566#4016#0#HTML" />
+                <element signature="e#4033#8252#0#HTML" />
               </folding>
             </state>
           </provider>
@@ -203,11 +187,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>100</find>
-      <find>pagesizes</find>
-      <find>10</find>
-      <find>noRecords</find>
-      <find>no</find>
       <find>data: {</find>
       <find>columns</find>
       <find>toggle-detail</find>
@@ -233,6 +212,11 @@
       <find>common_field_entry_form</find>
       <find>field</find>
       <find>&quot;</find>
+      <find>classList</find>
+      <find>generalSearch</find>
+      <find>clear</find>
+      <find>Reload Data</find>
+      <find>destroy</find>
     </findStrings>
     <replaceStrings>
       <replace>updated</replace>
@@ -275,18 +259,18 @@
         <option value="$PROJECT_DIR$/app/database/migrations/2019_06_29_154607_create_default_milestone_table.php" />
         <option value="$PROJECT_DIR$/app/database/migrations/2019_06_29_163310_create_common_fields_table.php" />
         <option value="$PROJECT_DIR$/app/database/migrations/2019_06_27_081746_create_modules_table.php" />
-        <option value="$PROJECT_DIR$/app/views/tech_dashboard/includes/scripts.blade.php" />
         <option value="$PROJECT_DIR$/app/views/tech_dashboard/pages/module/createmodule.blade.php" />
         <option value="$PROJECT_DIR$/app/views/tech_dashboard/pages/administration/commonfields.blade.php" />
-        <option value="$PROJECT_DIR$/app/routes.php" />
         <option value="$PROJECT_DIR$/app/controllers/CommonFieldController.php" />
         <option value="$PROJECT_DIR$/app/models/Module.php" />
         <option value="$PROJECT_DIR$/public/assets/js/custom/commonfields.js" />
-        <option value="$PROJECT_DIR$/app/views/tech_dashboard/pages/module/modulelist.blade.php" />
         <option value="$PROJECT_DIR$/public/assets/js/custom/utilities.js" />
         <option value="$PROJECT_DIR$/public/assets/js/custom/createmodule.js" />
+        <option value="$PROJECT_DIR$/app/views/tech_dashboard/includes/scripts.blade.php" />
+        <option value="$PROJECT_DIR$/app/views/tech_dashboard/pages/module/modulelist.blade.php" />
         <option value="$PROJECT_DIR$/app/controllers/ModuleController.php" />
         <option value="$PROJECT_DIR$/public/assets/js/custom/modulelist.js" />
+        <option value="$PROJECT_DIR$/app/routes.php" />
       </list>
     </option>
   </component>
@@ -554,6 +538,39 @@
               <item name="js" type="462c0819:PsiDirectoryNode" />
               <item name="demo4" type="462c0819:PsiDirectoryNode" />
               <item name="pages" type="462c0819:PsiDirectoryNode" />
+              <item name="crud" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="technology_dashboard" type="b2602c69:ProjectViewProjectNode" />
+              <item name="technology_dashboard" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+              <item name="demo4" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
+              <item name="crud" type="462c0819:PsiDirectoryNode" />
+              <item name="metronic-datatable" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="technology_dashboard" type="b2602c69:ProjectViewProjectNode" />
+              <item name="technology_dashboard" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+              <item name="demo4" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
+              <item name="crud" type="462c0819:PsiDirectoryNode" />
+              <item name="metronic-datatable" type="462c0819:PsiDirectoryNode" />
+              <item name="api" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="technology_dashboard" type="b2602c69:ProjectViewProjectNode" />
+              <item name="technology_dashboard" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+              <item name="demo4" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
               <item name="wizard" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -595,12 +612,12 @@
       <workItem from="1561623537103" duration="5440000" />
       <workItem from="1561632984696" duration="24979000" />
       <workItem from="1561754831979" duration="32260000" />
-      <workItem from="1561820004636" duration="18911000" />
+      <workItem from="1561820004636" duration="25608000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="114379000" />
+    <option name="totallyTimeSpent" value="121076000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
@@ -847,13 +864,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/assets/js/demo4/scripts.bundle.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="1165" column="53" selection-start-line="1165" selection-start-column="48" selection-end-line="1165" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/database/migrations/2019_06_27_081746_create_modules_table.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
@@ -873,13 +883,6 @@
             <marker date="1561837259766" expanded="true" signature="24561:28220" ph="..." />
             <marker date="1561837259766" expanded="false" signature="36031:39218" ph="..." />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/tech_dashboard/pages/administration/commonfields.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="137" column="112" selection-start-line="137" selection-start-column="93" selection-end-line="137" selection-end-column="112" />
         </state>
       </provider>
     </entry>
@@ -905,35 +908,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/routes.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="40" column="133" selection-start-line="40" selection-start-column="133" selection-end-line="40" selection-end-column="133" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/models/Module.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
           <caret line="11" column="34" selection-start-line="11" selection-start-column="34" selection-end-line="11" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/tech_dashboard/includes/scripts.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="281">
-          <caret line="112" lean-forward="true" selection-start-line="112" selection-end-line="112" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/tech_dashboard/pages/module/modulelist.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="368">
-          <caret line="127" column="116" selection-start-line="127" selection-start-column="116" selection-end-line="127" selection-end-column="116" />
-          <folding>
-            <element signature="e#1566#4017#0#HTML" />
-            <element signature="e#7302#7535#0#HTML" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -970,11 +948,107 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/tech_dashboard/pages/administration/commonfields.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="451">
+          <caret line="149" column="18" lean-forward="true" selection-start-line="36" selection-start-column="12" selection-end-line="149" selection-end-column="18" />
+          <folding>
+            <element signature="e#1566#4016#0#HTML" />
+            <element signature="e#4033#8252#0#HTML" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/tech_dashboard/includes/scripts.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="468">
+          <caret line="123" column="83" selection-start-line="123" selection-start-column="83" selection-end-line="123" selection-end-column="83" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/assets/js/demo4/pages/crud/metronic-datatable/base/data-ajax.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#55#61#1" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/assets/js/demo4/scripts.bundle.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="278">
+          <caret line="7834" column="33" lean-forward="true" selection-start-line="7834" selection-start-column="33" selection-end-line="7834" selection-end-column="33" />
+          <folding>
+            <element signature="e#220571#224252#0" />
+            <element signature="e#224360#224945#0" />
+            <element signature="e#225099#225219#0" />
+            <element signature="e#225248#225337#0" />
+            <element signature="e#225540#225885#0" />
+            <element signature="e#226065#226217#0" />
+            <element signature="e#226383#226598#0" />
+            <element signature="e#229919#230886#0" />
+            <element signature="e#230962#233559#0" />
+            <element signature="e#233755#236057#0" />
+            <element signature="e#236265#237457#0" />
+            <element signature="e#237549#237829#0" />
+            <element signature="e#237961#238191#0" />
+            <element signature="e#238274#238572#0" />
+            <element signature="e#238912#240005#0" />
+            <element signature="e#240043#240177#0" />
+            <element signature="e#240423#240573#0" />
+            <element signature="e#240724#241235#0" />
+            <element signature="e#241264#241749#0" />
+            <element signature="e#241985#242279#0" />
+            <element signature="e#242366#242415#0" />
+            <element signature="e#242502#242986#0" />
+            <element signature="e#243100#243594#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/assets/js/demo4/pages/crud/metronic-datatable/api/events.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="235">
+          <caret line="158" column="38" selection-start-line="158" selection-start-column="36" selection-end-line="158" selection-end-column="38" />
+          <folding>
+            <element signature="e#229#540#0" />
+            <element signature="e#578#776#0" />
+            <element signature="e#846#1192#0" />
+            <element signature="e#1290#1469#0" />
+            <element signature="e#1471#1525#0" />
+            <element signature="e#1527#1669#0" />
+            <element signature="e#1604#1662#0" />
+            <element signature="e#1775#1837#0" />
+            <element signature="e#1839#2590#0" />
+            <element signature="e#1969#2583#0" />
+            <element signature="e#2592#3162#0" />
+            <element signature="e#2740#3155#0" />
+            <element signature="e#55#61#1" expanded="true" />
+            <element signature="e#3325#4249#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/assets/js/demo4/pages/crud/metronic-datatable/api/methods.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="18" lean-forward="true" selection-start-line="13" selection-start-column="16" selection-end-line="17" selection-end-column="18" />
+          <folding>
+            <element signature="e#546#741#0" />
+            <element signature="e#818#856#0" />
+            <element signature="e#896#4010#0" />
+            <element signature="e#55#61#1" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/public/assets/js/custom/commonfields.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="417">
-          <caret line="238" column="13" lean-forward="true" selection-start-line="234" selection-start-column="12" selection-end-line="238" selection-end-column="13" />
+        <state relative-caret-position="272">
+          <caret line="125" selection-start-line="125" selection-end-line="156" selection-end-column="1" />
           <folding>
+            <element signature="e#453#3958#0" />
             <element signature="n#!!block;n#deleteField#0" />
             <element signature="n#!!block;n#clearFieldEntryForm#0" />
             <element signature="n#!!block;n#init#0" />
@@ -982,25 +1056,39 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/tech_dashboard/pages/module/modulelist.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="27" selection-start-line="4" selection-start-column="27" selection-end-line="4" selection-end-column="27" />
+          <folding>
+            <element signature="e#1566#4017#0#HTML" />
+            <element signature="e#4033#8262#0#HTML" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/ModuleController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="53" selection-start-line="53" selection-end-line="53" />
+        <state relative-caret-position="502">
+          <caret line="194" column="28" selection-start-line="194" selection-start-column="28" selection-end-line="194" selection-end-column="28" />
           <folding>
             <element signature="n#showCreateModule#0;n#ModuleController#0;n#!!top" />
             <element signature="n#showModuleList#0;n#ModuleController#0;n#!!top" />
+            <element signature="n#saveModule#0;n#ModuleController#0;n#!!top" />
             <element signature="n#saveField#0;n#ModuleController#0;n#!!top" />
             <element signature="n#saveMilestone#0;n#ModuleController#0;n#!!top" />
             <element signature="n#valiDateMilestone#0;n#ModuleController#0;n#!!top" />
             <element signature="n#getDataModuleList#0;n#ModuleController#0;n#!!top" />
+            <element signature="n#getDataModule#0;n#ModuleController#0;n#!!top" />
+            <element signature="n#getDataModuleFields#0;n#ModuleController#0;n#!!top" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/assets/js/custom/modulelist.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="36" selection-start-line="4" selection-start-column="36" selection-end-line="4" selection-end-column="36" />
+        <state relative-caret-position="502">
+          <caret line="302" column="30" selection-start-line="302" selection-start-column="30" selection-end-line="302" selection-end-column="30" />
           <folding>
             <element signature="e#4315#8417#0" />
             <element signature="e#5495#5715#0" />
@@ -1011,10 +1099,19 @@
             <element signature="e#7275#8082#0" />
             <element signature="n#!!block;n#editModule#0" />
             <element signature="n#!!block;n#saveModule#0" />
+            <element signature="e#8685#11693#0" />
+            <element signature="e#9315#9366#0" />
             <element signature="n#!!block;n#clearModuleEditForm#0" />
             <element signature="n#!!block;n#showModuleFailureAlert#0" />
             <element signature="n#!!block;n#init#0" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/routes.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="561">
+          <caret line="42" column="10" selection-start-line="42" selection-start-column="10" selection-end-line="42" selection-end-column="10" />
         </state>
       </provider>
     </entry>
