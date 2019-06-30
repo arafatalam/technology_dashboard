@@ -1,6 +1,5 @@
 @extends('tech_dashboard.layout.master')
 @section('content')
-    <span id="docid" hidden>createmodule</span>
     <span id="field_id" hidden></span>
     <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor">
         <!-- begin:: Subheader -->
@@ -215,9 +214,9 @@
                                                                             <label>Data Type</label>
                                                                             <div>
                                                                                 <select class="form-control kt-select2" id="field_data_type" style="width:100%; !important;">
-                                                                                    <option value="TEXT">Text</option>
-                                                                                    <option value="DROPDOWN">Drop Down</option>
-                                                                                    <option value="DATE">Date</option>
+                                                                                    @foreach(unserialize(Session::get('FIELD_DATA_TYPES')) as $fieldDataType)
+                                                                                        <option value="{{ $fieldDataType->id }}">{{ $fieldDataType->name }}</option>
+                                                                                    @endforeach
                                                                                 </select>
                                                                             </div>
                                                                         </div>

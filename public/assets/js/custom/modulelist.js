@@ -219,7 +219,7 @@ function clearModuleEditForm(){
     $('#module_id').text('');
     $('#module_name').val('');
     $('#module_milestone_type').val('Fixed Milestone');
-    $('#module_ramrks').val('');
+    $('#module_remarks').val('');
     select2dropdown();
 
     document.getElementById('module_fields_row').classList.add('kt-hidden');
@@ -274,7 +274,7 @@ function populateModuleFieldsTable( moduleId ){
                 textAlign: 'center',
             },
             {
-                field: 'field_data_type',
+                field: 'field_data_type.name',
                 title: 'Data Type',
                 autoHide: false,
                 textAlign: 'center',
@@ -353,11 +353,12 @@ function showFieldData( fieldId ) {
             $('#module_field_form_name').text('Edit Field');
 
             $('#module_field_name').val(data.field_name);
-            if(data.is_dropdown){
-                $('#module_field_data_type').val('DROPDOWN');
-            } else {
-                $('#module_field_data_type').val(data.field_data_type);
-            }
+            $('#module_field_data_type').val(data.field_data_type.id);
+            // if(data.is_dropdown){
+            //     $('#module_field_data_type').val('DROPDOWN');
+            // } else {
+            //     $('#module_field_data_type').val(data.field_data_type);
+            // }
             select2dropdown();
             $('#module_field_serial').val(data.serial);
             $('#module_field_dropdown_values').val(data.dropdown_values);
@@ -373,7 +374,7 @@ function confirmSaveField(){
     field.module_id = $('#module_id').text();
     field.module_field_id = $('#module_field_id').text();
     field.module_field_name = $('#module_field_name').val();
-    field.module_field_data_type = $('#module_field_data_type').val();
+    field.module_field_data_type_id = $('#module_field_data_type').val();
     field.module_field_serial = $('#module_field_serial').val();
     field.module_field_dropdown_values = $('#module_field_dropdown_values').val();
     field.module_field_remarks = $('#module_field_remarks').val();
@@ -417,7 +418,7 @@ function saveField( field ){
             module_id : field.module_id,
             field_id : field.module_field_id,
             field_name : field.module_field_name,
-            field_data_type : field.module_field_data_type,
+            field_data_type_id : field.module_field_data_type_id,
             serial : field.module_field_serial,
             dropdown_values : field.module_field_dropdown_values,
             remarks : field.module_field_remarks
@@ -506,7 +507,7 @@ function clearFieldEditForm(){
     $('#module_field_form_name').text('Add New Field');
 
     $('#module_field_name').val('');
-    $('#module_field_data_type').val('TEXT');
+    $('#module_field_data_type').val(1);
     $('#module_field_serial').val('');
     $('#module_field_dropdown_values').val('');
     $('#module_field_remarks').val('');

@@ -20,6 +20,12 @@ class LoginController extends BaseController {
             Session::put('EMPLOYEE_ID', $result->emp_id);
             Session::put('USER_ID', $result->id);
 
+//            console.log(Module::all());
+
+//            Session::put('PROJECT_CATEGORIES', serialize(Module::all()));
+
+            Session::put('FIELD_DATA_TYPES', serialize(FieldDataType::all()));
+
             return Redirect::Route('landing');
         }
         else

@@ -1,4 +1,6 @@
 jQuery(document).ready(function() {
+
+    KTBootstrapDatepicker.init();
     autoResizeTextArea();
     select2dropdown();
     // $('form').keypress(function(event) {
@@ -22,9 +24,11 @@ $.ajaxSetup({
 
     }
 });
+
 function select2dropdown(){
     $('.kt-select2').select2({});
 }
+
 function autoResizeTextArea(){
 
     var demo = $('.autoresize');
@@ -42,6 +46,7 @@ function getNotificationMessage( data ){
 
     return message;
 }
+
 function showNotification( type, message, title){
 
     toastr.options = {
@@ -69,3 +74,39 @@ function showNotification( type, message, title){
     }
 
 }
+
+var KTBootstrapDatepicker = function () {
+
+    var arrows;
+    if (KTUtil.isRTL()) {
+        arrows = {
+            leftArrow: '<i class="la la-angle-right"></i>',
+            rightArrow: '<i class="la la-angle-left"></i>'
+        }
+    } else {
+        arrows = {
+            leftArrow: '<i class="la la-angle-left"></i>',
+            rightArrow: '<i class="la la-angle-right"></i>'
+        }
+    }
+
+    // Private functions
+    var initDatePicker = function () {
+
+        $('.date-picker').datepicker({
+            rtl: KTUtil.isRTL(),
+            todayBtn: "linked",
+            clearBtn: true,
+            todayHighlight: true,
+            templates: arrows,
+            format: 'yyyy-mm-dd'
+        });
+    }
+
+    return {
+        // public functions
+        init: function() {
+            initDatePicker();
+        }
+    };
+}();

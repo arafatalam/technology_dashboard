@@ -17,10 +17,15 @@ class CommonFieldController extends BaseController {
 
     public function showCommonFields(){
 
+        Session::put('PROJECT_CATEGORIES', serialize(Module::all()));
+
         Session::put('DocId', 'commonfields');
         Session::put('Header', 'header_administration');
 
-        return View::make('tech_dashboard.pages.administration.commonfields');
+        $fieldDataTypes = FieldDataType::all();
+
+        return View::make('tech_dashboard.pages.administration.commonfields')
+            ->with('fieldDataTypes', $fieldDataTypes);
     }
 
     public function getDataCommonFields(){
@@ -30,12 +35,15 @@ class CommonFieldController extends BaseController {
             $commonField->user;
         };
 
+        $commonFields = $commonFields->sortBy('serial');
+
         return $commonFields;
     }
 
     public function getDataCommonField( $fieldId ){
-
-        return CommonField::find($fieldId);
+        $commonField = CommonField::find($fieldId);
+        $commonField->fieldDataType;
+        return $commonField;
 
     }
 
@@ -85,9 +93,9 @@ class CommonFieldController extends BaseController {
 
 
         $commonField->field_name = $values['field_name'];
-        $commonField->field_data_type = $values['field_data_type'];
+        $commonField->field_data_type_id = $values['field_data_type_id'];
 
-        if($values['field_data_type'] == 'DROPDOWN'){
+        if($values['field_data_type_id'] == 3){
             $commonField->is_dropdown = 1;
             $commonField->dropdown_values = $values['dropdown_values'];
         }
@@ -124,7 +132,7 @@ class CommonFieldController extends BaseController {
         $validationRule = array(
             'field_id' => 'required',
             'field_name' => 'required',
-            'field_data_type' => 'required',
+            'field_data_type_id' => 'required',
             'serial' => 'sometimes|numeric',
             'remarks' => 'required',
             'module_id' => 'sometimes|required'

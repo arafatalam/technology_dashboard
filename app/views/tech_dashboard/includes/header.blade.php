@@ -44,13 +44,13 @@
                                     </a>
                                     <div class="kt-menu__submenu kt-menu__submenu--classic kt-menu__submenu--right">
                                         <ul class="kt-menu__subnav" style="max-height: 600px; overflow: auto;">
-                                            {{--@foreach(unserialize(Session::get('PROJECT_CATEGORIES')) as $category)--}}
-                                                {{--<li class="kt-menu__item " aria-haspopup="true">--}}
-                                                    {{--<a href="./redcreateproject/{{ $category->id }}" class="kt-menu__link ">--}}
-                                                        {{--<span class="kt-menu__link-text">{{  $category->category  }}</span>--}}
-                                                    {{--</a>--}}
-                                                {{--</li>--}}
-                                            {{--@endforeach--}}
+                                            @foreach(unserialize(Session::get('PROJECT_CATEGORIES')) as $category)
+                                                <li class="kt-menu__item " aria-haspopup="true">
+                                                    <a href="./redcreateproject/{{ $category->id }}" class="kt-menu__link ">
+                                                        <span class="kt-menu__link-text">{{  $category->module_name  }}</span>
+                                                    </a>
+                                                </li>
+                                            @endforeach
                                         </ul>
                                     </div>
                                 </li>
@@ -63,13 +63,13 @@
                                     </a>
                                     <div class="kt-menu__submenu kt-menu__submenu--classic kt-menu__submenu--right">
                                         <ul class="kt-menu__subnav">
-                                            {{--@foreach(unserialize(Session::get('PROJECT_CATEGORIES')) as $category)--}}
-                                                {{--<li class="kt-menu__item " aria-haspopup="true">--}}
-                                                    {{--<a href="./redprojectlist/{{ $category->id }}" class="kt-menu__link ">--}}
-                                                        {{--<span class="kt-menu__link-text">{{  $category->category  }}</span>--}}
-                                                    {{--</a>--}}
-                                                {{--</li>--}}
-                                            {{--@endforeach--}}
+                                            @foreach(unserialize(Session::get('PROJECT_CATEGORIES')) as $category)
+                                                <li class="kt-menu__item " aria-haspopup="true">
+                                                    <a href="./redcreateproject/{{ $category->id }}" class="kt-menu__link ">
+                                                        <span class="kt-menu__link-text">{{  $category->module_name  }}</span>
+                                                    </a>
+                                                </li>
+                                            @endforeach
                                         </ul>
                                     </div>
                                 </li>

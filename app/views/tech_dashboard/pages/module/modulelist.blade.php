@@ -1,6 +1,5 @@
 @extends('tech_dashboard.layout.master')
 @section('content')
-    <span id="docid" hidden>modulelist</span>
     <span id="module_id" hidden></span>
     <span id="module_field_id" hidden>0</span>
     <span id="default_milestone_id" hidden>0</span>
@@ -208,9 +207,9 @@
                                         <label>Data Type</label>
                                         <div>
                                             <select class="form-control kt-select2" id="module_field_data_type">
-                                                <option value="TEXT">Text</option>
-                                                <option value="DROPDOWN">Drop Down</option>
-                                                <option value="DATE">Date</option>
+                                                @foreach(unserialize(Session::get('FIELD_DATA_TYPES')) as $fieldDataType)
+                                                    <option value="{{ $fieldDataType->id }}">{{ $fieldDataType->name }}</option>
+                                                @endforeach
                                             </select>
                                         </div>
                                     </div>

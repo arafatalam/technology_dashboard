@@ -8,4 +8,8 @@ class CommonField extends Eloquent {
         return $this->belongsTo('User', 'updated_by')->select(['user_name']);
     }
 
+    public function fieldDataType(){
+        return $this->belongsTo('FieldDataType');
+    }
+
 }

@@ -78,7 +78,8 @@ function addField(){
 
     module_field.field_id_temp = fieldIdTemp;
     module_field.field_name = $('#field_name').val();
-    module_field.field_data_type = $('#field_data_type').val();
+    module_field.field_data_type_id = $('#field_data_type').val();
+    module_field.field_data_type = $("#field_data_type option:selected").text();
     module_field.serial = $('#field_serial').val();
     module_field.dropdown_values = $('#field_dropdown_values').val();
     module_field.field_remarks = $('#field_remarks').val();
@@ -114,7 +115,7 @@ function clearModuleFieldEntryForm(){
 
     module_field = {};
     $('#field_name').val("");
-    $('#field_data_type').val("TEXT");
+    $('#field_data_type').val(1);
     $('#field_serial').val("");
     $('#field_dropdown_values').val("");
     $('#field_remarks').val("");
@@ -239,7 +240,7 @@ function saveField( field ){
             module_id : field.module_id,
             field_id : 0,
             field_name : field.field_name,
-            field_data_type : field.field_data_type,
+            field_data_type_id : field.field_data_type_id,
             serial : field.serial,
             dropdown_values : field.dropdown_values,
             remarks : field.field_remarks

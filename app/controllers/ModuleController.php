@@ -20,6 +20,8 @@ class ModuleController extends BaseController {
         Session::put('DocId', 'createmodule');
         Session::put('Header', 'header_administration');
 
+        $fieldDataType = FieldDataType::all();
+
         return View::make('tech_dashboard.pages.module.createmodule');
     }
 
@@ -90,8 +92,8 @@ class ModuleController extends BaseController {
 
             $moduleField->module_id = Input::get('module_id');
             $moduleField->field_name = Input::get('field_name');
-            $moduleField->field_data_type = Input::get('field_data_type');
-            if(Input::get('field_data_type') == 'DROPDOWN'){
+            $moduleField->field_data_type_id = Input::get('field_data_type_id');
+            if(Input::get('field_data_type_id') == 3){
                 $moduleField->is_dropdown = 1;
                 $moduleField->dropdown_values = Input::get('dropdown_values');
             }
@@ -229,6 +231,7 @@ class ModuleController extends BaseController {
         $moduleFields = Module::find($moduleId)->moduleFields;
         foreach ($moduleFields as $moduleField) {
             $moduleField->user;
+            $moduleField->fieldDataType;
         }
         return $moduleFields;
 
@@ -238,6 +241,7 @@ class ModuleController extends BaseController {
 
         $moduleField = ModuleField::find($moduleFieldId);
         $moduleField->user;
+        $moduleField->fieldDataType;
 
         return $moduleField;
 

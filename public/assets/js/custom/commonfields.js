@@ -5,6 +5,7 @@ jQuery(document).ready(function() {
     init();
     KTDatatableDataLocalDemo.init();
 
+
 });
 var KTDatatableDataLocalDemo = function() {
     // Private functions
@@ -133,20 +134,22 @@ function showField( commonFieldId ) {
         success : function(data){
 
             init();
-            $("#field_id").text(data.id);
-            $("#entry_form_name").text("Edit Field");
+            $('#field_id').text(data.id);
+            $('#entry_form_name').text('Edit Field');
 
             //TODO Feeding the form with current data
-            $("#field_name").val(data.field_name);
+            $('#field_name').val(data.field_name);
+
+            $('#field_data_type').val(data.field_data_type.id);
+
             if(data.is_dropdown){
-                $("#field_data_type").val("DROPDOWN");
+             $('#dropdown_values').val(data.dropdown_values);
             } else {
-                $("#field_data_type").val(data.field_data_type);
+                 $('#dropdown_values').val('');
             }
             select2dropdown();
-            $("#serial").val(data.serial);
-            $("#dropdown_values").val(data.dropdown_values);
-            // $("#remarks").text(data.remarks);
+            $('#serial').val(data.serial);
+
 
             document.getElementById('delete_field_button').classList.remove('kt-hidden');
         }
@@ -160,10 +163,10 @@ function saveField(){
 
     var field_id = 0;
     var field_name = $("#field_name").val();
-    var field_data_type = $("#field_data_type").val();
+    var field_data_type_id = $("#field_data_type").val();
     var dropdown_values = "";
 
-    if(field_data_type == 'DROPDOWN');{
+    if(field_data_type_id == 3);{
         dropdown_values = $("#dropdown_values").val();
     }
     var serial = $("#serial").val();
@@ -198,7 +201,7 @@ function saveField(){
 
                     field_id : field_id,
                     field_name : field_name,
-                    field_data_type : field_data_type,
+                    field_data_type_id : field_data_type_id,
                     serial : serial,
                     dropdown_values : dropdown_values,
                     remarks : remarks
@@ -315,7 +318,7 @@ function init(){
     $("#field_id").text("");
     $("#entry_form_name").text("Add New Field");
     $('#field_name').val('');
-    $("#field_data_type").val("TEXT");
+    $("#field_data_type").val(1);
     $("#serial").val("");
     $("#dropdown_values").val("");
     $("#remarks").val("");
