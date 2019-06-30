@@ -449,7 +449,6 @@ function clearFieldEditForm(){
 
 }
 
-
 function showModuleFailureAlert( data ){
 
     var message = getNotificationMessage(data)
@@ -462,12 +461,10 @@ function showModuleFailureAlert( data ){
     KTApp.unprogress(buttonObject);
 
 }
+
 function init(){
 
     //TODO Populate Module List Datatable
     populateModuleListTable();
 
 }
-
-
-//todo Module List, Field List working except deletion

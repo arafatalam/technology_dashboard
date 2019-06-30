@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="09c33a73-abe1-4415-b8f9-c8d0a1bad0ce" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/app/controllers/ModuleController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/ModuleController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/tech_dashboard/pages/module/modulelist.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/tech_dashboard/pages/module/modulelist.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/assets/js/custom/modulelist.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/custom/modulelist.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/custom/utilities.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/custom/utilities.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -31,7 +28,7 @@
         <counts>
           <entry key="css" value="26" />
           <entry key="dummy" value="6" />
-          <entry key="js" value="13253" />
+          <entry key="js" value="13374" />
           <entry key="php" value="11622" />
         </counts>
       </usages-collector>
@@ -40,7 +37,7 @@
           <entry key="Blade" value="4236" />
           <entry key="CSS" value="26" />
           <entry key="HTML" value="13" />
-          <entry key="JavaScript" value="13240" />
+          <entry key="JavaScript" value="13361" />
           <entry key="PHP" value="7386" />
           <entry key="PLAIN_TEXT" value="6" />
         </counts>
@@ -135,8 +132,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/assets/js/custom/modulelist.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="493">
-              <caret line="450" lean-forward="true" selection-start-line="450" selection-end-line="450" />
+            <state relative-caret-position="527">
+              <caret line="463" lean-forward="true" selection-start-line="463" selection-end-line="463" />
               <folding>
                 <element signature="n#!!block;n#populateModuleListTable#0" />
                 <element signature="e#368#489#0" />
@@ -646,12 +643,12 @@
       <workItem from="1561623537103" duration="5440000" />
       <workItem from="1561632984696" duration="24979000" />
       <workItem from="1561754831979" duration="32260000" />
-      <workItem from="1561820004636" duration="35362000" />
+      <workItem from="1561820004636" duration="35971000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="130830000" />
+    <option name="totallyTimeSpent" value="131439000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
@@ -1128,8 +1125,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/assets/js/custom/modulelist.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="450" lean-forward="true" selection-start-line="450" selection-end-line="450" />
+        <state relative-caret-position="527">
+          <caret line="463" lean-forward="true" selection-start-line="463" selection-end-line="463" />
           <folding>
             <element signature="n#!!block;n#populateModuleListTable#0" />
             <element signature="e#368#489#0" />
