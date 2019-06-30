@@ -2,7 +2,7 @@
 @section('content')
     <span id="docid" hidden>modulelist</span>
     <span id="module_id" hidden></span>
-    <span id="module_field_id" hidden></span>
+    <span id="module_field_id" hidden>0</span>
     <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor">
 
         <!-- begin:: Subheader -->
@@ -76,7 +76,7 @@
                         </div>
                     </div>
                 </div>
-                <div id="module_entry_form" class="col-xl-4">
+                <div class="col-xl-4">
                     <!--begin::Portlet-->
                     <div class="kt-portlet kt-portlet--head-noborder kt-portlet--height-fluid">
                         <div class="kt-portlet__head">
@@ -125,7 +125,7 @@
                                 </div>
                                 <div class="row kt-hidden" id="module_edit_form_buttons">
                                     <div class="col-lg-6">
-                                        <button type="button" class="btn btn-primary" onclick="saveModule();">Save</button>
+                                        <button type="button" class="btn btn-primary" onclick="confirmSaveModule();">Save</button>
                                         <button type="button" class="btn btn-secondary" onclick="clearModuleEditForm();">Cancel</button>
                                     </div>
                                     <div class="col-lg-6 kt-align-right">
@@ -139,7 +139,7 @@
                     <!--end::Portlet-->
                 </div>
             </div>
-            <div class="row">
+            <div class="row kt-hidden" id="module_fields_row">
                 <div class="col-xl-8">
                     <div class="kt-portlet kt-portlet--mobile kt-portlet--head-noborder kt-portlet--height-fluid">
                         <div class="kt-portlet__head kt-portlet__head--lg">
@@ -179,7 +179,7 @@
                         </div>
                     </div>
                 </div>
-                <div id="common_field_entry_form" class="col-xl-4">
+                <div id="module_field_entry_form" class="col-xl-4">
                     <!--begin::Portlet-->
                     <div class="kt-portlet kt-portlet--head-noborder kt-portlet--height-fluid">
                         <div class="kt-portlet__head">
@@ -189,7 +189,7 @@
                                 </span>
 
                                 <h3 class="kt-portlet__head-title kt-font-brand">
-                                    <span id="entry_form_name" >Add New Field</span>
+                                    <span id="module_field_form_name" >Add New Field</span>
                                 </h3>
                             </div>
                         </div>
@@ -233,20 +233,17 @@
                                         <textarea id="module_field_remarks" class="form-control form-control autoresize" rows="2"></textarea>
                                     </div>
                                 </div>
+                                <div class="form-group row" id="module_field_edit_form_buttons">
+                                    <div class="col-lg-6">
+                                        <button type="button" class="btn btn-primary" onclick="confirmSaveField();">Save</button>
+                                        <button type="button" class="btn btn-secondary" onclick="clearFieldEditForm();">Cancel</button>
+                                    </div>
+                                    <div class="col-lg-6 kt-align-right">
+                                        <button id="delete_module_button" disabled type="button" class="btn btn-danger" onclick="deleteModule();">Delete</button>
+                                    </div>
+                                </div>
                             </form>
                         </div>
-                        <div class="kt-portlet__foot kt-portlet__foot--no-border">
-                            <div class="row">
-                                <div class="col-lg-6">
-                                    <button type="button" class="btn btn-primary" onclick="saveField();">Save</button>
-                                    <button type="button" class="btn btn-secondary" onclick="clearFieldEntryForm();">Cancel</button>
-                                </div>
-                                <div class="col-lg-6 kt-align-right">
-                                    <button id="delete_field_button" type="button" class="btn btn-danger kt-hidden" onclick="deleteField();">Delete</button>
-                                </div>
-                            </div>
-                        </div>
-
                         <!--end::Form-->
                     </div>
                     <!--end::Portlet-->

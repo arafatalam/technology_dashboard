@@ -62,7 +62,7 @@ class ModuleController extends BaseController {
 //                $module->id = 1;
                 $result['id'] = 1;
                 $result['module_id'] = $module->id;
-                $result['text']['module']['message'][0]= "Module Created Sucessfully!!";
+                $result['text']['module']['message'][0]= "Module : " . $module->module_name . " Saved Sucessfully!!";
             }catch (Exception $e){
                 $result['id'] = 0;
                 $result['text']['module']['message']= $e->getMessage();
@@ -79,28 +79,35 @@ class ModuleController extends BaseController {
             $result['field_name'] = Input::get('field_name');
             return $result;
         } else {
-            $newModuleField = new ModuleField();
 
-            $newModuleField->module_id = Input::get('module_id');
-            $newModuleField->field_name = Input::get('field_name');
-            $newModuleField->field_data_type = Input::get('field_data_type');
+            if(Input::has('field_id') && Input::get('field_id') >0){
+
+                $moduleField = ModuleField::find(Input::get('field_id'));
+            } else {
+
+                $moduleField = new ModuleField();
+            }
+
+            $moduleField->module_id = Input::get('module_id');
+            $moduleField->field_name = Input::get('field_name');
+            $moduleField->field_data_type = Input::get('field_data_type');
             if(Input::get('field_data_type') == 'DROPDOWN'){
-                $newModuleField->is_dropdown = 1;
-                $newModuleField->dropdown_values = Input::get('dropdown_values');
+                $moduleField->is_dropdown = 1;
+                $moduleField->dropdown_values = Input::get('dropdown_values');
             }
             if(Input::get('serial') >0 ){
-                $newModuleField->serial = Input::get('serial');
+                $moduleField->serial = Input::get('serial');
             } else {
-                $newModuleField->serial = ModuleField::max('serial') + 1;
+                $moduleField->serial = ModuleField::max('serial') + 1;
             }
-            $newModuleField->remarks = Input::get('remarks');
-            $newModuleField->updated_by = Session::get('USER_ID');
+            $moduleField->remarks = Input::get('remarks');
+            $moduleField->updated_by = Session::get('USER_ID');
 
             try{
-                $newModuleField->save();
+                $moduleField->save();
 //                $newModuleField->id = 1;
                 $result['id'] = 1;
-                $result['text']['field'][$newModuleField->field_name][0]= "FIELD : " . $newModuleField->field_name . " Created Sucessfully!!";
+                $result['text']['field'][$moduleField->field_name][0]= "FIELD : " . $moduleField->field_name . " Saved Sucessfully!!";
             }catch (Exception $e){
                 $result['id'] = 0;
                 $result['text']['field']['message']= $e->getMessage();

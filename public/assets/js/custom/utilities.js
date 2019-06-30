@@ -54,7 +54,7 @@ function showNotification( type, message, title){
         "onclick": null,
         "showDuration": "300",
         "hideDuration": "1000",
-        "timeOut": "0",
+        "timeOut": "10000",
         "extendedTimeOut": "0",
         "showEasing": "swing",
         "hideEasing": "linear",
