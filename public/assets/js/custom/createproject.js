@@ -1,9 +1,12 @@
 'use strict';
 
+
 jQuery(document).ready(function() {
 
     getDataCommonFields();
     getDataModuleFields();
+
+
 
 });
 
@@ -60,17 +63,19 @@ function createMarkups(data){
 
 
     });
-    
+
     $('#project_data_form_body').append(rowStart + innerElement + rowEnd);
+
 
     // Add dropdown options.
     $.each(data, function(index, item){
 
         if(item.is_dropdown == 1){
 
-            var dropDownListMarkup = getDropDownMarkup(item.dropdown_values);
+            var dropDownListMarkup = createDropDownMarkup(item.dropdown_values);
 
             $('#' + item.html_class).append(dropDownListMarkup);
+
 
         }
     });

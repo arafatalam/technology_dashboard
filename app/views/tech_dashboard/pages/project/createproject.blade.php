@@ -1,7 +1,7 @@
 @extends('tech_dashboard.layout.master')
 @section('content')
     <span id="docid" hidden>createproject</span>
-    <span id="module_id" hidden>{{ Session::get('MODULE_ID') }}</span>
+    <span id="module_id" hidden>{{ $module->id }}</span>
 
 
     <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor">
@@ -46,8 +46,8 @@
         <div class="kt-content kt-grid__item kt-grid__item--fluid">
 
             {{--TODO BEGIN PROJECT DATA FORM--}}
-            <div class="kt-portlet kt-portlet--responsive-mobile">
-                <div class="kt-portlet__head">
+            <div class="kt-portlet kt-portlet--responsive-mobile ">
+                <div class="kt-portlet__head kt-portlet__head--noborder">
                     <div class="kt-portlet__head-label">
                         <span class="kt-portlet__head-icon">
                             <i class="fa fa-project-diagram kt-font-success"></i>
@@ -60,117 +60,170 @@
                 <!--begin::Form-->
                 <form id="project_data_form" class="kt-form kt-form--label-right">
                     <div class="kt-portlet__body" id="project_data_form_body">
-                        {{--<div class="form-group row">--}}
-                            {{--<div class="col-lg-4">--}}
-                                {{--<label>Project Name :</label>--}}
-                                {{--<input id="project_name" type="text" class="form-control " placeholder="">--}}
-                            {{--</div>--}}
-                            {{--<div class="col-lg-4">--}}
-                                {{--<label class="">Project Manager Name :</label>--}}
-                                {{--<div class="input-group">--}}
-                                    {{--<div class="input-group-prepend"><span class="input-group-text"><i class="la la-user"></i></span></div>--}}
-                                    {{--<input id="project_manager_name" type="text" class="form-control " placeholder="">--}}
-                                {{--</div>--}}
-                            {{--</div>--}}
-                            {{--<div class="col-lg-4">--}}
-                                {{--<label>Status :</label>--}}
-                                {{--<select class="form-control kt-select2" id="project_status" >--}}
-                                    {{--<option value="0">####</option>--}}
-                                {{--</select>--}}
-                            {{--</div>--}}
-                        {{--</div>--}}
-                        {{--<div class="form-group row">--}}
-                            {{--<div class="col-lg-4">--}}
-                                {{--<label>Initiation Date :</label>--}}
-                                {{--<input id="project_initiation_date" type="text" class="form-control  date-picker" readonly id="" />--}}
-                            {{--</div>--}}
-                            {{--<div class="col-lg-4">--}}
-                                {{--<label class="">Requestor Name :</label>--}}
-                                {{--<div class="input-group">--}}
-                                    {{--<div class="input-group-prepend">--}}
-                                        {{--<span class="input-group-text"><i class="la la-user"></i></span>--}}
-                                    {{--</div>--}}
-                                    {{--<input id="project_requestor_name" type="text" class="form-control " placeholder="">--}}
-                                {{--</div>--}}
-                            {{--</div>--}}
-                            {{--<div class="col-lg-4">--}}
-                                {{--<label>Requestor Division :</label>--}}
-                                {{--<div class="input-group">--}}
-                                    {{--<select class="form-control kt-select2" id="requestor_division" >--}}
-                                        {{--<option value="0">Requestor Division</option>--}}
-                                        {{--@foreach($requestorDivisions as $division)--}}
-                                            {{--<option value="{{ $division->id }}">{{ $division->division}}</option>--}}
-                                        {{--@endforeach--}}
-                                    {{--</select>--}}
-                                {{--</div>--}}
-                            {{--</div>--}}
-                        {{--</div>--}}
-                        {{--<div class="form-group row">--}}
-                            {{--<div class="col-lg-4">--}}
-                                {{--<label>Schedule Start Date :</label>--}}
-                                {{--<div class="input-group date">--}}
-                                    {{--<div class="input-group-prepend">--}}
-                                        {{--<span class="input-group-text">--}}
-                                            {{--<i class="la la-calendar"></i>--}}
-                                        {{--</span>--}}
-                                    {{--</div>--}}
-                                    {{--<input id="project_schedule_start_date" type="text" class="form-control  date-picker" readonly id="" />--}}
-                                {{--</div>--}}
-                            {{--</div>--}}
-                            {{--<div class="col-lg-4">--}}
-                                {{--<label>Schedule End Date :</label>--}}
-                                {{--<div class="input-group date">--}}
-                                    {{--<div class="input-group-prepend">--}}
-                                        {{--<span class="input-group-text">--}}
-                                            {{--<i class="la la-calendar"></i>--}}
-                                        {{--</span>--}}
-                                    {{--</div>--}}
-                                    {{--<input id="project_schedule_end_date" type="text" class="form-control  date-picker" readonly id="" />--}}
-                                {{--</div>--}}
-                            {{--</div>--}}
-                            {{--<div class="col-lg-4">--}}
-                                {{--<label>Remarks</label>--}}
-                                {{--<textarea id="project_remarks" class="form-control form-control autoresize" id="project_remarks" rows="1"></textarea>--}}
-                            {{--</div>--}}
-                        {{--</div>--}}
-                        {{--<div class="form-group row">--}}
-                            {{--<div class="col-lg-4">--}}
-                                {{--<label>Actual Start Date :</label>--}}
-                                {{--<div class="input-group date">--}}
-                                    {{--<div class="input-group-prepend">--}}
-                                        {{--<span class="input-group-text">--}}
-                                            {{--<i class="la la-calendar"></i>--}}
-                                        {{--</span>--}}
-                                    {{--</div>--}}
-                                    {{--<input id="project_actual_start_date" type="text" class="form-control  date-picker" readonly id="" />--}}
-                                {{--</div>--}}
-                            {{--</div>--}}
-                            {{--<div class="col-lg-4">--}}
-                                {{--<label>Actual End Date :</label>--}}
-                                {{--<div class="input-group date">--}}
-                                    {{--<div class="input-group-prepend">--}}
-                                        {{--<span class="input-group-text">--}}
-                                            {{--<i class="la la-calendar"></i>--}}
-                                        {{--</span>--}}
-                                    {{--</div>--}}
-                                    {{--<input id="project_actual_end_date" type="text" class="form-control  date-picker" readonly id="" />--}}
-                                {{--</div>--}}
-                            {{--</div>--}}
-                        {{--</div>--}}
-                        {{--<div class="form-group row">--}}
-                            {{--@foreach($common_fields as $common_field)--}}
-                                {{--<div class="col-lg-4">--}}
-                                    {{--<label>{{ $common_field->field_name }} :</label>--}}
-                                    {{--<textarea id="common_field_{{ $common_field->id }}" class="form-control form-control autoresize" rows="1"></textarea>--}}
-                                {{--</div>--}}
-                            {{--@endforeach--}}
-                        {{--</div>--}}
 
                     </div>
                 </form>
                 <!--end::Form-->
             </div>
             {{--TODO END PROJECT DATA FORM--}}
+
+            {{--TODO BEGIN MILESTONE DATA FORM--}}
+            @if( $hasDefaultMilestone )
+                <div class="kt-portlet">
+                    <div class="kt-portlet__head">
+                        <div class="kt-portlet__head-label">
+                            <span class="kt-portlet__head-icon">
+                                <i class="fa fa-chart-line kt-font-success"></i>
+                            </span>
+                            <h3 class="kt-portlet__head-title kt-font-brand">
+                                Milestone Data
+                            </h3>
+                        </div>
+                    </div>
+                    <!--begin::Form-->
+                    <form class="kt-form" id="milestone_data_form">
+                        <div class="kt-portlet__body">
+                            <div class="kt-form__section kt-form__section--first">
+                                @if( $module->module_milestone_type == "Fixed Milestone")
+                                    <?php $counter = 0; ?>
+                                    @foreach($module->default_milestones as $milestone)
+                                        <div>
+                                            <div class="form-group form-group-row">
+                                                <div class="col-lg-12">
+                                                    <div data-repeater-item class="form-group row align-items-center">
+                                                        <div class="col-md-3">
+                                                            <div class="kt-form__group--inline">
+                                                                <div class="kt-form__control">
+                                                                    {{--<input name="milestone_name" type="text" class="form-control" value ="{{ $milestone->milestone_name }}">--}}
+                                                                    <textarea name="{{ '['.$counter.']' }}[milestone_name]" class="form-control form-control autoresize" id="milestone_name"  rows="1">{{ $milestone->milestone_name }}</textarea>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-1">
+                                                            <div class="kt-form__group--inline">
+                                                                <select class="form-control kt-select2 milestone_status" name="{{ '['.$counter.']' }}[milestone_status]">
+                                                                    {{--@foreach($statuses as $status)--}}
+                                                                        {{--<option value="{{ $status->id }}">{{ $status->status}}</option>--}}
+                                                                    {{--@endforeach--}}
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-2">
+                                                            <div class="kt-form__group--inline">
+                                                                <div class="kt-form__control">
+                                                                    <input name="{{ '['.$counter.']' }}[milestone_schedule_start_date]" type="text" class="form-control  date-picker" readonly id="" placeholder="Enter Schedule Start Date"/>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-2">
+                                                            <div class="kt-form__group--inline">
+                                                                <div class="kt-form__control">
+                                                                    <input name="{{ '['.$counter.']' }}[milestone_schedule_end_date]" type="text" class="form-control  date-picker" readonly id="" placeholder="Enter Schedule End Date"/>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-2">
+                                                            <div class="kt-form__group--inline">
+                                                                <div class="kt-form__control">
+                                                                    <input name="{{ '['.$counter.']' }}[milestone_actual_start_date]" type="text" class="form-control  date-picker" readonly id="" placeholder="Enter Actual Start Date"/>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-2">
+                                                            <div class="kt-form__group--inline">
+                                                                <div class="kt-form__control">
+                                                                    <input name="{{ '['.$counter.']' }}[milestone_actual_end_date]" type="text" class="form-control  date-picker" readonly id="" placeholder="Enter Actual End Date"/>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                        <?php $counter++;?>
+                                    @endforeach
+                                @else
+                                    <div id="kt_repeater_1">
+                                        <div class="form-group form-group-last row" id="kt_repeater_1">
+                                            <div data-repeater-list="" class="col-lg-12">
+                                                <div data-repeater-item class="form-group row align-items-center">
+                                                    <div class="col-md-2">
+                                                        <div class="kt-form__group--inline">
+                                                            <div class="kt-form__control">
+                                                                <input name="milestone_name" type="text" class="form-control" placeholder="Enter milestone name">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-1">
+                                                        <div class="kt-form__group--inline">
+                                                            <select class="form-control kt-select2 milestone_status" name="milestone_status">
+                                                                {{--@foreach($statuses as $status)--}}
+                                                                    {{--<option value="{{ $status->id }}">{{ $status->status}}</option>--}}
+                                                                {{--@endforeach--}}
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-2">
+                                                        <div class="kt-form__group--inline">
+                                                            <div class="kt-form__control">
+                                                                <input name="milestone_schedule_start_date" type="text" class="form-control  date-picker" readonly id="" placeholder="Enter Schedule Start Date"/>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-2">
+                                                        <div class="kt-form__group--inline">
+                                                            <div class="kt-form__control">
+                                                                <input name="milestone_schedule_end_date" type="text" class="form-control  date-picker" readonly id="" placeholder="Enter Schedule End Date"/>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-2">
+                                                        <div class="kt-form__group--inline">
+                                                            <div class="kt-form__control">
+                                                                <input name="milestone_actual_start_date" type="text" class="form-control  date-picker" readonly id="" placeholder="Enter Actual Start Date"/>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-2">
+                                                        <div class="kt-form__group--inline">
+                                                            <div class="kt-form__control">
+                                                                <input name="milestone_actual_end_date" type="text" class="form-control  date-picker" readonly id="" placeholder="Enter Actual End Date"/>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-1">
+                                                        <div class="kt-form__group--inline">
+                                                            <div class="kt-form__control">
+                                                                <a href="javascript:;" data-repeater-delete="" class=" btn btn-label-danger btn-bold">
+                                                                    <i class="la la-trash-o"></i>
+                                                                    Delete
+                                                                </a>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group form-group-last row">
+                                            {{--<label class="col-lg-2 col-form-label"></label>--}}
+                                            <div class="col-lg-4">
+                                                <a href="javascript:;" data-repeater-create="" class="btn btn-bold btn-sm btn-label-brand">
+                                                    <i class="la la-plus"></i> Add
+                                                </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                @endif
+
+                            </div>
+                        </div>
+                    </form>
+
+                    <!--end::Form-->
+                </div>
+            @endif
+            {{--TODO END MILESTONE DATA FORM--}}
 
 
 

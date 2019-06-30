@@ -28,13 +28,12 @@ class ProjectController extends BaseController {
 
         $module = Module::find($moduleId);
 
+        $module->defaultMilestones;
+
+//        return $module;
         return View::make('tech_dashboard.pages.project.createproject')
-            ->with('moduleId', $module->id);
-
-
-
-
-
+            ->with('module', $module)
+            ->with('hasDefaultMilestone', count($module->defaultMilestones));
 
     }
     public function showCreateModule(){
