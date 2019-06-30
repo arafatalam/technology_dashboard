@@ -8,9 +8,9 @@ class FieldDataTypeTableSeeder extends Seeder {
         FieldDataType::create(array
             (
                 'name' => 'Text',
-                'html_element' => '<div class="col-lg-3">\n' .
-                                    '<label>##FIELD_NAME## :</label>\n' .
-                                    '<textarea id="##FIELD_ID##" class="form-control form-control autoresize" rows="1"></textarea>\n' .
+                'html_element' => '<div class="col-lg-3">' .
+                                    '<label>##FIELD_NAME## :</label>' .
+                                    '<textarea id="##FIELD_ID##" class="form-control form-control autoresize" rows="1"></textarea>' .
                                     '</div>',
                 'updated_by' => 1
             )
@@ -18,9 +18,9 @@ class FieldDataTypeTableSeeder extends Seeder {
         FieldDataType::create(array
             (
                 'name' => 'Date',
-                'html_element' => '<div class="col-lg-3">\n' .
-                                    '<label>##FIELD_NAME## :</label>\n' .
-                                    '<input id="##FIELD_ID" type="text" class="form-control  date-picker" readonly id="" />\n' .
+                'html_element' => '<div class="col-lg-3">' .
+                                    '<label>##FIELD_NAME## :</label>' .
+                                    '<input id="##FIELD_ID" type="text" class="form-control  date-picker" readonly id="" />' .
                                     '</div>' ,
                 'updated_by' => 1
             )
@@ -28,10 +28,10 @@ class FieldDataTypeTableSeeder extends Seeder {
         FieldDataType::create(array
             (
                 'name' => 'Drop Down',
-                'html_element' => '<div class="col-lg-3">\n' .
-                                    '<label>##FIELD_NAME## :</label>\n' .
-                                    '<select id="##FIELD_ID##" class="form-control kt-select2"  >\n' .
-                                    '</select>\n' .
+                'html_element' => '<div class="col-lg-3">' .
+                                    '<label>##FIELD_NAME## :</label>' .
+                                    '<select id="##FIELD_ID##" class="form-control kt-select2"  >' .
+                                    '</select>' .
                                     '</div>' ,
                 'updated_by' => 1
             )

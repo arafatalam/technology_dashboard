@@ -1,9 +1,9 @@
 'use strict';
 
-
-
 jQuery(document).ready(function() {
+
     getDataCommonFields();
+    getDataModuleFields();
 
 });
 
@@ -14,16 +14,29 @@ function getDataCommonFields(){
         url : './getdatacommonfields',
         dataType : 'JSON',
         success : function(data){
-            console.log(data);
+
             createMarkups(data);
+
         }
     });
 
 }
 
+function getDataModuleFields(){
+
+    var moduleId = $('#module_id').text();
+
+    $.ajax({
+       type : 'POST',
+       url : './getdatamodulefields/' + moduleId,
+       dataType: 'JSON',
+       success : function(data){
+           createMarkups(data);
+       }
+    });
 
 
-
+}
 
 function createMarkups(data){
 
@@ -32,48 +45,89 @@ function createMarkups(data){
     var rowEnd = '</div>';
     var count = 1;
 
-    innerElement = '<div class="col-lg-3">\n' +
-                        '<label>##FIELD_NAME## :</label>\n' +
-                        '<textarea id="##FIELD_ID##" class="form-control form-control autoresize" rows="1"></textarea>\n' +
-                    '</div>';
+    $.each(data, function(index, item){
 
-    innerElement = '<div class="col-lg-3">\n' +
-                        '<label>##FIELD_NAME## :</label>\n' +
-                        '<input id="##FIELD_ID" type="text" class="form-control  date-picker" readonly id="" />\n' +
-                    '</div>';
+        var tempInnerElement = item.field_data_type.html_element;
+        tempInnerElement = tempInnerElement.replace('##FIELD_NAME##', item.field_name);
+        tempInnerElement = tempInnerElement.replace('##FIELD_ID##', item.html_class);
+        innerElement = innerElement + tempInnerElement;
+        if( count === 4 ){
+            $('#project_data_form_body').append(rowStart + innerElement + rowEnd);
+            innerElement = '';
+            count = 1;
+        }
+        count++
 
 
-    innerElement = '<div class="col-lg-4">\n' +
-                        '<label>##FIELD_NAME## :</label>\n' +
-                        '<select id="##FIELD_ID##" class="form-control kt-select2"  >\n' +
-                        '</select>\n' +
-                    '</div>';
+    });
+    
+    $('#project_data_form_body').append(rowStart + innerElement + rowEnd);
 
-    console.log(innerElement);
+    // Add dropdown options.
+    $.each(data, function(index, item){
 
-    // $.each(data, function(index, item){
-    //     innerElement = innerElement +
-    //                     '<div class="col-lg-3">' +
-    //                         '<label>' + item.field_name + ' :</label>' +
-    //                         '<textarea id="common_field_' + item.id + '" class="form-control form-control autoresize" rows="1"></textarea>' +
-    //                     '</div>';
-    //
-    //     if(count === 4){
-    //         var fullRow = rowStart + innerElement + rowEnd;
-    //
-    //         $('#project_form_body').append(fullRow);
-    //
-    //         innerElement = '';
-    //         count = 0;
-    //     }
-    //     count++;
-    // });
-    //
-    $('#project_form_body').append(rowStart + innerElement + rowEnd);
+        if(item.is_dropdown == 1){
+
+            var dropDownListMarkup = getDropDownMarkup(item.dropdown_values);
+
+            $('#' + item.html_class).append(dropDownListMarkup);
+
+        }
+    });
 
     autoResizeTextArea();
     select2dropdown();
+    KTBootstrapDatepicker.init();
+}
 
+function createDropDownMarkup( $dropdownValues ){
 
+    var valuesArray = $dropdownValues.split(",");
+    var markUp = '';
+
+    $.each(valuesArray, function (index, item) {
+
+        markUp = markUp + '<option value="' + item + '">' + item + '</option>';
+
+    })
+
+    return markUp;
 
 }
+
+
+var KTBootstrapDatepicker = function () {
+
+    var arrows;
+    if (KTUtil.isRTL()) {
+        arrows = {
+            leftArrow: '<i class="la la-angle-right"></i>',
+            rightArrow: '<i class="la la-angle-left"></i>'
+        }
+    } else {
+        arrows = {
+            leftArrow: '<i class="la la-angle-left"></i>',
+            rightArrow: '<i class="la la-angle-right"></i>'
+        }
+    }
+
+    // Private functions
+    var initDatePicker = function () {
+
+        $('.date-picker').datepicker({
+            rtl: KTUtil.isRTL(),
+            todayBtn: "linked",
+            clearBtn: true,
+            todayHighlight: true,
+            templates: arrows,
+            format: 'yyyy-mm-dd'
+        });
+    }
+
+    return {
+        // public functions
+        init: function() {
+            initDatePicker();
+        }
+    };
+}();

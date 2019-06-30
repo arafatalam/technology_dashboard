@@ -1,7 +1,7 @@
 @extends('tech_dashboard.layout.master')
 @section('content')
     <span id="docid" hidden>createproject</span>
-    {{--<span id="project_type_id" hidden>{{ $projectCategory->id }}</span>--}}
+    <span id="module_id" hidden>{{ Session::get('MODULE_ID') }}</span>
 
 
     <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor">
@@ -59,112 +59,112 @@
                 </div>
                 <!--begin::Form-->
                 <form id="project_data_form" class="kt-form kt-form--label-right">
-                    <div class="kt-portlet__body" id="project_form_body">
-                        <div class="form-group row">
-                            <div class="col-lg-4">
-                                <label>Project Name :</label>
-                                <input id="project_name" type="text" class="form-control " placeholder="">
-                            </div>
-                            <div class="col-lg-4">
-                                <label class="">Project Manager Name :</label>
-                                <div class="input-group">
-                                    <div class="input-group-prepend"><span class="input-group-text"><i class="la la-user"></i></span></div>
-                                    <input id="project_manager_name" type="text" class="form-control " placeholder="">
-                                </div>
-                            </div>
-                            <div class="col-lg-4">
-                                <label>Status :</label>
-                                <select class="form-control kt-select2" id="project_status" >
-                                    <option value="0">####</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <div class="col-lg-4">
-                                <label>Initiation Date :</label>
-                                <input id="project_initiation_date" type="text" class="form-control  date-picker" readonly id="" />
-                            </div>
-                            <div class="col-lg-4">
-                                <label class="">Requestor Name :</label>
-                                <div class="input-group">
-                                    <div class="input-group-prepend">
-                                        <span class="input-group-text"><i class="la la-user"></i></span>
-                                    </div>
-                                    <input id="project_requestor_name" type="text" class="form-control " placeholder="">
-                                </div>
-                            </div>
-                            <div class="col-lg-4">
-                                <label>Requestor Division :</label>
-                                <div class="input-group">
-                                    <select class="form-control kt-select2" id="requestor_division" >
-                                        <option value="0">Requestor Division</option>
+                    <div class="kt-portlet__body" id="project_data_form_body">
+                        {{--<div class="form-group row">--}}
+                            {{--<div class="col-lg-4">--}}
+                                {{--<label>Project Name :</label>--}}
+                                {{--<input id="project_name" type="text" class="form-control " placeholder="">--}}
+                            {{--</div>--}}
+                            {{--<div class="col-lg-4">--}}
+                                {{--<label class="">Project Manager Name :</label>--}}
+                                {{--<div class="input-group">--}}
+                                    {{--<div class="input-group-prepend"><span class="input-group-text"><i class="la la-user"></i></span></div>--}}
+                                    {{--<input id="project_manager_name" type="text" class="form-control " placeholder="">--}}
+                                {{--</div>--}}
+                            {{--</div>--}}
+                            {{--<div class="col-lg-4">--}}
+                                {{--<label>Status :</label>--}}
+                                {{--<select class="form-control kt-select2" id="project_status" >--}}
+                                    {{--<option value="0">####</option>--}}
+                                {{--</select>--}}
+                            {{--</div>--}}
+                        {{--</div>--}}
+                        {{--<div class="form-group row">--}}
+                            {{--<div class="col-lg-4">--}}
+                                {{--<label>Initiation Date :</label>--}}
+                                {{--<input id="project_initiation_date" type="text" class="form-control  date-picker" readonly id="" />--}}
+                            {{--</div>--}}
+                            {{--<div class="col-lg-4">--}}
+                                {{--<label class="">Requestor Name :</label>--}}
+                                {{--<div class="input-group">--}}
+                                    {{--<div class="input-group-prepend">--}}
+                                        {{--<span class="input-group-text"><i class="la la-user"></i></span>--}}
+                                    {{--</div>--}}
+                                    {{--<input id="project_requestor_name" type="text" class="form-control " placeholder="">--}}
+                                {{--</div>--}}
+                            {{--</div>--}}
+                            {{--<div class="col-lg-4">--}}
+                                {{--<label>Requestor Division :</label>--}}
+                                {{--<div class="input-group">--}}
+                                    {{--<select class="form-control kt-select2" id="requestor_division" >--}}
+                                        {{--<option value="0">Requestor Division</option>--}}
                                         {{--@foreach($requestorDivisions as $division)--}}
                                             {{--<option value="{{ $division->id }}">{{ $division->division}}</option>--}}
                                         {{--@endforeach--}}
-                                    </select>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <div class="col-lg-4">
-                                <label>Schedule Start Date :</label>
-                                <div class="input-group date">
-                                    <div class="input-group-prepend">
-                                        <span class="input-group-text">
-                                            <i class="la la-calendar"></i>
-                                        </span>
-                                    </div>
-                                    <input id="project_schedule_start_date" type="text" class="form-control  date-picker" readonly id="" />
-                                </div>
-                            </div>
-                            <div class="col-lg-4">
-                                <label>Schedule End Date :</label>
-                                <div class="input-group date">
-                                    <div class="input-group-prepend">
-                                        <span class="input-group-text">
-                                            <i class="la la-calendar"></i>
-                                        </span>
-                                    </div>
-                                    <input id="project_schedule_end_date" type="text" class="form-control  date-picker" readonly id="" />
-                                </div>
-                            </div>
-                            <div class="col-lg-4">
-                                <label>Remarks</label>
-                                <textarea id="project_remarks" class="form-control form-control autoresize" id="project_remarks" rows="1"></textarea>
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <div class="col-lg-4">
-                                <label>Actual Start Date :</label>
-                                <div class="input-group date">
-                                    <div class="input-group-prepend">
-                                        <span class="input-group-text">
-                                            <i class="la la-calendar"></i>
-                                        </span>
-                                    </div>
-                                    <input id="project_actual_start_date" type="text" class="form-control  date-picker" readonly id="" />
-                                </div>
-                            </div>
-                            <div class="col-lg-4">
-                                <label>Actual End Date :</label>
-                                <div class="input-group date">
-                                    <div class="input-group-prepend">
-                                        <span class="input-group-text">
-                                            <i class="la la-calendar"></i>
-                                        </span>
-                                    </div>
-                                    <input id="project_actual_end_date" type="text" class="form-control  date-picker" readonly id="" />
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            @foreach($common_fields as $common_field)
-                                <div class="col-lg-4">
-                                    <label>{{ $common_field->field_name }} :</label>
-                                    <textarea id="common_field_{{ $common_field->id }}" class="form-control form-control autoresize" rows="1"></textarea>
-                                </div>
-                            @endforeach
-                        </div>
+                                    {{--</select>--}}
+                                {{--</div>--}}
+                            {{--</div>--}}
+                        {{--</div>--}}
+                        {{--<div class="form-group row">--}}
+                            {{--<div class="col-lg-4">--}}
+                                {{--<label>Schedule Start Date :</label>--}}
+                                {{--<div class="input-group date">--}}
+                                    {{--<div class="input-group-prepend">--}}
+                                        {{--<span class="input-group-text">--}}
+                                            {{--<i class="la la-calendar"></i>--}}
+                                        {{--</span>--}}
+                                    {{--</div>--}}
+                                    {{--<input id="project_schedule_start_date" type="text" class="form-control  date-picker" readonly id="" />--}}
+                                {{--</div>--}}
+                            {{--</div>--}}
+                            {{--<div class="col-lg-4">--}}
+                                {{--<label>Schedule End Date :</label>--}}
+                                {{--<div class="input-group date">--}}
+                                    {{--<div class="input-group-prepend">--}}
+                                        {{--<span class="input-group-text">--}}
+                                            {{--<i class="la la-calendar"></i>--}}
+                                        {{--</span>--}}
+                                    {{--</div>--}}
+                                    {{--<input id="project_schedule_end_date" type="text" class="form-control  date-picker" readonly id="" />--}}
+                                {{--</div>--}}
+                            {{--</div>--}}
+                            {{--<div class="col-lg-4">--}}
+                                {{--<label>Remarks</label>--}}
+                                {{--<textarea id="project_remarks" class="form-control form-control autoresize" id="project_remarks" rows="1"></textarea>--}}
+                            {{--</div>--}}
+                        {{--</div>--}}
+                        {{--<div class="form-group row">--}}
+                            {{--<div class="col-lg-4">--}}
+                                {{--<label>Actual Start Date :</label>--}}
+                                {{--<div class="input-group date">--}}
+                                    {{--<div class="input-group-prepend">--}}
+                                        {{--<span class="input-group-text">--}}
+                                            {{--<i class="la la-calendar"></i>--}}
+                                        {{--</span>--}}
+                                    {{--</div>--}}
+                                    {{--<input id="project_actual_start_date" type="text" class="form-control  date-picker" readonly id="" />--}}
+                                {{--</div>--}}
+                            {{--</div>--}}
+                            {{--<div class="col-lg-4">--}}
+                                {{--<label>Actual End Date :</label>--}}
+                                {{--<div class="input-group date">--}}
+                                    {{--<div class="input-group-prepend">--}}
+                                        {{--<span class="input-group-text">--}}
+                                            {{--<i class="la la-calendar"></i>--}}
+                                        {{--</span>--}}
+                                    {{--</div>--}}
+                                    {{--<input id="project_actual_end_date" type="text" class="form-control  date-picker" readonly id="" />--}}
+                                {{--</div>--}}
+                            {{--</div>--}}
+                        {{--</div>--}}
+                        {{--<div class="form-group row">--}}
+                            {{--@foreach($common_fields as $common_field)--}}
+                                {{--<div class="col-lg-4">--}}
+                                    {{--<label>{{ $common_field->field_name }} :</label>--}}
+                                    {{--<textarea id="common_field_{{ $common_field->id }}" class="form-control form-control autoresize" rows="1"></textarea>--}}
+                                {{--</div>--}}
+                            {{--@endforeach--}}
+                        {{--</div>--}}
 
                     </div>
                 </form>

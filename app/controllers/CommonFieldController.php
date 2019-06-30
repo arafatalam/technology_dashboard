@@ -33,6 +33,8 @@ class CommonFieldController extends BaseController {
         $commonFields = CommonField::all();
         foreach($commonFields as $commonField){
             $commonField->user;
+            $commonField->fieldDataType;
+
         };
 
         $commonFields = $commonFields->sortBy('serial');
@@ -111,6 +113,14 @@ class CommonFieldController extends BaseController {
 
       //  $stop_date =
         $commonField->updated_on = date('Y-m-d');
+
+
+        $htmlClass = strtolower($values['field_name']);
+        $htmlClass = str_replace(' ', '_', $htmlClass);
+        $commonField->html_class = $htmlClass;
+
+
+
 
 
 

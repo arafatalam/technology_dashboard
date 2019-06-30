@@ -26,22 +26,12 @@ class ProjectController extends BaseController {
 
         $moduleId = Session::get('MODULE_ID');
 
-        $commonFields = CommonField::all();
         $module = Module::find($moduleId);
 
-        $module->moduleFields;
-        $module->defaultMilestones;
-        $module->user;
+        return View::make('tech_dashboard.pages.project.createproject')
+            ->with('moduleId', $module->id);
 
 
-//        return View::make('tech_dashboard.pages.project.createproject')
-//            ->with('common_fields', $commonFields);
-
-        $result['common_fields'] = $commonFields;
-        $result['module'] = $module;
-
-
-        return $result;
 
 
 
