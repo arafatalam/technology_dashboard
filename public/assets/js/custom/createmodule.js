@@ -264,6 +264,7 @@ function saveMilestone( milestone ) {
         url : './savemilestone',
         data : {
             module_id : milestone.module_id,
+            milestone_id : 0,
             milestone_name : milestone.milestone_name,
             remarks : "Initial Adding",
         },

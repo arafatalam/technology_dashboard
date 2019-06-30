@@ -36,8 +36,12 @@ Route::get('/createmodule', array('as' => 'createmodule', 'before ' => 'auth', '
 Route::get('/modulelist', array('as' => 'modulelist', 'before ' => 'auth', 'uses' => 'ModuleController@showModuleList'));
 Route::post('/savemodule', array('as' => 'savemodule', 'before ' => 'auth', 'uses' => 'ModuleController@saveModule'));
 Route::post('/savefield', array('as' => 'savefield', 'before ' => 'auth', 'uses' => 'ModuleController@saveField'));
+Route::post('/deletefield', array('as' => 'deletefield', 'before ' => 'auth', 'uses' => 'ModuleController@deleteField'));
 Route::post('/savemilestone', array('as' => 'savemilestone', 'before ' => 'auth', 'uses' => 'ModuleController@saveMilestone'));
+Route::post('/deletemilestone', array('as' => 'deletemilestone', 'before ' => 'auth', 'uses' => 'ModuleController@deleteMilestone'));
 Route::get('/getdatamodulelist', array('as' => 'getdatamodulelist', 'before ' => 'auth', 'uses' => 'ModuleController@getDataModuleList'));
 Route::get('/getdatamodule/{moduleId}', array('as' => 'getdatamodule', 'before ' => 'auth', 'uses' => 'ModuleController@getDataModule'));
 Route::post('/getdatamodulefields/{moduleId}', array('as' => 'getdatamodulefields', 'before ' => 'auth', 'uses' => 'ModuleController@getDataModuleFields'));
 Route::get('/getdatamodulefield/{moduleFieldId}', array('as' => 'getdatamodulefield', 'before ' => 'auth', 'uses' => 'ModuleController@getDataModuleField'));
+Route::get('/getdatadefaultmilestones/{moduleId}', array('as' => 'getdatadefaultmilestones', 'before ' => 'auth', 'uses' => 'ModuleController@getDataDefaultMilestones'));
+Route::get('/getdatadefaultmilestone/{milestoneId}', array('as' => 'getdatadefaultmilestone', 'before ' => 'auth', 'uses' => 'ModuleController@getDataDefaultMilestone'));

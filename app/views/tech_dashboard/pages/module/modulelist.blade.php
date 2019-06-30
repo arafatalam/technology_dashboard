@@ -3,6 +3,7 @@
     <span id="docid" hidden>modulelist</span>
     <span id="module_id" hidden></span>
     <span id="module_field_id" hidden>0</span>
+    <span id="default_milestone_id" hidden>0</span>
     <div class="kt-grid__item kt-grid__item--fluid kt-grid kt-grid--hor">
 
         <!-- begin:: Subheader -->
@@ -239,7 +240,7 @@
                                         <button type="button" class="btn btn-secondary" onclick="clearFieldEditForm();">Cancel</button>
                                     </div>
                                     <div class="col-lg-6 kt-align-right">
-                                        <button id="delete_module_button" disabled type="button" class="btn btn-danger" onclick="deleteModule();">Delete</button>
+                                        <button id="delete_field_button" type="button" class="btn btn-danger" onclick="deleteField();">Delete</button>
                                     </div>
                                 </div>
                             </form>
@@ -249,7 +250,96 @@
                     <!--end::Portlet-->
                 </div>
             </div>
+            <div class="row kt-hidden" id="default_milestone_row">
+                <div class="col-xl-8">
+                    <div class="kt-portlet kt-portlet--mobile kt-portlet--head-noborder kt-portlet--height-fluid">
+                        <div class="kt-portlet__head kt-portlet__head--lg">
+                            <div class="kt-portlet__head-label">
+                                <span class="kt-portlet__head-icon">
+                                    <i class="kt-font-success flaticon2-line-chart"></i>
+                                </span>
+                                <h3 id="default_milestone_table_title" class="kt-portlet__head-title kt-font-brand">
+                                    Default Milestones
+                                </h3>
+                            </div>
+                        </div>
+                        <div class="kt-portlet__body">
+                            <!--begin: Search Form -->
+                            <div class="kt-form kt-form--label-right kt-margin-t-20 kt-margin-b-10">
+                                <div class="row align-items-center">
+                                    <div class="col-xl-8 order-2 order-xl-1">
+                                        <div class="row align-items-center">
+                                            <div class="col-md-4 kt-margin-b-20-tablet-and-mobile">
+                                                <div class="kt-input-icon kt-input-icon--left">
+                                                    <input type="text" class="form-control" placeholder="Search..." id="generalSearch">
+                                                    <span class="kt-input-icon__icon kt-input-icon__icon--left">
+                                                        <span><i class="la la-search"></i></span>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--end: Search Form -->
+                        </div>
+                        <div class="kt-portlet__body kt-portlet__body--fit">
+                            <!--begin: Datatable -->
+                            <div class="kt-datatable" id="table_default_milestone_list"></div>
+                            <!--end: Datatable -->
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-4" id ="default_milestone_form">
+                    <!--begin::Portlet-->
+                    <div class="kt-portlet kt-portlet--head-noborder kt-portlet--height-fluid">
+                        <div class="kt-portlet__head">
+                            <div class="kt-portlet__head-label">
+                                <span class="kt-portlet__head-icon">
+                                    <i class="kt-font-success la la-edit "></i>
+                                </span>
 
+                                <h3 class="kt-portlet__head-title kt-font-brand">
+                                    <span id="default_milestone_form_name" >Add Default Milestone</span>
+                                </h3>
+                            </div>
+                        </div>
+                        <!--begin::Form-->
+
+                        <div class="kt-portlet__body">
+                            <div class="kt-portlet__content">
+                                <div class="row">
+                                    <div class="col-xl-12">
+                                        <div class="form-group">
+                                            <label>Milestone Name</label>
+                                            <textarea id="default_milestone_name" class="form-control form-control autoresize" rows="1"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xl-12">
+                                        <div class="form-group">
+                                            <label>Remarks:</label>
+                                            <textarea id="default_milestone_remarks" class="form-control form-control autoresize" rows="2"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row" id="milestone_edit_form_buttons">
+                                    <div class="col-lg-6">
+                                        <button type="button" class="btn btn-primary" onclick="confirmSaveMilestone();">Save</button>
+                                        <button type="button" class="btn btn-secondary" onclick="clearMilestoneEditForm();">Cancel</button>
+                                    </div>
+                                    <div class="col-lg-6 kt-align-right">
+                                        <button id="delete_milestone_button"  type="button" class="btn btn-danger" onclick="deleteMilestone();">Delete</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--end::Form-->
+                    </div>
+                    <!--end::Portlet-->
+                </div>
+            </div>
             <!--End::Section-->
             <!--End::Dashboard 2-->
         </div>

@@ -107,7 +107,7 @@ class ModuleController extends BaseController {
                 $moduleField->save();
 //                $newModuleField->id = 1;
                 $result['id'] = 1;
-                $result['text']['field'][$moduleField->field_name][0]= "FIELD : " . $moduleField->field_name . " Saved Sucessfully!!";
+                $result['text']['field'][$moduleField->field_name][0]= "Field : " . $moduleField->field_name . " Saved Sucessfully!!";
             }catch (Exception $e){
                 $result['id'] = 0;
                 $result['text']['field']['message']= $e->getMessage();
@@ -116,15 +116,37 @@ class ModuleController extends BaseController {
         return $result;
     }
 
+    public function deleteField(){
+
+        $moduleField = ModuleField::find(Input::get('field_id'));
+
+        try{
+            $moduleField->delete();
+
+            $result['id'] = 1;
+            $result['text']['milestone'][$moduleField->field_name][0]= "Field : " . $moduleField->field_name . "Deleted Sucessfully!!";
+        } catch (Exception $e){
+            $result['id'] = 0;
+            $result['text']['milestone']['message']= $e->getMessage();
+        }
+
+        return $result;
+
+    }
+
     public function saveMilestone(){
 
-        $result = $this->valiDateMilestone(Input::all());
+        $result = $this->validateMilestone(Input::all());
         if($result['id'] == 0){
             $result['milestone_name'] = Input::get('milestone_name');
             return $result;
         } else {
 
-            $defaultMilestone = new DefaultMilestone();
+            if(Input::has('milestone_id') && Input::get('milestone_id') == 0){
+                $defaultMilestone = new DefaultMilestone();
+            } else {
+                $defaultMilestone = DefaultMilestone::find(Input::get('milestone_id'));
+            }
 
             $defaultMilestone->module_id = Input::get('module_id');
             $defaultMilestone->milestone_name = Input::get('milestone_name');
@@ -135,7 +157,7 @@ class ModuleController extends BaseController {
                 $defaultMilestone->save();
 //                $defaultMilestone->id = 1;
                 $result['id'] = 1;
-                $result['text']['milestone'][$defaultMilestone->field_name][0]= "FIELD : " . $defaultMilestone->field_name . " Created Sucessfully!!";
+                $result['text']['milestone'][$defaultMilestone->milestone_name][0]= "Milestone : " . $defaultMilestone->milestone_name . " Saved Sucessfully!!";
             }catch (Exception $e){
                 $result['id'] = 0;
                 $result['text']['milestone']['message']= $e->getMessage();
@@ -149,8 +171,26 @@ class ModuleController extends BaseController {
 
     }
 
-    public function valiDateMilestone( $values ){
+    public function deleteMilestone(){
+
+        $defaultMilestone = DefaultMilestone::find(Input::get('milestone_id'));
+
+        try{
+            $defaultMilestone->delete();
+
+            $result['id'] = 1;
+            $result['text']['milestone'][$defaultMilestone->field_name][0]= "Milestone : " . $defaultMilestone->field_name . "Deleted Sucessfully!!";
+        } catch (Exception $e){
+            $result['id'] = 0;
+            $result['text']['milestone']['message']= $e->getMessage();
+        }
+
+        return $result;
+    }
+
+    public function validateMilestone( $values ){
         $validationRule = array(
+            'milestone_id' => 'sometimes|required',
             'module_id' => 'required',
             'milestone_name' => 'required',
             'remarks' => 'required',
@@ -201,6 +241,23 @@ class ModuleController extends BaseController {
 
         return $moduleField;
 
+
+    }
+
+    public function getDataDefaultMilestones( $moduleId ){
+
+        $defaultMilestones = Module::find($moduleId)->defaultMilestones;
+        foreach ($defaultMilestones as $milestone){
+            $milestone->user;
+        }
+        return $defaultMilestones;
+    }
+
+    public function getDataDefaultMilestone( $milestoneId ){
+
+        $defaultMilestone = DefaultMilestone::find($milestoneId);
+//        $defaultMilestone->user;
+        return $defaultMilestone;
 
     }
 
