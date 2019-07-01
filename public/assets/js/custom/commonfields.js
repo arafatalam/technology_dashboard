@@ -50,7 +50,7 @@ var KTDatatableDataLocalDemo = function() {
                             textAlign: 'center',
                         },
                         {
-                            field: 'field_data_type',
+                            field: 'field_data_type.name',
                             title: 'Data Type',
                             autoHide: false,
                             textAlign: 'center',

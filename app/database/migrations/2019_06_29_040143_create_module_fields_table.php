@@ -18,11 +18,11 @@ class CreateModuleFieldsTable extends Migration {
 
             $table->integer('module_id');
             $table->text('field_name');
-            $table->text('field_data_type');
+            $table->integer('field_data_type_id');
             $table->boolean('is_dropdown');
             $table->text('dropdown_values')->nullable();
             $table->integer('serial');
-            $table->text('html_class')->nullable();
+            $table->string('html_id')->nullable()->unique();
             $table->text('remarks');
             $table->integer('updated_by');
 			$table->timestamps();

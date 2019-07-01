@@ -60,7 +60,18 @@
                 <!--begin::Form-->
                 <form id="project_data_form" class="kt-form kt-form--label-right">
                     <div class="kt-portlet__body" id="project_data_form_body">
-
+                        <div class="form-group row">
+                            <div class="col-lg-3">
+                                <label>Status :</label>
+                                <div class="input-group">
+                                    <select class="form-control kt-select2" id="project_status">
+                                        @foreach($statuses as $status)
+                                            <option value="{{ $status->id }}">{{ $status->status}}</option>
+                                        @endforeach
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </form>
                 <!--end::Form-->
@@ -94,17 +105,16 @@
                                                         <div class="col-md-3">
                                                             <div class="kt-form__group--inline">
                                                                 <div class="kt-form__control">
-                                                                    {{--<input name="milestone_name" type="text" class="form-control" value ="{{ $milestone->milestone_name }}">--}}
-                                                                    <textarea name="{{ '['.$counter.']' }}[milestone_name]" class="form-control form-control autoresize" id="milestone_name"  rows="1">{{ $milestone->milestone_name }}</textarea>
+                                                                    <textarea name="{{ '['.$counter.']' }}[milestone_name]" class="form-control form-control autoresize" id="milestone_name"  rows="1" readonly>{{ $milestone->milestone_name }}</textarea>
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                        <div class="col-md-1">
+                                                        <div class="col-md-2">
                                                             <div class="kt-form__group--inline">
                                                                 <select class="form-control kt-select2 milestone_status" name="{{ '['.$counter.']' }}[milestone_status]">
-                                                                    {{--@foreach($statuses as $status)--}}
-                                                                        {{--<option value="{{ $status->id }}">{{ $status->status}}</option>--}}
-                                                                    {{--@endforeach--}}
+                                                                    @foreach($statuses as $status)
+                                                                        <option value="{{ $status->id }}">{{ $status->status}}</option>
+                                                                    @endforeach
                                                                 </select>
                                                             </div>
                                                         </div>
@@ -118,13 +128,6 @@
                                                         <div class="col-md-2">
                                                             <div class="kt-form__group--inline">
                                                                 <div class="kt-form__control">
-                                                                    <input name="{{ '['.$counter.']' }}[milestone_schedule_end_date]" type="text" class="form-control  date-picker" readonly id="" placeholder="Enter Schedule End Date"/>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-md-2">
-                                                            <div class="kt-form__group--inline">
-                                                                <div class="kt-form__control">
                                                                     <input name="{{ '['.$counter.']' }}[milestone_actual_start_date]" type="text" class="form-control  date-picker" readonly id="" placeholder="Enter Actual Start Date"/>
                                                                 </div>
                                                             </div>
@@ -132,88 +135,90 @@
                                                         <div class="col-md-2">
                                                             <div class="kt-form__group--inline">
                                                                 <div class="kt-form__control">
-                                                                    <input name="{{ '['.$counter.']' }}[milestone_actual_end_date]" type="text" class="form-control  date-picker" readonly id="" placeholder="Enter Actual End Date"/>
+                                                                    <div class="kt-form__control">
+
+                                                                        <textarea name="{{ '['.$counter.']' }}[milestone_remarks]" class="form-control form-control autoresize" id="milestone_remarks"  rows="1"></textarea>
+                                                                    </div>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
-
                                         </div>
                                         <?php $counter++;?>
                                     @endforeach
                                 @else
-                                    <div id="kt_repeater_1">
-                                        <div class="form-group form-group-last row" id="kt_repeater_1">
-                                            <div data-repeater-list="" class="col-lg-12">
-                                                <div data-repeater-item class="form-group row align-items-center">
-                                                    <div class="col-md-2">
-                                                        <div class="kt-form__group--inline">
-                                                            <div class="kt-form__control">
-                                                                <input name="milestone_name" type="text" class="form-control" placeholder="Enter milestone name">
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-1">
-                                                        <div class="kt-form__group--inline">
-                                                            <select class="form-control kt-select2 milestone_status" name="milestone_status">
+                                    {{--<div id="kt_repeater_1">--}}
+                                        {{--<div class="form-group form-group-last row" id="kt_repeater_1">--}}
+                                            {{--<div data-repeater-list="" class="col-lg-12">--}}
+                                                {{--<div data-repeater-item class="form-group row align-items-center">--}}
+                                                    {{--<div class="col-md-2">--}}
+                                                        {{--<div class="kt-form__group--inline">--}}
+                                                            {{--<div class="kt-form__control">--}}
+                                                                {{--<input name="milestone_name" type="text" class="form-control" placeholder="Enter milestone name">--}}
+                                                            {{--</div>--}}
+                                                        {{--</div>--}}
+                                                    {{--</div>--}}
+                                                    {{--<div class="col-md-1">--}}
+                                                        {{--<div class="kt-form__group--inline">--}}
+                                                            {{--<select class="form-control kt-select2 milestone_status" name="milestone_status">--}}
                                                                 {{--@foreach($statuses as $status)--}}
                                                                     {{--<option value="{{ $status->id }}">{{ $status->status}}</option>--}}
                                                                 {{--@endforeach--}}
-                                                            </select>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-2">
-                                                        <div class="kt-form__group--inline">
-                                                            <div class="kt-form__control">
-                                                                <input name="milestone_schedule_start_date" type="text" class="form-control  date-picker" readonly id="" placeholder="Enter Schedule Start Date"/>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-2">
-                                                        <div class="kt-form__group--inline">
-                                                            <div class="kt-form__control">
-                                                                <input name="milestone_schedule_end_date" type="text" class="form-control  date-picker" readonly id="" placeholder="Enter Schedule End Date"/>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-2">
-                                                        <div class="kt-form__group--inline">
-                                                            <div class="kt-form__control">
-                                                                <input name="milestone_actual_start_date" type="text" class="form-control  date-picker" readonly id="" placeholder="Enter Actual Start Date"/>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-2">
-                                                        <div class="kt-form__group--inline">
-                                                            <div class="kt-form__control">
-                                                                <input name="milestone_actual_end_date" type="text" class="form-control  date-picker" readonly id="" placeholder="Enter Actual End Date"/>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-md-1">
-                                                        <div class="kt-form__group--inline">
-                                                            <div class="kt-form__control">
-                                                                <a href="javascript:;" data-repeater-delete="" class=" btn btn-label-danger btn-bold">
-                                                                    <i class="la la-trash-o"></i>
-                                                                    Delete
-                                                                </a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="form-group form-group-last row">
+                                                            {{--</select>--}}
+                                                        {{--</div>--}}
+                                                    {{--</div>--}}
+                                                    {{--<div class="col-md-2">--}}
+                                                        {{--<div class="kt-form__group--inline">--}}
+                                                            {{--<div class="kt-form__control">--}}
+                                                                {{--<input name="milestone_schedule_start_date" type="text" class="form-control  date-picker" readonly id="" placeholder="Enter Schedule Start Date"/>--}}
+                                                            {{--</div>--}}
+                                                        {{--</div>--}}
+                                                    {{--</div>--}}
+                                                    {{--<div class="col-md-2">--}}
+                                                        {{--<div class="kt-form__group--inline">--}}
+                                                            {{--<div class="kt-form__control">--}}
+                                                                {{--<input name="milestone_schedule_end_date" type="text" class="form-control  date-picker" readonly id="" placeholder="Enter Schedule End Date"/>--}}
+                                                            {{--</div>--}}
+                                                        {{--</div>--}}
+                                                    {{--</div>--}}
+                                                    {{--<div class="col-md-2">--}}
+                                                        {{--<div class="kt-form__group--inline">--}}
+                                                            {{--<div class="kt-form__control">--}}
+                                                                {{--<input name="milestone_actual_start_date" type="text" class="form-control  date-picker" readonly id="" placeholder="Enter Actual Start Date"/>--}}
+                                                            {{--</div>--}}
+                                                        {{--</div>--}}
+                                                    {{--</div>--}}
+                                                    {{--<div class="col-md-2">--}}
+                                                        {{--<div class="kt-form__group--inline">--}}
+                                                            {{--<div class="kt-form__control">--}}
+                                                                {{--<input name="milestone_actual_end_date" type="text" class="form-control  date-picker" readonly id="" placeholder="Enter Actual End Date"/>--}}
+                                                            {{--</div>--}}
+                                                        {{--</div>--}}
+                                                    {{--</div>--}}
+                                                    {{--<div class="col-md-1">--}}
+                                                        {{--<div class="kt-form__group--inline">--}}
+                                                            {{--<div class="kt-form__control">--}}
+                                                                {{--<a href="javascript:;" data-repeater-delete="" class=" btn btn-label-danger btn-bold">--}}
+                                                                    {{--<i class="la la-trash-o"></i>--}}
+                                                                    {{--Delete--}}
+                                                                {{--</a>--}}
+                                                            {{--</div>--}}
+                                                        {{--</div>--}}
+                                                    {{--</div>--}}
+                                                {{--</div>--}}
+                                            {{--</div>--}}
+                                        {{--</div>--}}
+                                        {{--<div class="form-group form-group-last row">--}}
                                             {{--<label class="col-lg-2 col-form-label"></label>--}}
-                                            <div class="col-lg-4">
-                                                <a href="javascript:;" data-repeater-create="" class="btn btn-bold btn-sm btn-label-brand">
-                                                    <i class="la la-plus"></i> Add
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
+                                            {{--<div class="col-lg-4">--}}
+                                                {{--<a href="javascript:;" data-repeater-create="" class="btn btn-bold btn-sm btn-label-brand">--}}
+                                                    {{--<i class="la la-plus"></i> Add--}}
+                                                {{--</a>--}}
+                                            {{--</div>--}}
+                                        {{--</div>--}}
+                                    {{--</div>--}}
                                 @endif
 
                             </div>

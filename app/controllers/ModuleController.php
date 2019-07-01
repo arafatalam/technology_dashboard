@@ -105,6 +105,12 @@ class ModuleController extends BaseController {
             $moduleField->remarks = Input::get('remarks');
             $moduleField->updated_by = Session::get('USER_ID');
 
+            $htmlId = strtolower(Input::get('field_name'));
+
+            $htmlId = preg_replace('/[^A-Za-z0-9\-]/', ' ', $htmlId);
+            $htmlId = str_replace(' ', '_', $htmlId);
+            $moduleField->html_id = $htmlId;
+
             try{
                 $moduleField->save();
 //                $newModuleField->id = 1;

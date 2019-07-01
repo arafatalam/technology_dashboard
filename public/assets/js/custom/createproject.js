@@ -1,14 +1,43 @@
 'use strict';
-
+var commonFieldList = [];
+var moduleFieldList = [];
 
 jQuery(document).ready(function() {
 
     getDataCommonFields();
     getDataModuleFields();
 
-
-
 });
+
+function createProject(){
+
+    var milestone_data = $('#milestone_data_form').serializeArray();
+    var project_data = {};
+
+
+    $.each(commonFieldList, function(index, item){
+
+        project_data[item.html_id] = $('#' + item.html_id ).val();
+
+
+    });
+    $.each(moduleFieldList, function (index, item) {
+
+        project_data[item.html_id] = $('#' + item.html_id ).val();
+       // console.log(item.html_id);
+    });
+
+    // console.log($('#project_name').val());
+
+
+    console.log(project_data);
+
+
+
+}
+
+
+
 
 function getDataCommonFields(){
 
@@ -19,9 +48,15 @@ function getDataCommonFields(){
         success : function(data){
 
             createMarkups(data);
+            setCommonFieldList(data)
 
         }
     });
+
+}
+function setCommonFieldList(data){
+
+    commonFieldList = data;
 
 }
 
@@ -35,9 +70,13 @@ function getDataModuleFields(){
        dataType: 'JSON',
        success : function(data){
            createMarkups(data);
+           setModuleFieldList( data )
        }
     });
+}
+function setModuleFieldList( data ){
 
+    moduleFieldList = data;
 
 }
 
@@ -52,7 +91,7 @@ function createMarkups(data){
 
         var tempInnerElement = item.field_data_type.html_element;
         tempInnerElement = tempInnerElement.replace('##FIELD_NAME##', item.field_name);
-        tempInnerElement = tempInnerElement.replace('##FIELD_ID##', item.html_class);
+        tempInnerElement = tempInnerElement.replace('##FIELD_ID##', item.html_id);
         innerElement = innerElement + tempInnerElement;
         if( count === 4 ){
             $('#project_data_form_body').append(rowStart + innerElement + rowEnd);
@@ -74,7 +113,7 @@ function createMarkups(data){
 
             var dropDownListMarkup = createDropDownMarkup(item.dropdown_values);
 
-            $('#' + item.html_class).append(dropDownListMarkup);
+            $('#' + item.html_id).append(dropDownListMarkup);
 
 
         }
