@@ -2,6 +2,7 @@
 
 class CommonField extends Eloquent {
 
+    protected $table = 'project_common_fields';
     public $timestamps = false;
 
     public function user(){

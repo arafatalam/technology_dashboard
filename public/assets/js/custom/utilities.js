@@ -99,7 +99,7 @@ var KTBootstrapDatepicker = function () {
             clearBtn: true,
             todayHighlight: true,
             templates: arrows,
-            format: 'yyyy-mm-dd'
+            format: 'dd-mm-yyyy'
         });
     }
 

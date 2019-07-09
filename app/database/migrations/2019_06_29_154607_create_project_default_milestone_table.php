@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateModulesTable extends Migration {
+class CreateProjectDefaultMilestoneTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,13 +12,14 @@ class CreateModulesTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('modules', function(Blueprint $table)
+		Schema::create('project_default_milestones', function(Blueprint $table)
 		{
 			$table->increments('id');
-			$table->text('module_name');
-			$table->text('module_milestone_type');
+			$table->integer('module_id');
+			$table->text('milestone_name');
+			$table->text('shortcode')->nullable();
 			$table->text('remarks');
-			$table->text('updated_by');
+			$table->integer('updated_by');
 			$table->timestamps();
 		});
 	}
@@ -30,7 +31,7 @@ class CreateModulesTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('modules');
+		Schema::drop('deafult_milestones');
 	}
 
 }

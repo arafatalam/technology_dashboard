@@ -3,7 +3,7 @@ class FieldDataTypeTableSeeder extends Seeder {
 
     public function run()
     {
-        DB::table('field_data_types')->delete();
+        DB::table('project_field_data_types')->delete();
 
         FieldDataType::create(array
             (
@@ -12,7 +12,8 @@ class FieldDataTypeTableSeeder extends Seeder {
                                     '<label>##FIELD_NAME## :</label>' .
                                     '<textarea id="##FIELD_ID##" class="form-control form-control autoresize" rows="1"></textarea>' .
                                     '</div>',
-                'updated_by' => 1
+                'updated_by' => 1,
+                'db_data_type' => 'text'
             )
         );
         FieldDataType::create(array
@@ -22,7 +23,8 @@ class FieldDataTypeTableSeeder extends Seeder {
                                     '<label>##FIELD_NAME## :</label>' .
                                     '<input id="##FIELD_ID" type="text" class="form-control  date-picker" readonly id="" />' .
                                     '</div>' ,
-                'updated_by' => 1
+                'updated_by' => 1,
+                'db_data_type' => 'date'
             )
         );
         FieldDataType::create(array
@@ -33,7 +35,8 @@ class FieldDataTypeTableSeeder extends Seeder {
                                     '<select id="##FIELD_ID##" class="form-control kt-select2"  >' .
                                     '</select>' .
                                     '</div>' ,
-                'updated_by' => 1
+                'updated_by' => 1,
+                'db_data_type' => 'text'
             )
         );
     }

@@ -17,20 +17,22 @@ function createProject(){
 
     $.each(commonFieldList, function(index, item){
 
-        project_data[item.html_id] = $('#' + item.html_id ).val();
+        project_data[item.html_id_and_db_column_name] = $('#' + item.html_id_and_db_column_name ).val();
 
 
     });
     $.each(moduleFieldList, function (index, item) {
 
-        project_data[item.html_id] = $('#' + item.html_id ).val();
-       // console.log(item.html_id);
+        project_data[item.html_id_and_db_column_name] = $('#' + item.html_id_and_db_column_name ).val();
+       // console.log(item.html_id_and_db_column_name);
     });
 
     // console.log($('#project_name').val());
+    project_data['project_status'] = $('#project_status').val();
 
 
-    console.log(project_data);
+    // console.log(project_data);
+    console.log(milestone_data);
 
 
 
@@ -91,7 +93,7 @@ function createMarkups(data){
 
         var tempInnerElement = item.field_data_type.html_element;
         tempInnerElement = tempInnerElement.replace('##FIELD_NAME##', item.field_name);
-        tempInnerElement = tempInnerElement.replace('##FIELD_ID##', item.html_id);
+        tempInnerElement = tempInnerElement.replace('##FIELD_ID##', item.html_id_and_db_column_name);
         innerElement = innerElement + tempInnerElement;
         if( count === 4 ){
             $('#project_data_form_body').append(rowStart + innerElement + rowEnd);
@@ -113,7 +115,7 @@ function createMarkups(data){
 
             var dropDownListMarkup = createDropDownMarkup(item.dropdown_values);
 
-            $('#' + item.html_id).append(dropDownListMarkup);
+            $('#' + item.html_id_and_db_column_name).append(dropDownListMarkup);
 
 
         }

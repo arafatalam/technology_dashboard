@@ -2,7 +2,7 @@
 
 class ModuleField extends Eloquent {
 
-
+    protected $table = 'project_module_fields';
     public function user(){
         return $this->belongsTo('User', 'updated_by')->select(['user_name']);
     }

@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateFieldDataTypesTable extends Migration {
+class CreateProjectModulesTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,11 +12,13 @@ class CreateFieldDataTypesTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('field_data_types', function(Blueprint $table)
+		Schema::create('project_modules', function(Blueprint $table)
 		{
 			$table->increments('id');
-			$table->text('name');
-			$table->text('html_element');
+			$table->text('module_name');
+			$table->text('module_milestone_type');
+			$table->string('db_table_name')->unique();
+			$table->text('remarks');
 			$table->text('updated_by');
 			$table->timestamps();
 		});
@@ -29,7 +31,7 @@ class CreateFieldDataTypesTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('field_data_types');
+		Schema::drop('modules');
 	}
 
 }

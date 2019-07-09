@@ -56,10 +56,15 @@ class ModuleController extends BaseController {
 
             $module->module_name = Input::get('module_name');
             $module->module_milestone_type = Input::get('module_milestone_type');
+            $module->db_table_name = 'project_module_' . Utilities::removeSpecialCharacters(Input::get('module_name'));
             $module->remarks = Input::get('module_remarks');
             $module->updated_by = Session::get('USER_ID');
 
             try{
+
+                DatabaseOperations::createModuleTable($module->db_table_name);
+
+
                 $module->save();
 //                $module->id = 1;
                 $result['id'] = 1;
@@ -104,14 +109,14 @@ class ModuleController extends BaseController {
             }
             $moduleField->remarks = Input::get('remarks');
             $moduleField->updated_by = Session::get('USER_ID');
-
-            $htmlId = strtolower(Input::get('field_name'));
-
-            $htmlId = preg_replace('/[^A-Za-z0-9\-]/', ' ', $htmlId);
-            $htmlId = str_replace(' ', '_', $htmlId);
-            $moduleField->html_id = $htmlId;
+            $moduleField->html_id_and_db_column_name = Utilities::removeSpecialCharacters(Input::get('field_name'));
 
             try{
+
+                DatabaseOperations::addModuleFieldColumn(Input::get('module_id'), Input::get('field_name'),
+                    Input::get('field_data_type_id'));
+
+
                 $moduleField->save();
 //                $newModuleField->id = 1;
                 $result['id'] = 1;

@@ -1,6 +1,7 @@
 <?php
 
 class Module extends Eloquent {
+    protected $table = 'project_modules';
 
     public function user(){
         return $this->belongsTo('User', 'updated_by')->select(['user_name']);

@@ -114,12 +114,9 @@ class CommonFieldController extends BaseController {
       //  $stop_date =
         $commonField->updated_on = date('Y-m-d');
 
+        $dbFieldName = Utilities::removeSpecialCharacters($values['field_name']);
 
-        $htmlId = strtolower($values['field_name']);
-        $htmlId = preg_replace('/[^A-Za-z0-9\-]/', ' ', $htmlId);
-        $htmlId = str_replace('/', ' ', $htmlId);
-        $htmlId = str_replace(' ', '_', $htmlId);
-        $commonField->html_id = $htmlId;
+        $commonField->html_id_and_db_column_name = $dbFieldName;
 
 
 

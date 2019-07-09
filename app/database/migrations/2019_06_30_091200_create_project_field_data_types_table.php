@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateDefaultMilestoneTable extends Migration {
+class CreateProjectFieldDataTypesTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,14 +12,13 @@ class CreateDefaultMilestoneTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('default_milestones', function(Blueprint $table)
+		Schema::create('project_field_data_types', function(Blueprint $table)
 		{
 			$table->increments('id');
-			$table->integer('module_id');
-			$table->text('milestone_name');
-			$table->text('shortcode')->nullable();
-			$table->text('remarks');
-			$table->integer('updated_by');
+			$table->text('name');
+			$table->string('db_data_type');
+			$table->text('html_element');
+			$table->text('updated_by');
 			$table->timestamps();
 		});
 	}
@@ -31,7 +30,7 @@ class CreateDefaultMilestoneTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('deafult_milestones');
+		Schema::drop('field_data_types');
 	}
 
 }

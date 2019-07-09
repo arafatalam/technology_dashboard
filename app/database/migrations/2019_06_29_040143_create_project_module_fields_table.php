@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateCommonFieldsTable extends Migration {
+class CreateProjectModuleFieldsTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,10 +12,11 @@ class CreateCommonFieldsTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('common_fields', function(Blueprint $table)
+		Schema::create('project_module_fields', function(Blueprint $table)
 		{
-            $table->increments('id');
+			$table->increments('id');
 
+            $table->integer('module_id');
             $table->text('field_name');
             $table->integer('field_data_type_id');
             $table->boolean('is_dropdown');
@@ -24,7 +25,7 @@ class CreateCommonFieldsTable extends Migration {
             $table->string('html_id')->nullable()->unique();
             $table->text('remarks');
             $table->integer('updated_by');
-            $table->date('updated_on');
+			$table->timestamps();
 		});
 	}
 
@@ -35,7 +36,7 @@ class CreateCommonFieldsTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('common_fields');
+		Schema::drop('module_fields');
 	}
 
 }
