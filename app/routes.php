@@ -41,7 +41,12 @@ Route::post('/savemilestone', array('as' => 'savemilestone', 'before ' => 'auth'
 Route::post('/deletemilestone', array('as' => 'deletemilestone', 'before ' => 'auth', 'uses' => 'ModuleController@deleteMilestone'));
 Route::get('/getdatamodulelist', array('as' => 'getdatamodulelist', 'before ' => 'auth', 'uses' => 'ModuleController@getDataModuleList'));
 Route::get('/getdatamodule/{moduleId}', array('as' => 'getdatamodule', 'before ' => 'auth', 'uses' => 'ModuleController@getDataModule'));
+
+
 Route::post('/getdatamodulefields/{moduleId}', array('as' => 'getdatamodulefields', 'before ' => 'auth', 'uses' => 'ModuleController@getDataModuleFields'));
+Route::get('/getdatamodulefields/{moduleId}', array('as' => 'getdatamodulefields', 'before ' => 'auth', 'uses' => 'ModuleController@getDataModuleFields'));
+
+
 Route::get('/getdatamodulefield/{moduleFieldId}', array('as' => 'getdatamodulefield', 'before ' => 'auth', 'uses' => 'ModuleController@getDataModuleField'));
 Route::get('/getdatadefaultmilestones/{moduleId}', array('as' => 'getdatadefaultmilestones', 'before ' => 'auth', 'uses' => 'ModuleController@getDataDefaultMilestones'));
 Route::get('/getdatadefaultmilestone/{milestoneId}', array('as' => 'getdatadefaultmilestone', 'before ' => 'auth', 'uses' => 'ModuleController@getDataDefaultMilestone'));
@@ -50,3 +55,4 @@ Route::get('/getdatadefaultmilestone/{milestoneId}', array('as' => 'getdatadefau
 //TODO Project Related Routes
 Route::get('/redcreateproject/{moduleId}', array('as' => 'redcreateproject','before' => 'auth', 'uses' => 'ProjectController@redCreateProject'));
 Route::get('/createproject', array('as' => 'createproject','before' => 'auth', 'uses' => 'ProjectController@showCreateProject'));
+

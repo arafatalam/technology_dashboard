@@ -123,7 +123,7 @@ var KTWizard3 = function () {
 		btn.on('click', function(e) {
 			e.preventDefault();
 
-            KTApp.progress(btn);
+            // KTApp.progress(btn);
 
             saveEntireModule( btn );
 

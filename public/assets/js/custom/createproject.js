@@ -5,7 +5,6 @@ var moduleFieldList = [];
 jQuery(document).ready(function() {
 
     getDataCommonFields();
-    getDataModuleFields();
 
 });
 
@@ -50,12 +49,19 @@ function getDataCommonFields(){
         success : function(data){
 
             createMarkups(data);
-            setCommonFieldList(data)
+            setCommonFieldList(data);
+            getDataModuleFields();
 
         }
     });
 
+
+
+
 }
+
+
+
 function setCommonFieldList(data){
 
     commonFieldList = data;
@@ -67,7 +73,7 @@ function getDataModuleFields(){
     var moduleId = $('#module_id').text();
 
     $.ajax({
-       type : 'POST',
+       type : 'GET',
        url : './getdatamodulefields/' + moduleId,
        dataType: 'JSON',
        success : function(data){
@@ -89,6 +95,7 @@ function createMarkups(data){
     var rowEnd = '</div>';
     var count = 1;
 
+    console.log(data);
     $.each(data, function(index, item){
 
         var tempInnerElement = item.field_data_type.html_element;

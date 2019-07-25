@@ -57,12 +57,16 @@ class ModuleController extends BaseController {
             $module->module_name = Input::get('module_name');
             $module->module_milestone_type = Input::get('module_milestone_type');
             $module->db_table_name = 'project_module_' . Utilities::removeSpecialCharacters(Input::get('module_name'));
+
+
+
             $module->remarks = Input::get('module_remarks');
             $module->updated_by = Session::get('USER_ID');
 
             try{
 
-                DatabaseOperations::createModuleTable($module->db_table_name);
+
+               DatabaseOperations::createModuleTable($module->db_table_name);
 
 
                 $module->save();
@@ -72,7 +76,7 @@ class ModuleController extends BaseController {
                 $result['text']['module']['message'][0]= "Module : " . $module->module_name . " Saved Sucessfully!!";
             }catch (Exception $e){
                 $result['id'] = 0;
-                $result['text']['module']['message']= $e->getMessage();
+                $result['text']['module']['message']= "Hello ". $e->getMessage();
             }
         }
         return $result;
@@ -247,6 +251,7 @@ class ModuleController extends BaseController {
         return $moduleFields;
 
     }
+
 
     public function getDataModuleField( $moduleFieldId ){
 

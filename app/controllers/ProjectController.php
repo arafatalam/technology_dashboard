@@ -28,6 +28,7 @@ class ProjectController extends BaseController {
 
         $module = Module::find($moduleId);
         $module->defaultMilestones;
+        $module->moduleFields;
 
         $statuses = Status::all();
 

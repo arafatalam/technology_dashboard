@@ -4,14 +4,17 @@ class DatabaseOperations extends BaseController  {
 
     public function createModuleTable( $tableName ){
 
+
         Schema::create($tableName, function($table)
         {
             $table->increments('id');
             $table->integer('status_id');
             $commonFields = CommonField::all();
+
             foreach ($commonFields as $commonField){
+
                 $fieldDataType = $commonField->fieldDataType->db_data_type;
-                $fieldName = $commonField->field_name;
+                $fieldName = $commonField->html_id_and_db_column_name;
 
                 $table->$fieldDataType($fieldName);
             }

@@ -25,6 +25,8 @@ jQuery(document).ready(function() {
 
 function saveEntireModule( buttonObject ){ // this function is called from /assets/js/demo4/pages/wizard/wizard-3.js"
 
+    console.log(module);
+
     if(moduleCount == 0){
         swal.fire({
             "title": "No Module!!",
@@ -45,6 +47,8 @@ function saveEntireModule( buttonObject ){ // this function is called from /asse
             },
             dataType : 'JSON',
             success : function(data){
+
+
 
                 if(data.id == 0){
                     showModuleFailureAlert(data);
@@ -153,7 +157,7 @@ function showModuleFailureAlert( data ){
         message,
         'error'
     );
-    KTApp.unprogress(buttonObject);
+    // KTApp.unprogress(buttonObject);
 
 }
 
