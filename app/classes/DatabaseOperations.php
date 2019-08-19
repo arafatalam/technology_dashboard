@@ -18,10 +18,24 @@ class DatabaseOperations extends BaseController  {
 
                 $table->$fieldDataType($fieldName);
             }
-
+            $table->string('updated_by');
             $table->timestamps();
         });
 
+    }
+
+    public function createMilestonesTable( $tableName){
+        Schema::create($tableName, function($table)
+        {
+            $table->increments('id');
+            $table->integer('project_id');
+            $table->text('milestone_name');
+            $table->integer('status_id');
+            $table->date('milestone_start_date');
+            $table->date('milestone_end_date');
+            $table->string('updated_by');
+            $table->timestamps();
+        });
     }
 
     public function addModuleFieldColumn($moduleId, $columnName, $dataTypeId){
@@ -59,9 +73,17 @@ class DatabaseOperations extends BaseController  {
 
     public function insertData($tableName, $colName, $colValue){
 
-        DB::table($tableName)->insert(
+        return DB::table($tableName)->insertGetId(
             array( $colName => $colValue)
         );
 
+    }
+
+    public function updateData($tableName, $rowId, $colName, $colValue){
+
+
+        DB::table($tableName)
+            ->where('id', $rowId)
+            ->update(array($colName => $colValue));
     }
 }

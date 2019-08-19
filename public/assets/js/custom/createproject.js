@@ -9,11 +9,15 @@ jQuery(document).ready(function() {
 });
 
 function createProject(){
+    //Saving Project Field Data. Milestones will be saved later
 
-    var milestone_data = $('#milestone_data_form').serializeArray();
+
+
+
     var project_data = {};
-
-
+    var moduleId = $('#module_id').text();
+    var milestoneData = $('#milestone_data_form').serializeArray();
+    console.log(milestoneData);
     $.each(commonFieldList, function(index, item){
 
         project_data[item.html_id_and_db_column_name] = $('#' + item.html_id_and_db_column_name ).val();
@@ -23,22 +27,62 @@ function createProject(){
     $.each(moduleFieldList, function (index, item) {
 
         project_data[item.html_id_and_db_column_name] = $('#' + item.html_id_and_db_column_name ).val();
-       // console.log(item.html_id_and_db_column_name);
+
     });
 
-    // console.log($('#project_name').val());
-    project_data['project_status'] = $('#project_status').val();
+    // project_data['status_id'] = $('#project_status').val();
 
+    var statusId = $('#project_status').val();
 
-    // console.log(project_data);
-    console.log(milestone_data);
+    swal.fire({
+        title: 'Are you sure??',
+        text: 'Are you sure you want to save the project?',
+        type: 'warning',
+        confirmButtonText: 'Yes, Save',
+        showCancelButton: true,
+        cancelButtonText: 'No, cancel!',
+    }).then(function(result) {
+        if(result.value){
+            saveProject(moduleId, statusId, project_data, milestoneData);
+        } else {
+            swal.fire(
+                'Cancel!',
+                'Project Saving Canceled!',
+                'error'
+            );
+        }
+    });
+    // var milestone_data = $('#milestone_data_form').serializeArray();
+
 
 
 
 }
 
 
+function saveProject(moduleId, statusId, projectData, milestoneData){
 
+    $.ajax({
+        type : 'POST',
+        url : './saveproject',
+        data : {
+            module_id : moduleId,
+            status_id  : statusId,
+            project_data : projectData,
+            milestone_data : milestoneData
+
+        },
+        dataType : 'text',
+        success : function(data){
+
+            console.log(data);
+
+        }
+    });
+
+
+
+}
 
 function getDataCommonFields(){
 
@@ -95,13 +139,14 @@ function createMarkups(data){
     var rowEnd = '</div>';
     var count = 1;
 
-    console.log(data);
+
     $.each(data, function(index, item){
 
         var tempInnerElement = item.field_data_type.html_element;
         tempInnerElement = tempInnerElement.replace('##FIELD_NAME##', item.field_name);
         tempInnerElement = tempInnerElement.replace('##FIELD_ID##', item.html_id_and_db_column_name);
         innerElement = innerElement + tempInnerElement;
+
         if( count === 4 ){
             $('#project_data_form_body').append(rowStart + innerElement + rowEnd);
             innerElement = '';

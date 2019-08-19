@@ -39,12 +39,79 @@ class ProjectController extends BaseController {
             ->with('hasDefaultMilestone', count($module->defaultMilestones));
 
     }
-    public function showCreateModule(){
 
-        Session::put('DocId', 'createmodule');
-        Session::put('Header', 'header_administration');
+    public function saveProject(){
+        $moduleId = Input::get('module_id');
 
-        return View::make('tech_dashboard.pages.module.createmodule');
+        $module = Module::find($moduleId);
+        $tableName = $module->db_table_name;
+        $milestoneTableName = $module->milestone_table_name;
+        $projectData = Input::get('project_data');
+        $statusId = Input::get('status_id');
+
+        $projectId = DatabaseOperations::insertData($tableName, 'status_id', $statusId);
+
+        foreach($projectData as $colName => $colValue){
+
+            DatabaseOperations::updateData($tableName, $projectId, $colName, $colValue);
+
+        }
+
+        if(Input::has('milestone_data')){
+
+
+            $milestones = $this->processMilestoneData(Input::get('milestone_data'));
+
+
+            if(count($milestones > 0)){
+                $count = 0;
+                foreach ($milestones as $milestone){
+
+                  
+
+
+
+                    $singleMilestone = new Milestone();
+                    $singleMilestone->setTable($milestoneTableName);
+                    $singleMilestone->project_id = $projectId;
+                    $singleMilestone->milestone_name = $milestone['['. $count. '][milestone_name]'];
+                    $singleMilestone->status_id = $milestone['[' . $count . '][milestone_status]'];
+
+
+                    $singleMilestone->milestone_start_date = $milestone['['. $count. '][milestone_start_date]'];
+                    $singleMilestone->milestone_end_date = $milestone['['. $count. '][milestone_end_date]'];
+
+                    $singleMilestone->save();
+
+
+                    $count++;
+                }
+            }
+        }
+
+
+
+
+//        return $projectId;
+    }
+
+    public function processMilestoneData($milestoneData){
+
+        $result = array();
+        $count = 0;
+        $milestones = $milestoneData;
+
+        foreach( $milestones as $milestoneData){
+            $i[$milestoneData['name']] = $milestoneData['value'];
+            $count++;
+            if($count == 5){
+                array_push($result, $i);
+                $i = array();
+                $count = 0;
+            }
+        }
+
+        return $result;
     }
 
 

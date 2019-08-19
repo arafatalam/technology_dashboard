@@ -25,7 +25,7 @@ jQuery(document).ready(function() {
 
 function saveEntireModule( buttonObject ){ // this function is called from /assets/js/demo4/pages/wizard/wizard-3.js"
 
-    console.log(module);
+
 
     if(moduleCount == 0){
         swal.fire({

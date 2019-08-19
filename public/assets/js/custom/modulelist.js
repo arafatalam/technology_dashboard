@@ -379,6 +379,9 @@ function confirmSaveField(){
     field.module_field_dropdown_values = $('#module_field_dropdown_values').val();
     field.module_field_remarks = $('#module_field_remarks').val();
 
+    console.log(field);
+    return
+
     if(field.module_field_remarks == null || field.module_field_remarks == null || field.module_field_remarks == ''){
         swal.fire(
             'Remarks',

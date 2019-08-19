@@ -18,6 +18,7 @@ class CreateProjectModulesTable extends Migration {
 			$table->text('module_name');
 			$table->text('module_milestone_type');
 			$table->string('db_table_name')->unique();
+            $table->string('milestone_table_name')->unique();
 			$table->text('remarks');
 			$table->text('updated_by');
 			$table->timestamps();

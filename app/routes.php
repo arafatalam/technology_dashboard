@@ -55,4 +55,5 @@ Route::get('/getdatadefaultmilestone/{milestoneId}', array('as' => 'getdatadefau
 //TODO Project Related Routes
 Route::get('/redcreateproject/{moduleId}', array('as' => 'redcreateproject','before' => 'auth', 'uses' => 'ProjectController@redCreateProject'));
 Route::get('/createproject', array('as' => 'createproject','before' => 'auth', 'uses' => 'ProjectController@showCreateProject'));
+Route::post('/saveproject', array('as' => 'saveproject','before' => 'auth', 'uses' => 'ProjectController@saveProject'));
 

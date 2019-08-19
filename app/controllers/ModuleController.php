@@ -57,7 +57,7 @@ class ModuleController extends BaseController {
             $module->module_name = Input::get('module_name');
             $module->module_milestone_type = Input::get('module_milestone_type');
             $module->db_table_name = 'project_module_' . Utilities::removeSpecialCharacters(Input::get('module_name'));
-
+            $module->milestone_table_name = $module->db_table_name . '_milestones';
 
 
             $module->remarks = Input::get('module_remarks');
@@ -67,6 +67,7 @@ class ModuleController extends BaseController {
 
 
                DatabaseOperations::createModuleTable($module->db_table_name);
+               DatabaseOperations::createMilestonesTable($module->milestone_table_name);
 
 
                 $module->save();

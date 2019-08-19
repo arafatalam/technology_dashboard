@@ -11,7 +11,11 @@ var KTFormRepeater = function() {
             },
              
             show: function () {
+
+
+
                 $(this).slideDown();
+
             },
 
             hide: function (deleteElement) {                
@@ -25,11 +29,18 @@ var KTFormRepeater = function() {
             initEmpty: false,
            
             defaultValues: {
-                'text-input': 'foo'
+                'milestone_status': 1
             },
              
             show: function() {
-                $(this).slideDown();                               
+
+
+                $(this).slideDown();
+
+                KTBootstrapDatepicker.init();
+                autoResizeTextArea();
+                select2dropdown();
+
             },
 
             hide: function(deleteElement) {                 
