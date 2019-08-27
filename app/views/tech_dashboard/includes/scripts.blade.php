@@ -128,6 +128,10 @@
     <script src="./assets/js/custom/createproject.js" type="text/javascript"></script>
 @endif
 
+@if(Session::get('DocId') == 'addvendor')
+    <script src="./assets/js/custom/addvendor.js" type="text/javascript"></script>
+@endif
+
 {{--<script src="./assets/js/demo4/pages/crud/forms/widgets/autosize.js" type="text/javascript"></script>--}}
 {{--<script src="./assets/js/demo4/pages/crud/metronic-datatable/base/data-local.js" type="text/javascript"></script>--}}
 {{--<script src="./assets/js/demo4/pages/crud/forms/widgets/select2.js" type="text/javascript"></script>--}}

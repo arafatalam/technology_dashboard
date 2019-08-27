@@ -77,7 +77,7 @@ class ModuleController extends BaseController {
                 $result['text']['module']['message'][0]= "Module : " . $module->module_name . " Saved Sucessfully!!";
             }catch (Exception $e){
                 $result['id'] = 0;
-                $result['text']['module']['message']= "Hello ". $e->getMessage();
+                $result['text']['module']['message']= $e->getMessage();
             }
         }
         return $result;

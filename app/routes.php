@@ -57,3 +57,8 @@ Route::get('/redcreateproject/{moduleId}', array('as' => 'redcreateproject','bef
 Route::get('/createproject', array('as' => 'createproject','before' => 'auth', 'uses' => 'ProjectController@showCreateProject'));
 Route::post('/saveproject', array('as' => 'saveproject','before' => 'auth', 'uses' => 'ProjectController@saveProject'));
 
+
+//TODO Vendor Related Routes
+Route::get('/addvendor', array('as' => 'addvendor','before' => 'auth', 'uses' => 'VendorController@showAddVendor'));
+Route::post('/savevendor', array('as' => 'savevendor','before' => 'auth', 'uses' => 'VendorController@saveVendor'));
+
