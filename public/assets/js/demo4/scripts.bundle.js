@@ -5922,7 +5922,7 @@ var KTWizard = function(elementId, options) {
 			 */
 			setupDOM: function(table) {
 				// set table classes
-				$(table).find('> thead').addClass(pfx + 'datatable__head');
+				$(table).find('> thead').addClass(pfx + 'datatable__head bold'); // AA CHANGED
 				$(table).find('> tbody').addClass(pfx + 'datatable__body');
 				$(table).find('> tfoot').addClass(pfx + 'datatable__foot');
 				$(table).find('tr').addClass(pfx + 'datatable__row');

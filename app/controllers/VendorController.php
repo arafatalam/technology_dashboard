@@ -21,6 +21,39 @@ class VendorController extends BaseController {
         return View::make('tech_dashboard.pages.vendor.addvendor');
     }
 
+    public function showVendorList(){
+        Session::put('DocId', 'vendorlist');
+        return View::make('tech_dashboard.pages.vendor.vendorlist');
+
+
+
+    }
+
+    public function getDataVendorList(){
+
+        $vendorData = Vendor::all();
+
+        foreach($vendorData as $vendor){
+
+            $services = $vendor->services;
+            foreach($services as $service){
+                $service->serviceCategory;
+                $service->serviceSubCategory;
+            }
+        }
+
+        return $vendorData;
+    }
+
+    public function getDataVendorStatus($vendorId){
+
+        $vendor = Vendor::find($vendorId);
+        $status = $vendor->vendor_enlistment_status;
+
+        return $status;
+
+    }
+
     public function saveVendor(){
 
         $vendorData = Input::get('vendor');
@@ -31,21 +64,16 @@ class VendorController extends BaseController {
             $vendor->vendor_name = $vendorData['vendorName'];
             $vendor->vendor_specialization = $vendorData['vendorSpecialization'];
             $vendor->vendor_product_line = $vendorData['vendorProductLine'];
-            $vendor->vendor_communication = $vendorData['vendorCommunication'];
-            $vendor->vendor_document_sharing = $vendorData['vendorDocumentSharing'];
-            $vendor->vendor_technical_discussion = $vendorData['vendorTechnicalDiscussion'];
-            $vendor->vendor_tech_feasibility_analysis = $vendorData['vendorTechFeasibilityAnalysis'];
-            $vendor->vendor_meeting_plan = date('Y-m-d', strtotime($vendorData['vendorMeetingPlan']));
-            $vendor->vendor_status = $vendorData['vendorStatus'];
+            $vendor->vendor_enlistment_status = $vendorData['vendorEnlistmentStatus'];
             $vendor->vendor_contact_person = $vendorData['vendorContactPerson'];
             $vendor->vendor_contact_designation = $vendorData['vendorContactDesignation'];
             $vendor->vendor_contact_phone = $vendorData['vendorContactPhone'];
             $vendor->vendor_office_address = $vendorData['vendorOfficeAddress'];
             $vendor->vendor_office_phone = $vendorData['vendorOfficePhone'];
-            $vendor->vendor_initial_meeting_date = date('Y-m-d', strtotime($vendorData['vendorInitMeetingDate']));
-            $vendor->vendor_last_meeting_date = date('Y-m-d', strtotime($vendorData['vendorLastMeetingDate']));
+//            $vendor->vendor_initial_meeting_date = date('Y-m-d', strtotime($vendorData['vendorInitMeetingDate']));
+
             $vendor->vendor_remarks = $vendorData['vendorRemarks'];
-            $vendor->vendor_onboarding_date = date('Y-m-d', strtotime($vendorData['vendorOnboardingDate']));
+            $vendor->vendor_enlistment_date = date('Y-m-d', strtotime($vendorData['vendorEnlistmentDate']));
 
             $vendor->updated_by = Session::get('USER_ID');
 
@@ -65,5 +93,38 @@ class VendorController extends BaseController {
 
     }
 
+    public function redVendorDetails($vendorId){
 
+        Session::put('VENDOR_ID', $vendorId);
+
+        return Redirect::to('/vendordetails');
+
+
+    }
+
+    public function vendorDetails(){
+
+        Session::put('DocId', 'vendordetails');
+        $vendor = Vendor::find(Session::get('VENDOR_ID'));
+
+        return View::make('tech_dashboard.pages.vendor.vendordetails')
+                        ->with('vendor', $vendor);
+
+
+
+    }
+
+    public function getDataVendorServiceList($vendorId){
+        $vendor = Vendor::Find($vendorId);
+
+        if($vendor->vendor_enlistment_status == 'Enlisted'){
+            $services = $vendor->services;
+            return $services;
+        }
+
+
+
+
+
+    }
 }

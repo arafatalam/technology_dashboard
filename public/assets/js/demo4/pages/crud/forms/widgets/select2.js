@@ -13,8 +13,8 @@ var KTSelect2 = function() {
         });
 
         // multi select
-        $('#kt_select2_3, #kt_select2_3_validate').select2({
-            placeholder: "Select a state",
+        $('#service_user_department, #kt_select2_3_validate').select2({
+
         });
 
         // basic

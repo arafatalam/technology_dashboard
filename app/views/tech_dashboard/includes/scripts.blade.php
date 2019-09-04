@@ -115,6 +115,7 @@
 @if(Session::get('DocId') == 'commonfields')
     <script src="./assets/js/custom/commonfields.js" type="text/javascript"></script>
 @endif
+
 @if(Session::get('DocId') == 'createmodule')
     <script src="./assets/js/custom/createmodule.js" type="text/javascript"></script>
     <script src="./assets/js/demo4/pages/wizard/wizard-3.js" type="text/javascript"></script>
@@ -132,6 +133,30 @@
     <script src="./assets/js/custom/addvendor.js" type="text/javascript"></script>
 @endif
 
+@if(Session::get('DocId') == 'addservice')
+    <script src="./assets/js/custom/addservice.js" type="text/javascript"></script>
+    {{--<script src="./assets/demo4/pages/crud/forms/widgets/select2.js" type="text/javascript"></script>--}}
+@endif
+
+@if(Session::get('DocId') == 'servicelist')
+    <script src="./assets/js/custom/servicelist.js" type="text/javascript"></script>
+    {{--<script src="./assets/demo4/pages/crud/forms/widgets/select2.js" type="text/javascript"></script>--}}
+@endif
+
+@if(Session::get('DocId') == 'vendorlist')
+    <script src="./assets/js/custom/vendorlist.js" type="text/javascript"></script>
+    {{--<script src="./assets/demo4/pages/crud/forms/widgets/select2.js" type="text/javascript"></script>--}}
+@endif
+
+@if(Session::get('DocId') == 'vendordetails')
+    <script src="./assets/js/custom/vendordetails.js" type="text/javascript"></script>
+    {{--<script src="./assets/demo4/pages/crud/forms/widgets/select2.js" type="text/javascript"></script>--}}
+@endif
+
+@if(Session::get('DocId') == 'addissue')
+    <script src="./assets/js/custom/addissue.js" type="text/javascript"></script>
+    {{--<script src="./assets/demo4/pages/crud/forms/widgets/select2.js" type="text/javascript"></script>--}}
+@endif
 {{--<script src="./assets/js/demo4/pages/crud/forms/widgets/autosize.js" type="text/javascript"></script>--}}
 {{--<script src="./assets/js/demo4/pages/crud/metronic-datatable/base/data-local.js" type="text/javascript"></script>--}}
 {{--<script src="./assets/js/demo4/pages/crud/forms/widgets/select2.js" type="text/javascript"></script>--}}

@@ -75,6 +75,19 @@ function showNotification( type, message, title){
 
 }
 
+
+function showFailureAlert( data ){
+
+    var message = getNotificationMessage(data)
+
+    swal.fire(
+        'Failed!',
+        message,
+        'error'
+    );
+    KTApp.unprogress(buttonObject);
+
+}
 var KTBootstrapDatepicker = function () {
 
     var arrows;

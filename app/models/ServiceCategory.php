@@ -1,7 +1,10 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Arafat Alam Local
- * Date: 01-September-2019
- * Time: 11:52
- */
+
+class ServiceCategory extends Eloquent {
+
+    public function services(){
+        return $this->hasMany('Service');
+    }
+
+
+}

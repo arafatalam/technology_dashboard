@@ -61,4 +61,20 @@ Route::post('/saveproject', array('as' => 'saveproject','before' => 'auth', 'use
 //TODO Vendor Related Routes
 Route::get('/addvendor', array('as' => 'addvendor','before' => 'auth', 'uses' => 'VendorController@showAddVendor'));
 Route::post('/savevendor', array('as' => 'savevendor','before' => 'auth', 'uses' => 'VendorController@saveVendor'));
+Route::get('/vendorlist', array('as' => 'vendorlist','before' => 'auth', 'uses' => 'VendorController@showVendorList'));
+Route::get('/getdatavendorlist', array('as' => 'getdatavendorlist','before' => 'auth', 'uses' => 'VendorController@getDataVendorList'));
+Route::get('/getdatavendorstatus/{vendorId}', array('as' => 'getdatavendorstatus','before' => 'auth', 'uses' => 'VendorController@getDataVendorStatus'));
+Route::get('/redvendordetails/{vendorId}', array('as' => 'redvendordetails','before' => 'auth', 'uses' => 'VendorController@redVendorDetails'));
+Route::get('/vendordetails', array('as' => 'vendordetails','before' => 'auth', 'uses' => 'VendorController@vendorDetails'));
+Route::get('/getdatavendorservicelist/{vendorId}', array('as' => 'getdatavendorservicelist','before' => 'auth', 'uses' => 'VendorController@getDataVendorServiceList'));
 
+//TODO Service Related Routes
+Route::get('/addservice', array('as' => 'addservice','before' => 'auth', 'uses' => 'ServiceController@showAddService'));
+Route::post('/saveservice', array('as' => 'saveservice','before' => 'auth', 'uses' => 'ServiceController@saveService'));
+Route::get('/servicelist', array('as' => 'servicelist','before' => 'auth', 'uses' => 'ServiceController@showServiceList'));
+Route::get('/getdataservicelist', array('as' => 'getdataservicelist','before' => 'auth', 'uses' => 'ServiceController@getDataServiceList'));
+
+//TODO Issue Related Routes
+
+Route::get('/redshowaddissue/{serviceId}', array('as' => 'redshowaddissue','before' => 'auth', 'uses' => 'IssueController@redShowAddIssue'));
+Route::get('/showaddissue', array('as' => 'showaddissue','before' => 'auth', 'uses' => 'IssueController@showAddIssue'));

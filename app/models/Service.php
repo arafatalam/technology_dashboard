@@ -1,7 +1,18 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Arafat Alam Local
- * Date: 27-August-2019
- * Time: 13:07
- */
+
+class Service extends Eloquent {
+
+
+    public function vendor(){
+        return $this->belongsTo('Vendor');
+    }
+
+    public function serviceCategory(){
+        return $this->belongsTo('ServiceCategory');
+    }
+
+    public function serviceSubCategory(){
+        return $this->belongsTo('ServiceSubCategory');
+    }
+
+}

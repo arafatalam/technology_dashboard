@@ -14,21 +14,20 @@ function confirmSaveVendor(){
     vendor.vendorName = $('#vendor_name').val();
     vendor.vendorSpecialization = $('#vendor_specialization').val();
     vendor.vendorProductLine = $('#vendor_product_line').val();
-    vendor.vendorCommunication = $('#vendor_communication').val();
-    vendor.vendorDocumentSharing = $('#vendor_document_sharing').val();
-    vendor.vendorTechnicalDiscussion = $('#vendor_technical_discussion').val();
-    vendor.vendorTechFeasibilityAnalysis = $('#vendor_tech_feasibility_analysis').val();
-    vendor.vendorMeetingPlan = $('#vendor_meeting_plan').val();
-    vendor.vendorStatus = $('#vendor_status').val();
+    // vendor.vendorCommunication = $('#vendor_communication').val();
+    // vendor.vendorDocumentSharing = $('#vendor_document_sharing').val();
+    // vendor.vendorTechnicalDiscussion = $('#vendor_technical_discussion').val();
+    // vendor.vendorTechFeasibilityAnalysis = $('#vendor_tech_feasibility_analysis').val();
+    // vendor.vendorMeetingPlan = $('#vendor_meeting_plan').val();
+    vendor.vendorEnlistmentStatus = $('#vendor_enlistment_status').val();
     vendor.vendorContactPerson = $('#vendor_contact_person').val();
     vendor.vendorContactDesignation = $('#vendor_contact_designation').val();
     vendor.vendorContactPhone = $('#vendor_contact_phone').val();
     vendor.vendorOfficeAddress = $('#vendor_office_address').val();
     vendor.vendorOfficePhone = $('#vendor_office_phone').val();
-    vendor.vendorInitMeetingDate = $('#vendor_initial_meeting_date').val();
-    vendor.vendorLastMeetingDate = $('#vendor_last_meeting_date').val();
+
     vendor.vendorRemarks = $('#vendor_remarks').val();
-    vendor.vendorOnboardingDate = $('#vendor_onboarding_date').val();
+    vendor.vendorEnlistmentDate = $('#vendor_enlistment_date').val();
 
     console.log(vendor);
 

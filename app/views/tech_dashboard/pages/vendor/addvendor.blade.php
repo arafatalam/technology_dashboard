@@ -77,54 +77,19 @@
                             </div>
 
                         </div>
+
                         <div class="form-group row">
-
-                            <label class="col-lg-1 col-form-label">Communication:</label>
+                            <label class="col-lg-1 col-form-label">Enlistment Status:</label>
                             <div class="col-lg-3">
-                                <select class="form-control kt-select2" id="vendor_communication">
-                                    <option value="1" selected="selected">Yes</option>
-                                    <option value="2" >No</option>
+                                <select class="form-control kt-select2" id="vendor_enlistment_status">
+                                    <option value="Potential" selected="selected">Potential</option>
+                                    <option value="Enlisted" >Enlisted</option>
+
                                 </select>
                             </div>
-                            <label class="col-lg-1 col-form-label">Document Sharing:</label>
+                            <label class="col-lg-1 col-form-label">Enlistment Date:</label>
                             <div class="col-lg-3">
-                                <select class="form-control kt-select2" id="vendor_document_sharing">
-                                    <option value="1" selected="selected">Yes</option>
-                                    <option value="2" >No</option>
-                                </select>
-                            </div>
-                            <label class="col-lg-1 col-form-label">Technical Discussion:</label>
-                            <div class="col-lg-3">
-                                <select class="form-control kt-select2" id="vendor_technical_discussion">
-                                    <option value="1" selected="selected">Yes</option>
-                                    <option value="2" >No</option>
-                                </select>
-                            </div>
-
-                        </div>
-                        <div class="form-group row">
-
-                            <label class="col-lg-1 col-form-label">Technical Feasibility Analysis:</label>
-                            <div class="col-lg-3">
-                                <select class="form-control kt-select2" id="vendor_tech_feasibility_analysis">
-                                    <option value="1" selected="selected">Yes</option>
-                                    <option value="2" >No</option>
-                                </select>
-                            </div>
-                            <label class="col-lg-1 col-form-label">Meeting Plan:</label>
-                            <div class="col-lg-3">
-                                <input id="vendor_meeting_plan" type="text" class="form-control  date-picker"/>
-
-                            </div>
-
-                            <label class="col-lg-1 col-form-label">Status:</label>
-                            <div class="col-lg-3">
-                                <select class="form-control kt-select2" id="vendor_status">
-                                    <option value="On Boarded" selected="selected">On Boarded</option>
-                                    <option value="On Hold" >On Hold</option>
-                                    <option value="In Progress" >In Progress</option>
-                                    <option value="Dropped" >Dropped</option>
-                                </select>
+                                <input id="vendor_enlistment_date" type="text" class="form-control  date-picker"/>
                             </div>
 
                         </div>
@@ -156,27 +121,18 @@
                                 <textarea id="vendor_office_phone" class="form-control form-control autoresize" rows="1"></textarea>
 
                             </div>
-                            <label class="col-lg-1 col-form-label">Initial Meeting Date:</label>
-                            <div class="col-lg-3">
-                                <input id="vendor_initial_meeting_date" type="text" class="form-control  date-picker"/>
-                            </div>
+
 
                         </div>
                         <div class="form-group row">
 
-                            <label class="col-lg-1 col-form-label">Last Meeting Date:</label>
-                            <div class="col-lg-3">
-                                <input id="vendor_last_meeting_date" type="text" class="form-control  date-picker"/>
-                            </div>
+
                             <label class="col-lg-1 col-form-label">Remarks:</label>
-                            <div class="col-lg-3">
-                                <textarea id="vendor_remarks" class="form-control form-control autoresize" rows="1"></textarea>
+                            <div class="col-lg-11">
+                                <textarea id="vendor_remarks" class="form-control form-control autoresize" rows="2"></textarea>
 
                             </div>
-                            <label class="col-lg-1 col-form-label">Onboarding Date:</label>
-                            <div class="col-lg-3">
-                                <input id="vendor_onboarding_date" type="text" class="form-control  date-picker"/>
-                            </div>
+
 
                         </div>
                     </div>
