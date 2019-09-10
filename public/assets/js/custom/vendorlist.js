@@ -73,6 +73,7 @@ var KTDatatableChildDataLocalDemo = function() {
                             </a>\
 						  	<div class="dropdown-menu dropdown-menu-right">\
 						    	<a class="dropdown-item" href="./redshowaddissue/' + row.id +' "><i class="la la-warning"></i>Create Issue</a>\
+						    	<a class="dropdown-item" href="./redshowaddcr/' + row.id +' "><i class="la la-warning"></i>Raise CR</a>\
 						    	<a class="dropdown-item" href="#"><i class="la la-edit"></i> Edit Details</a>\
 						  	</div>\
 						</div>\

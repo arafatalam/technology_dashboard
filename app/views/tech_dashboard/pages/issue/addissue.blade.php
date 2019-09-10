@@ -1,6 +1,8 @@
 @extends('tech_dashboard.layout.master')
 @section('content')
     <span id="docid" hidden>addissue</span>
+    <span id="vendor_id" hidden>{{ $service->vendor_id }}</span>
+    <span id="service_id" hidden>{{ $service->id }}</span>
 
 
 
@@ -81,7 +83,7 @@
                             </div>
                             <label class="col-lg-1 col-form-label">Issue Status:</label>
                             <div class="col-lg-3">
-                                <select class="form-control kt-select2" id="service_category">
+                                <select class="form-control kt-select2" id="issue_status">
                                     <option value="Pending" >Pending</option>
                                     <option value="Escalated" >Escalated</option>
                                     <option value="Parked" >Parked</option>
@@ -95,20 +97,23 @@
 
                         </div>
 
+
                         <div class="form-group row">
 
-                            <label class="col-lg-1 col-form-label">Raising Date:</label>
+                            <label class="col-lg-1 col-form-label">SLA:</label>
                             <div class="col-lg-3">
-                                <input id="raising_date" type="text" class="form-control  date-picker"/>                            </div>
-                            <label class="col-lg-1 col-form-label">Solving Date:</label>
-                            <div class="col-lg-3">
-                                <input id="solving_date" type="text" class="form-control  date-picker"/>
-
+                                <textarea id="sla" class="form-control form-control autoresize" rows="1"></textarea>
                             </div>
-
-                            <label class="col-lg-1 col-form-label">Aging:</label>
+                            <label class="col-lg-1 col-form-label">SLA Status:</label>
                             <div class="col-lg-3">
-                                <textarea id="aging" class="form-control form-control autoresize" rows="1"></textarea>
+                                <select class="form-control kt-select2" id="sla_status">
+                                    <option value="Within SLA">Within SLA</option>
+                                    <option value="SLA Violated" >SLA Violated</option>
+                                </select>
+                            </div>
+                            <label class="col-lg-1 col-form-label">Remarks</label>
+                            <div class="col-lg-3">
+                                <textarea id="remarks" class="form-control form-control autoresize" rows="1"></textarea>
                             </div>
 
                         </div>
@@ -120,7 +125,7 @@
                             </div>
                             <label class="col-lg-1 col-form-label">SLA Status:</label>
                             <div class="col-lg-3">
-                                <select class="form-control kt-select2" id="pr_status">
+                                <select class="form-control kt-select2" id="sla_status">
                                     <option value="Within SLA">Within SLA</option>
                                     <option value="SLA Violated" >SLA Violated</option>
                                 </select>
@@ -155,7 +160,7 @@
                                 <button type="reset" id="" class="btn btn-secondary float-right" onclick="testAlert();">Cancel</button>
                             </div>
                             <div class="col-lg-1">
-                                <button type="button" class="btn btn-success float-right" onclick="confirmAddService();">Submit</button>
+                                <button type="button" class="btn btn-success float-right" onclick="confirmAddIssue();">Submit</button>
                                 {{--<button type="reset" class="btn btn-secondary">Cancel</button>--}}
                             </div>
                         </div>

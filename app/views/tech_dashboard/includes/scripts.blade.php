@@ -157,6 +157,11 @@
     <script src="./assets/js/custom/addissue.js" type="text/javascript"></script>
     {{--<script src="./assets/demo4/pages/crud/forms/widgets/select2.js" type="text/javascript"></script>--}}
 @endif
+
+@if(Session::get('DocId') == 'addcr')
+    <script src="./assets/js/custom/addcr.js" type="text/javascript"></script>
+    {{--<script src="./assets/demo4/pages/crud/forms/widgets/select2.js" type="text/javascript"></script>--}}
+@endif
 {{--<script src="./assets/js/demo4/pages/crud/forms/widgets/autosize.js" type="text/javascript"></script>--}}
 {{--<script src="./assets/js/demo4/pages/crud/metronic-datatable/base/data-local.js" type="text/javascript"></script>--}}
 {{--<script src="./assets/js/demo4/pages/crud/forms/widgets/select2.js" type="text/javascript"></script>--}}

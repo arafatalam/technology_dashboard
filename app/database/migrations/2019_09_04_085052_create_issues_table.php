@@ -19,7 +19,7 @@ class CreateIssuesTable extends Migration {
 			$table->integer('service_id');
 			$table->text('issue_details');
 			$table->text('issue_status');
-			$table->text('responsible_personnel');
+			$table->text('responsible_person');
 			$table->date('solving_date');
 			$table->date('raising_date');
 			$table->integer('aging');

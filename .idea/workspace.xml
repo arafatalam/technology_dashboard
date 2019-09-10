@@ -2,35 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="09c33a73-abe1-4415-b8f9-c8d0a1bad0ce" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/controllers/IssueController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/controllers/ServiceController.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/models/Issue.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/models/Service.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/models/ServiceCategory.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/models/ServiceSubCategory.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/tech_dashboard/pages/issue/addissue.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/tech_dashboard/pages/service/addservice.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/tech_dashboard/pages/service/addservicenew.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/tech_dashboard/pages/service/servicelist.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/tech_dashboard/pages/vendor/vendordetails.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/views/tech_dashboard/pages/vendor/vendorlist.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/js/custom/addissue.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/js/custom/addservice.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/js/custom/servicelist.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/js/custom/vendordetails.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/assets/js/custom/vendorlist.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/controllers/ChangeRequestController.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/views/tech_dashboard/pages/cr/addcr.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/assets/js/custom/addcr.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/controllers/IssueController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/IssueController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/controllers/VendorController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/controllers/VendorController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/database/migrations/2019_09_04_085052_create_issues_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/database/migrations/2019_09_04_085052_create_issues_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/models/Issue.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/Issue.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/models/Vendor.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/models/Vendor.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/routes.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/routes.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/views/tech_dashboard/includes/scripts.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/tech_dashboard/includes/scripts.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/tech_dashboard/pages/module/modulelist.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/tech_dashboard/pages/module/modulelist.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views/tech_dashboard/pages/vendor/addvendor.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/tech_dashboard/pages/vendor/addvendor.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/custom/addvendor.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/custom/addvendor.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/custom/utilities.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/custom/utilities.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/demo4/pages/crud/forms/widgets/select2.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/demo4/pages/crud/forms/widgets/select2.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/demo4/pages/crud/metronic-datatable/child/data-local.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/demo4/pages/crud/metronic-datatable/child/data-local.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/assets/js/demo4/scripts.bundle.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/demo4/scripts.bundle.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/tech_dashboard/pages/issue/addissue.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/tech_dashboard/pages/issue/addissue.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/tech_dashboard/pages/vendor/vendordetails.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/tech_dashboard/pages/vendor/vendordetails.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/js/custom/addissue.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/custom/addissue.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/js/custom/vendordetails.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/custom/vendordetails.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/assets/js/custom/vendorlist.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/assets/js/custom/vendorlist.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -59,11 +46,11 @@
     <session id="-1398153900">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="15" />
-          <entry key="project.open.time.1" value="2" />
+          <entry key="project.closed" value="18" />
+          <entry key="project.open.time.1" value="3" />
           <entry key="project.open.time.11" value="2" />
           <entry key="project.open.time.12" value="2" />
-          <entry key="project.open.time.13" value="2" />
+          <entry key="project.open.time.13" value="3" />
           <entry key="project.open.time.15" value="1" />
           <entry key="project.open.time.16" value="1" />
           <entry key="project.open.time.17" value="1" />
@@ -75,53 +62,54 @@
           <entry key="project.open.time.34" value="1" />
           <entry key="project.open.time.37" value="1" />
           <entry key="project.open.time.4" value="1" />
-          <entry key="project.opened" value="22" />
+          <entry key="project.opened" value="24" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="css" value="26" />
           <entry key="dummy" value="22" />
-          <entry key="js" value="22279" />
+          <entry key="js" value="22817" />
           <entry key="json" value="14" />
-          <entry key="php" value="30296" />
+          <entry key="php" value="32831" />
+          <entry key="txt" value="20" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="Blade" value="8436" />
+          <entry key="Blade" value="9863" />
           <entry key="CSS" value="26" />
-          <entry key="HTML" value="14" />
+          <entry key="HTML" value="15" />
           <entry key="JSON" value="14" />
-          <entry key="JavaScript" value="22265" />
-          <entry key="PHP" value="21860" />
-          <entry key="PLAIN_TEXT" value="22" />
+          <entry key="JavaScript" value="22802" />
+          <entry key="PHP" value="22968" />
+          <entry key="PLAIN_TEXT" value="42" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="css" value="4" />
-          <entry key="js" value="138" />
+          <entry key="js" value="156" />
           <entry key="json" value="1" />
-          <entry key="php" value="286" />
+          <entry key="php" value="304" />
           <entry key="ts" value="1" />
           <entry key="xml" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="Blade" value="82" />
+          <entry key="Blade" value="90" />
           <entry key="CSS" value="4" />
           <entry key="JSON" value="1" />
-          <entry key="JavaScript" value="138" />
-          <entry key="PHP" value="204" />
+          <entry key="JavaScript" value="156" />
+          <entry key="PHP" value="214" />
           <entry key="TypeScript" value="1" />
           <entry key="XML" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.js.language.service.starts">
         <counts>
-          <entry key="TypeScriptServerServiceImpl" value="20" />
+          <entry key="TypeScriptServerServiceImpl" value="22" />
         </counts>
       </usages-collector>
     </session>
@@ -129,104 +117,86 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/controllers/VendorController.php">
+        <entry file="file://$PROJECT_DIR$/public/assets/js/custom/servicelist.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="595">
-              <caret line="99" column="46" selection-start-line="99" selection-start-column="8" selection-end-line="99" selection-end-column="46" />
+            <state relative-caret-position="289">
+              <caret line="17" column="49" selection-start-line="17" selection-start-column="49" selection-end-line="17" selection-end-column="49" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/assets/js/custom/modulelist.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="969">
+              <caret line="57" column="35" selection-start-line="57" selection-start-column="35" selection-end-line="57" selection-end-column="35" />
               <folding>
-                <element signature="n#showVendorList#0;n#VendorController#0;n#!!top" />
-                <element signature="n#getDataVendorList#0;n#VendorController#0;n#!!top" />
-                <element signature="n#getDataVendorStatus#0;n#VendorController#0;n#!!top" />
-                <element signature="n#saveVendor#0;n#VendorController#0;n#!!top" />
+                <element signature="n#!!block;n#showModuleData#0" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/assets/js/custom/vendorlist.js">
+        <entry file="file://$PROJECT_DIR$/public/assets/js/custom/createproject.js">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/assets/js/custom/createmodule.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
-              <caret line="10" column="20" selection-start-line="10" selection-start-column="8" selection-end-line="10" selection-end-column="20" />
-              <folding>
-                <element signature="e#2666#6254#0" />
-              </folding>
+            <state relative-caret-position="2550">
+              <caret line="150" column="9" selection-start-line="150" selection-start-column="9" selection-end-line="150" selection-end-column="9" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/assets/js/custom/vendordetails.js">
+        <entry file="file://$PROJECT_DIR$/public/assets/js/custom/commonfields.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="243">
-              <caret line="64" selection-start-line="64" selection-end-line="64" />
+            <state relative-caret-position="136">
+              <caret line="8" column="3" selection-start-line="8" selection-start-column="3" selection-end-line="8" selection-end-column="3" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/assets/js/demo4/pages/crud/metronic-datatable/base/data-local.js">
+        <entry file="file://$PROJECT_DIR$/public/assets/js/custom/commofileds_bak.js">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/assets/js/custom/addvendor.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="697">
-              <caret line="218" column="17" selection-start-line="191" selection-start-column="19" selection-end-line="218" selection-end-column="17" />
+            <state relative-caret-position="357">
+              <caret line="21" column="64" selection-start-line="21" selection-start-column="64" selection-end-line="21" selection-end-column="64" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/routes.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="753">
-              <caret line="78" column="28" selection-start-line="78" selection-start-column="13" selection-end-line="78" selection-end-column="28" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/tech_dashboard/pages/vendor/vendordetails.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="311">
-              <caret line="50" column="100" selection-start-line="50" selection-start-column="100" selection-end-line="50" selection-end-column="100" />
-              <folding>
-                <element signature="e#3668#4773#0#HTML" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/controllers/IssueController.php">
+        <entry file="file://$PROJECT_DIR$/public/assets/js/custom/addservice.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="187">
-              <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/views/tech_dashboard/pages/issue/addissue.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="790">
-              <caret line="129" column="53" selection-start-line="129" selection-start-column="53" selection-end-line="129" selection-end-column="53" />
-              <folding>
-                <element signature="e#226#2235#0#HTML" />
-                <element signature="e#3162#5132#0#HTML" />
-                <element signature="e#11678#12832#0#HTML" />
-              </folding>
+              <caret line="11" column="7" selection-start-line="11" selection-start-column="7" selection-end-line="11" selection-end-column="7" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/assets/js/custom/addissue.js">
-          <provider selected="true" editor-type-id="text-editor" />
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="408">
+              <caret line="24" column="41" selection-end-line="101" />
+            </state>
+          </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/app/views/tech_dashboard/includes/scripts.blade.php">
+        <entry file="file://$PROJECT_DIR$/public/assets/js/custom/addcr.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="691">
-              <caret line="155" column="38" selection-start-line="155" selection-start-column="38" selection-end-line="155" selection-end-column="38" />
+            <state relative-caret-position="85">
+              <caret line="5" selection-start-line="5" selection-end-line="5" />
             </state>
           </provider>
         </entry>
@@ -242,7 +212,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>table_title</find>
       <find>title</find>
       <find>milestoneEntry</find>
       <find>module_fields_row</find>
@@ -272,6 +241,7 @@
       <find>thead</find>
       <find>kt-datatable</find>
       <find>subTableInit</find>
+      <find>addclass</find>
     </findStrings>
     <replaceStrings>
       <replace>updated</replace>
@@ -293,11 +263,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/app/database/migrations/2019_06_29_163310_create_project_common_fields_table.php" />
-        <option value="$PROJECT_DIR$/app/database/seeds/StatusTableSeeder.php" />
-        <option value="$PROJECT_DIR$/app/database/seeds/DatabaseSeeder.php" />
-        <option value="$PROJECT_DIR$/public/assets/js/demo4/pages/wizard/wizard-3.js" />
-        <option value="$PROJECT_DIR$/app/models/FieldDataType.php" />
         <option value="$PROJECT_DIR$/app/models/CommonField.php" />
         <option value="$PROJECT_DIR$/app/controllers/CommonFieldController.php" />
         <option value="$PROJECT_DIR$/public/assets/js/custom/modulelist.js" />
@@ -321,7 +286,6 @@
         <option value="$PROJECT_DIR$/app/views/tech_dashboard/pages/service/servicelistnew.blade.php" />
         <option value="$PROJECT_DIR$/app/database/migrations/2019_09_01_053640_create_service_categories_table.php" />
         <option value="$PROJECT_DIR$/app/database/migrations/2019_09_01_053742_create_service_sub_categories_table.php" />
-        <option value="$PROJECT_DIR$/app/models/Vendor.php" />
         <option value="$PROJECT_DIR$/app/models/Service.php" />
         <option value="$PROJECT_DIR$/app/models/ServiceCategory.php" />
         <option value="$PROJECT_DIR$/app/models/ServiceSubCategory.php" />
@@ -329,21 +293,27 @@
         <option value="$PROJECT_DIR$/public/assets/js/custom/addvendor.js" />
         <option value="$PROJECT_DIR$/app/controllers/ServiceController.php" />
         <option value="$PROJECT_DIR$/app/views/tech_dashboard/pages/service/addservicenew.blade.php" />
-        <option value="$PROJECT_DIR$/public/assets/js/custom/addservice.js" />
         <option value="$PROJECT_DIR$/public/assets/js/demo4/scripts.bundle.js" />
         <option value="$PROJECT_DIR$/app/views/tech_dashboard/pages/service/servicelist.blade.php" />
         <option value="$PROJECT_DIR$/app/views/tech_dashboard/pages/vendor/vendorlist.blade.php" />
         <option value="$PROJECT_DIR$/public/assets/js/demo4/pages/crud/metronic-datatable/child/data-local.js" />
-        <option value="$PROJECT_DIR$/app/controllers/VendorController.php" />
-        <option value="$PROJECT_DIR$/app/views/tech_dashboard/pages/vendor/vendordetails.blade.php" />
         <option value="$PROJECT_DIR$/app/database/migrations/2019_09_04_085052_create_issues_table.php" />
-        <option value="$PROJECT_DIR$/app/models/Issue.php" />
+        <option value="$PROJECT_DIR$/public/assets/js/custom/addservice.js" />
+        <option value="$PROJECT_DIR$/public/assets/js/custom/addissue.js" />
         <option value="$PROJECT_DIR$/app/controllers/IssueController.php" />
-        <option value="$PROJECT_DIR$/app/routes.php" />
+        <option value="$PROJECT_DIR$/app/models/Vendor.php" />
+        <option value="$PROJECT_DIR$/app/models/Issue.php" />
+        <option value="$PROJECT_DIR$/app/controllers/VendorController.php" />
         <option value="$PROJECT_DIR$/public/assets/js/custom/vendordetails.js" />
+        <option value="$PROJECT_DIR$/app/database/migrations/2019_09_08_064520_create_change_requests_table.php" />
+        <option value="$PROJECT_DIR$/app/controllers/ChangeRequestController.php" />
+        <option value="$PROJECT_DIR$/app/routes.php" />
         <option value="$PROJECT_DIR$/public/assets/js/custom/vendorlist.js" />
+        <option value="$PROJECT_DIR$/app/views/tech_dashboard/pages/vendor/vendordetails.blade.php" />
         <option value="$PROJECT_DIR$/app/views/tech_dashboard/pages/issue/addissue.blade.php" />
         <option value="$PROJECT_DIR$/app/views/tech_dashboard/includes/scripts.blade.php" />
+        <option value="$PROJECT_DIR$/app/views/tech_dashboard/pages/cr/addcr.blade.php" />
+        <option value="$PROJECT_DIR$/public/assets/js/custom/addcr.js" />
       </list>
     </option>
   </component>
@@ -448,10 +418,10 @@
     </include_path>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-10" />
-    <option name="y" value="-10" />
-    <option name="width" value="2420" />
-    <option name="height" value="1320" />
+    <option name="x" value="-14" />
+    <option name="y" value="-14" />
+    <option name="width" value="3025" />
+    <option name="height" value="1650" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -665,7 +635,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../dashboard_new" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.Custom" />
@@ -718,18 +688,36 @@
       <workItem from="1567278394910" duration="4530000" />
       <workItem from="1567311511153" duration="19350000" />
       <workItem from="1567486658690" duration="1556000" />
-      <workItem from="1567574144326" duration="10121000" />
+      <workItem from="1567574144326" duration="14139000" />
+      <workItem from="1567925320744" duration="7946000" />
+      <workItem from="1568001023590" duration="599000" />
     </task>
+    <task id="LOCAL-00001" summary="Added Issue Form">
+      <created>1567590685421</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1567590685421</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="280938000" />
+    <option name="totallyTimeSpent" value="293501000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
+    <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17537314" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.22483222" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -738,13 +726,14 @@
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32936078" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="9" show_stripe_button="false" />
       <window_info anchor="bottom" id="TypeScript" order="10" />
       <window_info anchor="bottom" id="Terminal" order="11" />
       <window_info anchor="bottom" id="Event Log" order="12" side_tool="true" />
+      <window_info anchor="bottom" id="Messages" order="13" weight="0.32936078" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -779,87 +768,15 @@
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Added Issue Form" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added Issue Form" />
+  </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/app/database/migrations/2019_07_31_075912_create_milestones_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="23" column="12" selection-start-line="23" selection-start-column="12" selection-end-line="23" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/CommonFieldController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="21" column="8" lean-forward="true" selection-start-line="21" selection-start-column="8" selection-end-line="21" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/assets/js/custom/commofileds_bak.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/assets/js/custom/createproject.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="31" selection-end-line="230" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/assets/js/custom/commonfields.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="884">
-          <caret line="52" column="56" selection-start-line="52" selection-start-column="56" selection-end-line="52" selection-end-column="56" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/UserController.php">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/ProjectController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="493">
-          <caret line="47" column="13" selection-start-line="47" selection-start-column="13" selection-end-line="47" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/assets/js/custom/createmodule.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="265">
-          <caret line="150" column="9" selection-start-line="150" selection-start-column="9" selection-end-line="150" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/assets/js/custom/utilities.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1326">
-          <caret line="78" column="25" selection-start-line="78" selection-start-column="9" selection-end-line="78" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/assets/js/demo4/pages/crud/forms/widgets/select2.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="15" column="35" selection-start-line="15" selection-start-column="12" selection-end-line="15" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/tech_dashboard/pages/module/modulelist.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="663">
-          <caret line="78" column="18" lean-forward="true" selection-start-line="37" selection-start-column="12" selection-end-line="78" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/assets/js/custom/modulelist.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="33" selection-start-line="16" selection-start-column="16" selection-end-line="16" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/assets/js/custom/servicelist.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="49" selection-start-line="17" selection-start-column="49" selection-end-line="17" selection-end-column="49" />
         </state>
       </provider>
     </entry>
@@ -914,13 +831,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/Service.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="14" column="31" selection-start-line="14" selection-start-column="31" selection-end-line="14" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/models/ServiceCategory.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
@@ -935,31 +845,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/assets/js/custom/addvendor.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="21" column="64" selection-start-line="21" selection-start-column="64" selection-end-line="21" selection-end-column="64" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views/tech_dashboard/pages/vendor/addvendor.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="572">
           <caret line="133" column="34" lean-forward="true" selection-start-line="129" selection-start-column="28" selection-end-line="133" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/ServiceController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="58" column="46" selection-start-line="58" selection-start-column="46" selection-end-line="58" selection-end-column="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/assets/js/custom/addservice.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="22" column="53" selection-start-line="22" selection-start-column="53" selection-end-line="22" selection-end-column="53" />
         </state>
       </provider>
     </entry>
@@ -984,24 +873,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/tech_dashboard/pages/vendor/vendorlist.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="38" selection-start-line="2" selection-start-column="38" selection-end-line="2" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/assets/js/demo4/pages/crud/metronic-datatable/child/data-local.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-6268">
           <caret line="2" selection-end-line="573" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/Vendor.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="6" column="38" selection-start-line="6" selection-start-column="38" selection-end-line="6" selection-end-column="38" />
         </state>
       </provider>
     </entry>
@@ -1019,61 +894,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/database/migrations/2019_09_04_085052_create_issues_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="28" column="42" selection-start-line="28" selection-start-column="42" selection-end-line="28" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/models/Milestone.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
           <caret line="6" column="1" lean-forward="true" selection-end-line="6" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models/Issue.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="11" selection-start-line="2" selection-start-column="11" selection-end-line="2" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/LoginController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="46" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/tech_dashboard/pages/vendor/vendordetails.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="311">
-          <caret line="50" column="100" selection-start-line="50" selection-start-column="100" selection-end-line="50" selection-end-column="100" />
-          <folding>
-            <element signature="e#3668#4773#0#HTML" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/controllers/VendorController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="595">
-          <caret line="99" column="46" selection-start-line="99" selection-start-column="8" selection-end-line="99" selection-end-column="46" />
-          <folding>
-            <element signature="n#showVendorList#0;n#VendorController#0;n#!!top" />
-            <element signature="n#getDataVendorList#0;n#VendorController#0;n#!!top" />
-            <element signature="n#getDataVendorStatus#0;n#VendorController#0;n#!!top" />
-            <element signature="n#saveVendor#0;n#VendorController#0;n#!!top" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/assets/js/custom/vendordetails.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="243">
-          <caret line="64" selection-start-line="64" selection-end-line="64" />
         </state>
       </provider>
     </entry>
@@ -1084,49 +908,216 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/routes.php">
+    <entry file="file://$PROJECT_DIR$/app/database/migrations/2019_09_04_085052_create_issues_table.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="753">
-          <caret line="78" column="28" selection-start-line="78" selection-start-column="13" selection-end-line="78" selection-end-column="28" />
+        <state relative-caret-position="340">
+          <caret line="21" column="44" selection-start-line="21" selection-start-column="44" selection-end-line="21" selection-end-column="44" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/VendorController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="714">
+          <caret line="135" column="23" selection-start-line="135" selection-start-column="23" selection-end-line="135" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/Vendor.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="36" selection-start-line="10" selection-start-column="36" selection-end-line="10" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/Service.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="5" selection-start-line="9" selection-start-column="4" selection-end-line="11" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models/Issue.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="39" selection-start-line="5" selection-start-column="39" selection-end-line="5" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/database/migrations/2019_09_08_064520_create_change_requests_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="544">
+          <caret line="33" column="7" lean-forward="true" selection-start-line="33" selection-start-column="7" selection-end-line="33" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/ServiceController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="58" column="46" selection-start-line="58" selection-start-column="46" selection-end-line="58" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/LoginController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret selection-end-line="46" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/IssueController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
+        <state relative-caret-position="442">
+          <caret line="26" column="29" selection-end-line="60" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/assets/js/custom/vendorlist.js">
+    <entry file="file://$PROJECT_DIR$/app/routes.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="20" selection-start-line="10" selection-start-column="8" selection-end-line="10" selection-end-column="20" />
-          <folding>
-            <element signature="e#2666#6254#0" />
-          </folding>
+        <state relative-caret-position="838">
+          <caret line="84" column="115" selection-start-line="84" selection-start-column="115" selection-end-line="84" selection-end-column="115" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/tech_dashboard/pages/module/modulelist.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="156">
+          <caret line="39" column="88" selection-start-line="39" selection-start-column="88" selection-end-line="39" selection-end-column="112" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/tech_dashboard/pages/vendor/vendorlist.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-896">
+          <caret line="2" column="38" selection-start-line="2" selection-start-column="38" selection-end-line="2" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/tech_dashboard/pages/vendor/vendordetails.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="670">
+          <caret line="108" column="68" selection-start-line="108" selection-start-column="68" selection-end-line="108" selection-end-column="68" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views/tech_dashboard/pages/issue/addissue.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="790">
-          <caret line="129" column="53" selection-start-line="129" selection-start-column="53" selection-end-line="129" selection-end-column="53" />
+        <state relative-caret-position="414">
+          <caret line="137" column="30" lean-forward="true" selection-start-line="137" selection-start-column="30" selection-end-line="137" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/controllers/ChangeRequestController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" selection-start-line="19" selection-end-line="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/tech_dashboard/includes/scripts.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="685">
+          <caret line="161" column="41" selection-start-line="161" selection-start-column="41" selection-end-line="161" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/assets/js/custom/utilities.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1326">
+          <caret line="78" column="25" selection-start-line="78" selection-start-column="9" selection-end-line="78" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views/tech_dashboard/pages/cr/addcr.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="594">
+          <caret line="153" column="62" selection-start-line="153" selection-start-column="43" selection-end-line="153" selection-end-column="62" />
           <folding>
-            <element signature="e#226#2235#0#HTML" />
-            <element signature="e#3162#5132#0#HTML" />
-            <element signature="e#11678#12832#0#HTML" />
+            <element signature="e#350#2359#0#HTML" />
+            <element signature="e#3286#4027#0#HTML" />
+            <element signature="e#4026#4745#0#HTML" />
+            <element signature="e#4052#5264#0#HTML" />
+            <element signature="e#5290#6200#0#HTML" />
+            <element signature="e#6225#7334#0#HTML" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/assets/js/custom/addissue.js">
+    <entry file="file://$PROJECT_DIR$/public/assets/js/custom/vendordetails.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2091">
+          <caret line="123" column="51" lean-forward="true" selection-start-line="123" selection-start-column="51" selection-end-line="123" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/assets/js/custom/vendorlist.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1275">
+          <caret line="75" column="131" selection-start-line="75" selection-start-column="131" selection-end-line="75" selection-end-column="131" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/assets/js/custom/servicelist.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="49" selection-start-line="17" selection-start-column="49" selection-end-line="17" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/assets/js/custom/modulelist.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="969">
+          <caret line="57" column="35" selection-start-line="57" selection-start-column="35" selection-end-line="57" selection-end-column="35" />
+          <folding>
+            <element signature="n#!!block;n#showModuleData#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/assets/js/custom/createproject.js">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views/tech_dashboard/includes/scripts.blade.php">
+    <entry file="file://$PROJECT_DIR$/public/assets/js/custom/createmodule.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="691">
-          <caret line="155" column="38" selection-start-line="155" selection-start-column="38" selection-end-line="155" selection-end-column="38" />
+        <state relative-caret-position="2550">
+          <caret line="150" column="9" selection-start-line="150" selection-start-column="9" selection-end-line="150" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/assets/js/custom/commonfields.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="3" selection-start-line="8" selection-start-column="3" selection-end-line="8" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/assets/js/custom/commofileds_bak.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/assets/js/custom/addvendor.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="357">
+          <caret line="21" column="64" selection-start-line="21" selection-start-column="64" selection-end-line="21" selection-end-column="64" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/assets/js/custom/addservice.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="7" selection-start-line="11" selection-start-column="7" selection-end-line="11" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/assets/js/custom/addissue.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="24" column="41" selection-end-line="101" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/assets/js/custom/addcr.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" selection-start-line="5" selection-end-line="5" />
         </state>
       </provider>
     </entry>

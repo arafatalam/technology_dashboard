@@ -86,7 +86,7 @@ class VendorController extends BaseController {
         } catch (Expection $e){
 
             $result['id'] = 0;
-            $result['text']['module']['message']= $e->getMessage();
+            $result['text']['vendor']['message']= $e->getMessage();
 
         }
         return $result;
@@ -126,5 +126,13 @@ class VendorController extends BaseController {
 
 
 
+    }
+
+    public function getDataVendorIssueList($vendorId){
+        $vendor = Vendor::find($vendorId);
+
+        $issues = $vendor->issues;
+
+        return $issues;
     }
 }

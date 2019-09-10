@@ -7,5 +7,9 @@ class Vendor extends Eloquent {
         return $this->hasMany('Service');
     }
 
+    public function issues(){
+        return $this->hasMany('Issue');
+    }
+
 
 }

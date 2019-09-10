@@ -67,7 +67,7 @@ Route::get('/getdatavendorstatus/{vendorId}', array('as' => 'getdatavendorstatus
 Route::get('/redvendordetails/{vendorId}', array('as' => 'redvendordetails','before' => 'auth', 'uses' => 'VendorController@redVendorDetails'));
 Route::get('/vendordetails', array('as' => 'vendordetails','before' => 'auth', 'uses' => 'VendorController@vendorDetails'));
 Route::get('/getdatavendorservicelist/{vendorId}', array('as' => 'getdatavendorservicelist','before' => 'auth', 'uses' => 'VendorController@getDataVendorServiceList'));
-
+Route::get('/getdatavendorissuelist/{vendorId}', array('as' => 'getdatavendorissuelist','before' => 'auth', 'uses' => 'VendorController@getDataVendorIssueList'));
 //TODO Service Related Routes
 Route::get('/addservice', array('as' => 'addservice','before' => 'auth', 'uses' => 'ServiceController@showAddService'));
 Route::post('/saveservice', array('as' => 'saveservice','before' => 'auth', 'uses' => 'ServiceController@saveService'));
@@ -78,3 +78,8 @@ Route::get('/getdataservicelist', array('as' => 'getdataservicelist','before' =>
 
 Route::get('/redshowaddissue/{serviceId}', array('as' => 'redshowaddissue','before' => 'auth', 'uses' => 'IssueController@redShowAddIssue'));
 Route::get('/showaddissue', array('as' => 'showaddissue','before' => 'auth', 'uses' => 'IssueController@showAddIssue'));
+Route::post('/saveissue', array('as' => 'saveissue','before' => 'auth', 'uses' => 'IssueController@saveIssue'));
+
+//TODO CR Related Routes
+Route::get('/redshowaddcr/{serviceId}', array('as' => 'redshowaddcr','before' => 'auth', 'uses' => 'ChangeRequestController@redShowAddCR'));
+Route::get('/showaddcr', array('as' => 'showaddcr','before' => 'auth', 'uses' => 'ChangeRequestController@showAddCR'));
